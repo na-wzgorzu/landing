@@ -21,7 +21,6 @@ export const Navigation = () => {
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="lg:hidden">
             <MenuIcon className="h-6 w-6" />
-            <span className="sr-only">Toggle navigation menu</span>
           </Button>
         </SheetTrigger>
         <SheetContent side="right" className="pl-4">
@@ -46,14 +45,13 @@ export const Navigation = () => {
 
       <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
         <Logo className="text-black/80 size-20" />
-        <span className="sr-only">Acme Inc</span>
       </Link>
       <nav className="ml-auto hidden lg:flex gap-6">
         {navLinks.map(({ href, label }, i) => (
           <Link
             key={href + i}
             href="#"
-            className="group inline-flex h-9 w-max items-center justify-center px-4 py-2 text-sm font-medium transition-colors hover:underline underline-offset-8 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
+            className="group inline-flex h-9 w-max items-center justify-center px-4 py-2 transition-all hover:border-b hover:border-gray-400 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50"
             prefetch={false}
           >
             {label}

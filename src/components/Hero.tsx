@@ -15,7 +15,7 @@ export const Hero = () => {
 
 export const HeroHeader = () => {
   return (
-    <div className="text-4xl text-white font-bold max-w-lg text-balance pr-10">
+    <div className="text-4xl text-white font-mono font-medium max-w-lg text-balance pr-10">
       Wypoczynek w zgodzie z naturą w Ośrodek Wypoczynkowy &apos;Na
       wzgórzu&apos;
     </div>
@@ -25,25 +25,23 @@ export const HeroHeader = () => {
 export const ReservationSection = () => {
   return (
     <div className="bg-white min-h-12 flex gap-4 border-white justify-between border w-fit">
-      <div className="flex text-xs gap-3">
+      <div className="flex text-sm font-light gap-3">
         <div className="pt-1 pl-1">Przyjazd</div>
         <div className="flex items-end">
-          <span className="font-semibold text-3xl mr-1">11</span>Sty
+          <span className="font-normal text-4xl mr-1">11</span>Sty
         </div>
       </div>
 
-      <div className="flex text-xs gap-3">
+      <div className="flex text-sm font-light gap-3">
         <div className="pt-1 pl-1">Wyjazd</div>
         <div className="flex items-end">
-          <span className="font-semibold text-3xl mr-1">12</span>Sty
+          <span className="font-normal text-4xl mr-1">12</span>Sty
         </div>
       </div>
 
-      {/* <div className="border border-solid border-white"> */}
       <Button variant="green" size="lg">
         Rezerwuj
       </Button>
-      {/* </div> */}
     </div>
   );
 };
