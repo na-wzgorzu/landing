@@ -1,0 +1,65 @@
+import { Logo } from "@/assets/logo";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { MenuIcon } from "lucide-react";
+import Link from "next/link";
+import React from "react";
+
+const navLinks = [
+  { href: "#", label: "O nas" },
+  { href: "#", label: "Domki" },
+  { href: "#", label: "Atrakcje" },
+  { href: "#", label: "Galeria" },
+  { href: "#", label: "Kontakt" },
+  { href: "#", label: "Rezerwuj" },
+];
+
+export const Navigation = () => {
+  return (
+    <header className="sticky top-0 inset-x-0 flex h-16 w-full shrink-0 items-center justify-end px-4 bg-white shadow-md">
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button variant="outline" size="icon" className="lg:hidden">
+            <MenuIcon className="h-6 w-6" />
+            <span className="sr-only">Toggle navigation menu</span>
+          </Button>
+        </SheetTrigger>
+        <SheetContent side="right" className="pl-4">
+          <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
+            <Logo className="text-black/80 size-20" />
+            <span className="sr-only">Acme Inc</span>
+          </Link>
+          <div className="grid gap-2 py-6">
+            {navLinks.map(({ href, label }, i) => (
+              <Link
+                key={href + i}
+                href="#"
+                className="flex w-full items-center py-2 text-lg font-semibold"
+                prefetch={false}
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+        </SheetContent>
+      </Sheet>
+
+      <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
+        <Logo className="text-black/80 size-20" />
+        <span className="sr-only">Acme Inc</span>
+      </Link>
+      <nav className="ml-auto hidden lg:flex gap-6">
+        {navLinks.map(({ href, label }, i) => (
+          <Link
+            key={href + i}
+            href="#"
+            className="group inline-flex h-9 w-max items-center justify-center px-4 py-2 text-sm font-medium transition-colors hover:underline underline-offset-8 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
+            prefetch={false}
+          >
+            {label}
+          </Link>
+        ))}
+      </nav>
+    </header>
+  );
+};
