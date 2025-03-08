@@ -16,7 +16,7 @@ const navLinks = [
 
 export const Navigation = () => {
   return (
-    <header className="sticky top-0 inset-x-0 flex h-16 w-full shrink-0 items-center justify-end px-4 bg-white shadow-md border-b border-gray-300">
+    <header className="sticky z-2 top-0 inset-x-0 flex h-16 w-full shrink-0 items-center justify-end px-4 bg-white text-gray-700 shadow-md border-b border-gray-300">
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="lg:hidden">

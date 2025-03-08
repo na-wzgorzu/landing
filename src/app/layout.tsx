@@ -24,9 +24,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pl" className="relative h-full *:box-border">
+    <html lang="pl" className="*:box-border">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans relative h-full`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans`}
       >
         <Navigation />
         {children}

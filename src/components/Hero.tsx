@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 export const Hero = () => {
   return (
     <div className="w-full bg-[url(/hero.jpg)] relative h-full bg-cover min-h-[calc(100vh-64px)] bg-no-repeat bg-center flex items-center justify-end">
-      <div className="flex flex-col h-full justify-around z-10">
+      <div className="flex flex-col h-full justify-around z-1">
         <div />
         <HeroHeader />
 
