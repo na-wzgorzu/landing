@@ -3,12 +3,16 @@ import { Button } from "@/components/ui/button";
 export const Hero = () => {
   return (
     <div className="w-full bg-[url(/hero.jpg)] relative h-full bg-cover min-h-[calc(100vh-64px)] bg-no-repeat bg-center flex items-center justify-end">
-      <div className="flex flex-col h-full justify-around">
+      <div className="flex flex-col h-full justify-around z-10">
         <div />
         <HeroHeader />
 
         <ReservationSection />
       </div>
+
+      {/* Tło z overlayem */}
+      <div className="absolute inset-0 bg-[url(/hero.jpg)] bg-cover bg-no-repeat bg-center" />
+      <div className="absolute inset-0 bg-black/20 bg-opacity-50" />
     </div>
   );
 };
