@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Josefin_Sans } from "next/font/google";
 import { Navigation } from "@/components/Navigation";
 import "./globals.css";
+import { Footer } from "@/components/Footer";
 
 const geistSans = Montserrat({
   variable: "--font-geist-sans",
@@ -30,6 +31,8 @@ export default function RootLayout({
       >
         <Navigation />
         {children}
+
+        <Footer />
       </body>
     </html>
   );

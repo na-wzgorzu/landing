@@ -1,20 +1,24 @@
-import { About } from "@/components/About";
+// import { About } from "@/components/About";
 import { Hero } from "@/components/Hero";
-import { HousesCarousel } from "@/components/Houses/HousesCarousel";
-import { VerticalDivider } from "@/components/VerticalDivider";
+// import { HousesCarousel } from "@/components/Houses/HousesCarousel";
+// import { VerticalDivider } from "@/components/VerticalDivider";
 
 export default function Home() {
   return (
     <div className="min-h-[calc(100vh-64px)]">
       <Hero />
-      <VerticalDivider />
 
-      <HousesCarousel />
-      <VerticalDivider />
+      <div className="text-4xl flex items-center justify-center font-bold min-h-[500px]">
+        Content
+      </div>
+      {/* <VerticalDivider /> */}
 
-      <About />
+      {/* <HousesCarousel /> */}
+      {/* <VerticalDivider /> */}
 
-      <div className="min-h-[500px] bg-amber-100" />
+      {/* <About /> */}
+
+      {/* <div className="min-h-[500px] bg-amber-100" /> */}
     </div>
   );
 }
