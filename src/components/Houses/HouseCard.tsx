@@ -30,7 +30,12 @@ export const HouseCard = ({
 
         <ButtonUnderline>Rezerwuj</ButtonUnderline>
       </div>
-      <Image src={image} alt="house" className="object-cover max-w-2xl" />
+
+      {/* Image wrapper to ensure responsiveness */}
+      <div className="relative w-full flex items-center">
+        <Image src={image} alt="house" className="w-full h-full object-cover" />
+      </div>
+
       <div className="max-w-[250px] min-w-[180px] w-full items-center flex flex-col justify-evenly gap-6 bg-brand text-white p-4">
         <ButtonUnderline>Galeria</ButtonUnderline>
 
