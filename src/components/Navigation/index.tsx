@@ -16,17 +16,21 @@ const navLinks = [
 
 export const Navigation = () => {
   return (
-    <header className="sticky z-2 top-0 inset-x-0 flex h-16 w-full shrink-0 items-center justify-end px-4 bg-white text-gray-700 shadow-md border-b border-gray-300">
+    <header className="sticky z-2 top-0 inset-x-0 flex h-16 w-full shrink-0 items-center justify-between flex-row-reverse lg:flex-row px-4 bg-brand lg:text-white shadow-md">
       <Sheet>
         <SheetTrigger asChild>
-          <Button variant="outline" size="icon" className="lg:hidden">
+          <Button
+            variant="outline"
+            size="icon"
+            className="lg:hidden border border-white rounded-xs bg-brand text-white"
+          >
             <MenuIcon className="h-6 w-6" />
           </Button>
         </SheetTrigger>
+
         <SheetContent side="right" className="pl-4">
-          <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
-            <Logo className="text-black/80 size-20" />
-            <span className="sr-only">Acme Inc</span>
+          <Link href="#" className="mr-6 hidden lg:flex z-10" prefetch={false}>
+            <Logo className="text-white size-20" />
           </Link>
           <div className="grid gap-2 py-6">
             {navLinks.map(({ href, label }, i) => (
@@ -43,9 +47,10 @@ export const Navigation = () => {
         </SheetContent>
       </Sheet>
 
-      <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
-        <Logo className="text-black/80 size-20" />
+      <Link href="#" className="mr-6 flex" prefetch={false}>
+        <Logo className="text-white size-20" />
       </Link>
+
       <nav className="ml-auto hidden lg:flex gap-6">
         {navLinks.map(({ href, label }, i) => (
           <Link
