@@ -1,13 +1,14 @@
 import Image from "next/image";
 import buildImg from "@/assets/build-1.jpg";
 import { ButtonUnderline } from "@/components/ButtonUnderline";
+import { Trees } from "@/assets/Trees";
 
 export const HousesBanner = () => {
   return (
     <div className="w-full bg-brand mb-6 text-white">
       <div className="w-full max-w-screen-lg mx-auto flex gap-4">
-        <div className="flex-1 flex flex-col gap-4 p-6 pl-0">
-          <h4 className="text-xl font-semibold">Domki</h4>
+        <div className="flex-1 justify-center flex flex-col gap-4 relative pl-0">
+          <h4 className="text-2xl font-medium">Domki</h4>
 
           <p>
             W ośrodku znajduje się osiem nowoczesnych, całorocznych domków o
@@ -19,6 +20,10 @@ export const HousesBanner = () => {
 
           <div className="justify-self-end">
             <ButtonUnderline>Czytaj więcej</ButtonUnderline>
+          </div>
+
+          <div className="absolute bottom-0 right-0">
+            <Trees />
           </div>
         </div>
 
