@@ -3,6 +3,7 @@ import { Attractions } from "@/components/Attractions";
 import { Hero } from "@/components/Hero";
 import { HousesCarousel } from "@/components/Houses/HousesCarousel";
 import { HousesBanner } from "@/components/HousesBanner";
+import { Newsletter } from "@/components/Newsletter";
 import { VerticalDivider } from "@/components/VerticalDivider";
 
 export default function Home() {
@@ -25,6 +26,8 @@ export default function Home() {
       <Attractions />
 
       <HousesBanner />
+
+      <Newsletter />
 
       {/* <div className="min-h-[500px] bg-amber-100" /> */}
     </div>
