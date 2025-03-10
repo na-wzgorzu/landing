@@ -1,8 +1,7 @@
 import Image from "next/image";
-
-import { PropsWithChildren } from "react";
 import { Expand, User } from "lucide-react";
 import { House } from "@/components/Houses/types";
+import { ButtonUnderline } from "@/components/ButtonUnderline";
 
 export const HouseCard = ({
   description,
@@ -52,16 +51,6 @@ export const HouseCard = ({
 
         <ButtonUnderline>Zobacz wszystkie</ButtonUnderline>
       </div>
-    </div>
-  );
-};
-
-const ButtonUnderline = ({ children }: PropsWithChildren) => {
-  return (
-    <div className="max-w-32 w-full flex flex-col mx-auto gap-1">
-      <button className="uppercase">{children}</button>
-      <div className="h-px bg-white w-5/8 mr-auto" />
-      <div className="h-px bg-white w-5/8 ml-auto" />
     </div>
   );
 };
