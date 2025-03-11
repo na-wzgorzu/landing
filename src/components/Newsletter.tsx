@@ -1,17 +1,22 @@
 import { ButtonUnderline } from "@/components/ButtonUnderline";
 import { VerticalDivider } from "@/components/VerticalDivider";
+import Image from "next/image";
 import React from "react";
+import about1Img from "@/assets/about-1.jpg";
+import about2Img from "@/assets/about-2.jpg";
+import { FooterBuild } from "@/assets/FooterBuild";
 
 export const Newsletter = () => {
   return (
     <div className="max-w-screen-lg w-full p-4 mx-auto flex justify-between items-center">
       <div className="flex w-full flex-col gap-4 p-4 pr-8">
-        <h4 className="font-mono text-2xl">Newsletter</h4>
+        <h4 className="font-mono text-3xl">Newsletter</h4>
         <div className="bg-gray-100 p-2 whitespace-nowrap max-w-[300px] border">
           Podaj swój adres email
         </div>
 
-        <div className="flex justify-end">
+        <div className="flex justify-around">
+          <div />
           <ButtonUnderline color={"black"}>Zapisz mnie</ButtonUnderline>
         </div>
       </div>
@@ -19,8 +24,35 @@ export const Newsletter = () => {
       <div>
         <VerticalDivider />
       </div>
-      <div className="text-3xl font-mono flex items-center justify-center w-full">
-        Nasz Facebook
+
+      <div className="w-full flex flex-col gap-6 justify-center items-center">
+        <div className="text-3xl font-mono flex items-center justify-center w-full">
+          <div className="w-full whitespace-break-spaces flex justify-center">
+            Nasz{"\n"}Facebook
+          </div>
+
+          <div className="w-full h-full min-h-20 flex">
+            <Image
+              src={about1Img}
+              alt="facebook1-section"
+              className="object-cover size-22 outline-8 outline-white -mr-8 -mt-10 z-10"
+            />
+
+            <div className="relative w-48">
+              <Image
+                src={about2Img}
+                alt="facebook2-section"
+                className="object-cover z-10 w-full outline-8 outline-brand"
+              />
+
+              <div className="w-full absolute -z-1 -top-[90px] -right-0">
+                <FooterBuild />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <ButtonUnderline color={"black"}>Zobacz</ButtonUnderline>
       </div>
     </div>
   );
