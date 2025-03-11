@@ -1,9 +1,9 @@
-import { About } from "@/components/About";
-import { Attractions } from "@/components/Attractions";
+// import { About } from "@/components/About";
+// import { Attractions } from "@/components/Attractions";
 import { Hero } from "@/components/Hero";
 import { HousesCarousel } from "@/components/Houses/HousesCarousel";
-import { HousesBanner } from "@/components/HousesBanner";
-import { Newsletter } from "@/components/Newsletter";
+// import { HousesBanner } from "@/components/HousesBanner";
+// import { Newsletter } from "@/components/Newsletter";
 import { VerticalDivider } from "@/components/VerticalDivider";
 
 export default function Home() {
@@ -17,19 +17,19 @@ export default function Home() {
       <VerticalDivider />
 
       <HousesCarousel />
-      <VerticalDivider />
+      {/* <VerticalDivider /> */}
 
-      <About />
+      {/* <About /> */}
 
-      <VerticalDivider />
+      {/* <VerticalDivider /> */}
 
-      <Attractions />
+      {/* <Attractions /> */}
 
-      <HousesBanner />
+      {/* <HousesBanner /> */}
 
-      <Newsletter />
+      {/* <Newsletter /> */}
 
-      {/* <div className="min-h-[500px] bg-amber-100" /> */}
+      <div className="min-h-[500px] bg-amber-100" />
     </div>
   );
 }
