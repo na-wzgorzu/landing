@@ -8,8 +8,8 @@ import { FooterBuild } from "@/assets/FooterBuild";
 
 export const Newsletter = () => {
   return (
-    <div className="max-w-screen-lg w-full p-4 mx-auto flex justify-between items-center">
-      <div className="flex w-full flex-col gap-4 p-4 pr-8">
+    <div className="max-w-screen-lg w-full p-4 mx-auto mt-10 flex flex-col-reverse gap-10 lg:gap-2 lg:flex-row justify-between items-center">
+      <div className="flex w-full flex-col items-center lg:items-stretch gap-4 p-4 pr-8">
         <h4 className="font-mono text-3xl">Newsletter</h4>
         <div className="bg-gray-100 p-2 whitespace-nowrap max-w-[300px] border">
           Podaj swój adres email
@@ -21,17 +21,21 @@ export const Newsletter = () => {
         </div>
       </div>
 
-      <div>
-        <VerticalDivider />
+      <div className="hidden lg:block">
+        <VerticalDivider color={"black"} />
+      </div>
+
+      <div className="lg:hidden block w-full max-w-sm">
+        <VerticalDivider type="horizontal" color={"black"} />
       </div>
 
       <div className="w-full flex flex-col gap-6 justify-center items-center">
-        <div className="text-3xl font-mono flex items-center justify-center w-full">
+        <div className="text-3xl font-mono flex flex-col gap-22 sm:flex-row items-center justify-center w-full">
           <div className="w-full whitespace-break-spaces flex justify-center">
             Nasz{"\n"}Facebook
           </div>
 
-          <div className="w-full h-full min-h-20 flex">
+          <div className="w-full h-full min-h-20 flex justify-center">
             <Image
               src={about1Img}
               alt="facebook1-section"

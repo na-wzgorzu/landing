@@ -8,7 +8,7 @@ import { VerticalDivider } from "@/components/VerticalDivider";
 
 export default function Home() {
   return (
-    <div className="min-h-[calc(100vh-64px)] flex flex-col gap-10">
+    <div className="min-h-[calc(100vh-64px)] flex flex-col gap-10 overflow-hidden">
       <Hero />
 
       {/* <div className="text-4xl flex items-center justify-center font-bold min-h-[500px]">
