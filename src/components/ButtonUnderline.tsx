@@ -21,10 +21,12 @@ export const ButtonUnderline = ({
 }: PropsWithChildren<Props>) => {
   const styles = buttonVariants({ color });
   return (
-    <div className="group max-w-32 w-full flex flex-col gap-1">
+    <div className="w-fit">
       <button className="uppercase">{children}</button>
-      <div className={`h-px ${styles} w-5/8 mr-auto`} />
-      <div className={`h-px ${styles} w-5/8 ml-auto`} />
+      <div className="max-w-32 flex flex-col gap-1">
+        <div className={`h-px ${styles} w-5/8 mr-auto`} />
+        <div className={`h-px ${styles} w-5/8 ml-auto`} />
+      </div>
     </div>
   );
 };

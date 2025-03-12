@@ -1,9 +1,10 @@
 import { About } from "@/components/About";
-// import { Attractions } from "@/components/Attractions";
+import { Attractions } from "@/components/Attractions";
 import { Hero } from "@/components/Hero";
 import { HousesCarousel } from "@/components/Houses/HousesCarousel";
 // import { HousesBanner } from "@/components/HousesBanner";
 // import { Newsletter } from "@/components/Newsletter";
+// import { Reviews } from "@/components/Reviews";
 import { VerticalDivider } from "@/components/VerticalDivider";
 
 export default function Home() {
@@ -18,11 +19,17 @@ export default function Home() {
 
       <About />
 
-      {/* <VerticalDivider color={"black"} /> */}
+      <VerticalDivider color={"black"} />
 
-      {/* <Attractions /> */}
+      <Attractions />
+
+      <div className="h-10" />
 
       {/* <HousesBanner /> */}
+
+      {/* <VerticalDivider color={"black"} /> */}
+
+      {/* <Reviews /> */}
 
       {/* <Newsletter /> */}
     </div>

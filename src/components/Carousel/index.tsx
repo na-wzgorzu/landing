@@ -8,9 +8,21 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { UseEmblaCarouselType } from "embla-carousel-react";
-import React, { PropsWithChildren, useState } from "react";
+import React, { PropsWithChildren, useEffect, useState } from "react";
 
-export const Carousel = ({ children }: PropsWithChildren) => {
+type Color = { color?: "primary" | "secondary" };
+
+type Props = {
+  withNavigation?: boolean;
+  withDots?: boolean;
+} & Color;
+
+export const Carousel = ({
+  children,
+  withNavigation = true,
+  withDots = true,
+  color,
+}: PropsWithChildren<Props>) => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [, setCount] = React.useState(0);
@@ -18,7 +30,7 @@ export const Carousel = ({ children }: PropsWithChildren) => {
   // const { onDotButtonClick, scrollSnaps, selectedIndex } =
   //   useDotButton(emblaApi);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!api) {
       return;
     }
@@ -35,10 +47,15 @@ export const Carousel = ({ children }: PropsWithChildren) => {
     <EmblaCarousel setApi={setApi} className="w-full mx-auto md:max-w-[80vw]">
       <CarouselContent>{children}</CarouselContent>
 
-      <CarouselDots emblaApi={api} current={current} />
-
-      <CarouselPrevious className="hidden md:flex bg-brand text-white border-brand hover:text-brand" />
-      <CarouselNext className="hidden md:flex bg-brand text-white border-brand hover:text-brand" />
+      {withDots && (
+        <CarouselDots emblaApi={api} current={current} color={color} />
+      )}
+      {withNavigation && (
+        <>
+          <CarouselPrevious className="cursor-pointer hidden md:flex bg-brand text-white border-brand hover:text-brand" />
+          <CarouselNext className="cursor-pointer hidden md:flex bg-brand text-white border-brand hover:text-brand" />
+        </>
+      )}
     </EmblaCarousel>
   );
 };
@@ -46,9 +63,11 @@ export const Carousel = ({ children }: PropsWithChildren) => {
 const CarouselDots = ({
   emblaApi,
   current,
+  color = "primary",
 }: {
   emblaApi: UseEmblaCarouselType["1"] | undefined;
   current: number;
+  color?: "primary" | "secondary";
 }) => {
   if (!emblaApi) {
     return;
@@ -56,17 +75,29 @@ const CarouselDots = ({
 
   return (
     <div className="flex gap-2 justify-center mt-4">
-      {emblaApi?.scrollSnapList().map((_, index) => (
-        <button
-          key={index}
-          className={`size-3 border-1 border-brand rounded-full ${
-            index === current - 1 ? "bg-brand" : ""
-          }`}
-          onClick={() => {
-            emblaApi?.scrollTo(index);
-          }}
-        />
-      ))}
+      {emblaApi?.scrollSnapList().map((_, index) => {
+        const colorPrimary =
+          index === current - 1
+            ? "border-brand bg-brand"
+            : "border-brand bg-white";
+
+        const colorSecondary =
+          index === current - 1
+            ? "border-white bg-white"
+            : "border-white bg-brand";
+
+        const colorDots = color === "primary" ? colorPrimary : colorSecondary;
+
+        return (
+          <button
+            key={index}
+            className={`cursor-pointer size-3 border-1 rounded-full ${colorDots}`}
+            onClick={() => {
+              emblaApi?.scrollTo(index);
+            }}
+          />
+        );
+      })}
     </div>
   );
 };
