@@ -5,20 +5,24 @@ import React from "react";
 import about1Img from "@/assets/about-1.jpg";
 import about2Img from "@/assets/about-2.jpg";
 import { FooterBuild } from "@/assets/FooterBuild";
+import { Input } from "@/components/ui/input";
+import Form from "next/form";
+import { saveEmail } from "@/components/Newsletter/actions";
 
 export const Newsletter = () => {
   return (
     <div className="max-w-screen-lg w-full p-4 mx-auto md:mt-10 flex flex-col-reverse gap-10 lg:gap-2 lg:flex-row justify-between items-center">
       <div className="flex w-full flex-col items-center lg:items-stretch gap-4 p-4 pr-8">
         <h4 className="font-mono text-3xl">Newsletter</h4>
-        <div className="bg-gray-100 p-2 whitespace-nowrap max-w-[300px] border">
-          Podaj swój adres email
-        </div>
 
-        <div className="flex justify-around">
-          <div />
-          <ButtonUnderline color={"black"}>Zapisz mnie</ButtonUnderline>
-        </div>
+        <Form className="flex flex-col gap-4" action={saveEmail}>
+          <Input name="email" id="email" placeholder="Podaj swój adres email" />
+
+          <div className="flex justify-around">
+            <div />
+            <ButtonUnderline color={"black"}>Zapisz mnie</ButtonUnderline>
+          </div>
+        </Form>
       </div>
 
       <div className="hidden lg:block">
