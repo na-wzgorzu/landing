@@ -8,7 +8,7 @@ import { FooterBuild } from "@/assets/FooterBuild";
 
 export const Newsletter = () => {
   return (
-    <div className="max-w-screen-lg w-full p-4 mx-auto mt-10 flex flex-col-reverse gap-10 lg:gap-2 lg:flex-row justify-between items-center">
+    <div className="max-w-screen-lg w-full p-4 mx-auto md:mt-10 flex flex-col-reverse gap-10 lg:gap-2 lg:flex-row justify-between items-center">
       <div className="flex w-full flex-col items-center lg:items-stretch gap-4 p-4 pr-8">
         <h4 className="font-mono text-3xl">Newsletter</h4>
         <div className="bg-gray-100 p-2 whitespace-nowrap max-w-[300px] border">
@@ -39,7 +39,7 @@ export const Newsletter = () => {
             <Image
               src={about1Img}
               alt="facebook1-section"
-              className="object-cover size-22 outline-8 outline-white -mr-8 -mt-10 z-10"
+              className="object-cover size-22 outline-8 outline-white -mr-8 -mt-10 z-1"
             />
 
             <div className="relative w-48">

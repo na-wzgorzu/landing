@@ -29,7 +29,7 @@ export const VerticalDivider = ({ type, color }: Props) => {
   }
 
   return (
-    <div className="h-[200px] relative flex gap-2 justify-center w-full my-10">
+    <div className="h-[200px] relative flex gap-2 justify-center w-full">
       <div className={`h-2/3 w-0.5 ${styles} mt-auto rounded-2xl`} />
       <div className={`h-2/3 w-0.5 ${styles} rounded-2xl`} />
     </div>

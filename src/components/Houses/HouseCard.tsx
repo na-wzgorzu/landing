@@ -12,8 +12,8 @@ export const HouseCard = ({
   size,
 }: House) => {
   return (
-    <div className="flex font-mono mx-auto">
-      <div className="max-w-[250px] min-w-[180px] w-full flex flex-col justify-evenly gap-6 bg-brand text-white p-4">
+    <div className="flex flex-col md:flex-row font-mono mx-auto">
+      <div className="md:max-w-[250px] min-w-[180px] w-full flex flex-col justify-evenly items-center gap-6 bg-brand text-white p-4">
         <div className="text-center">
           <h3 className="text-xl uppercase">{name}</h3>
 
@@ -35,7 +35,7 @@ export const HouseCard = ({
         <Image src={image} alt="house" className="w-full h-full object-cover" />
       </div>
 
-      <div className="max-w-[250px] min-w-[180px] w-full items-center flex flex-col justify-evenly gap-6 bg-brand text-white p-4">
+      <div className="md:max-w-[250px] min-w-[180px] w-full items-center flex flex-col justify-evenly gap-6 bg-brand text-white p-4">
         <ButtonUnderline>Galeria</ButtonUnderline>
 
         <div className="flex flex-col gap-4">

@@ -14,7 +14,7 @@ export function HousesCarousel() {
         </div>
       </div>
 
-      <div className="mx-auto relative">
+      <div className="md:mx-auto relative px-4">
         <div className="absolute right-0 -top-[185px] -z-1">
           <House />
         </div>

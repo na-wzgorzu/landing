@@ -6,7 +6,7 @@ import { ButtonUnderline } from "@/components/ButtonUnderline";
 
 export const Attractions = () => {
   return (
-    <div className="flex flex-col mx-auto max-w-screen-lg gap-6 text-gray-700">
+    <div className="flex flex-col mx-auto max-w-screen-lg gap-6 text-gray-700 px-4">
       <Title title="Zapraszamy" />
 
       <p>
@@ -16,7 +16,7 @@ export const Attractions = () => {
         scrambled it to make a type specimen book.
       </p>
 
-      <div className="flex gap-6">
+      <div className="flex gap-6 flex-col sm:flex-row">
         <div className="flex-2">
           <Image src={landscapeImg} alt="Landscape on the lake" />
         </div>

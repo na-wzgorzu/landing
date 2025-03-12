@@ -12,14 +12,18 @@ export const About = () => {
 
 const AboutHeader = () => {
   return (
-    <div className="flex flex-col mx-auto max-w-screen-lg gap-6">
+    <div className="flex flex-col mx-auto max-w-screen-lg gap-6 px-4">
       <div className="underline text-gray-700 font-semibold font-mono text-3xl underline-offset-8 decoration-gray-700">
         O nas
       </div>
 
-      <div className="flex gap-4">
+      <div className="flex gap-4 flex-col md:flex-row">
         <AboutContent key="firstImg" img={about2Img} />
-        <AboutContent key="SecondImg" img={about1Img} isReverseContent />
+        <AboutContent
+          key="SecondImg"
+          img={about1Img}
+          classNames="md:flex-col-reverse"
+        />
       </div>
     </div>
   );
@@ -27,17 +31,13 @@ const AboutHeader = () => {
 
 const AboutContent = ({
   img,
-  isReverseContent = false,
+  classNames,
 }: {
-  isReverseContent?: boolean;
+  classNames?: string;
   img: StaticImageData;
 }) => {
   return (
-    <div
-      className={`flex flex-col gap-4 ${
-        isReverseContent ? "flex-col-reverse" : ""
-      }`}
-    >
+    <div className={`flex flex-col gap-4 ${classNames}`}>
       <div>
         <Image alt="About image" src={img} />
       </div>

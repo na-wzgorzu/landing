@@ -14,14 +14,14 @@ export default function Home() {
       {/* <div className="text-4xl flex items-center justify-center font-bold min-h-[500px]">
         Content
       </div> */}
-      <VerticalDivider />
+      <VerticalDivider color={"black"} />
 
       <HousesCarousel />
-      <VerticalDivider />
+      <VerticalDivider color={"black"} />
 
       <About />
 
-      <VerticalDivider />
+      <VerticalDivider color={"black"} />
 
       <Attractions />
 

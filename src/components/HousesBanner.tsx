@@ -5,9 +5,9 @@ import { Trees } from "@/assets/Trees";
 
 export const HousesBanner = () => {
   return (
-    <div className="w-full bg-brand mb-6 text-white">
-      <div className="w-full max-w-screen-lg mx-auto flex gap-4">
-        <div className="flex-1 justify-center flex flex-col gap-4 relative pl-0">
+    <div className="w-full bg-brand text-white">
+      <div className="w-full max-w-screen-lg mx-auto flex flex-col md:flex-row gap-4">
+        <div className="flex-1 justify-center flex flex-col gap-4 relative p-4 min-w-[250px]">
           <h4 className="text-2xl font-medium">Domki</h4>
 
           <p>

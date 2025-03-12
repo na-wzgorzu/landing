@@ -32,7 +32,7 @@ export const Carousel = ({ children }: PropsWithChildren) => {
   }, [api]);
 
   return (
-    <EmblaCarousel setApi={setApi} className="w-full mx-auto max-w-[80vw]">
+    <EmblaCarousel setApi={setApi} className="w-full mx-auto md:max-w-[80vw]">
       <CarouselContent>{children}</CarouselContent>
 
       <CarouselDots emblaApi={api} current={current} />
