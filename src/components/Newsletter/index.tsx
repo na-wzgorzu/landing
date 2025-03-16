@@ -15,7 +15,7 @@ export const Newsletter = () => {
       <div className="flex w-full flex-col items-center lg:items-stretch gap-4 p-4 pr-8">
         <h4 className="font-mono text-3xl">Newsletter</h4>
 
-        <Form className="flex flex-col gap-4" action={saveEmail}>
+        <Form className="flex flex-col gap-4 w-full" action={saveEmail}>
           <Input name="email" id="email" placeholder="Podaj swój adres email" />
 
           <div className="flex justify-around">
