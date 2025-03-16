@@ -5,7 +5,7 @@ import React from "react";
 import about1Img from "@/assets/about-1.jpg";
 import about2Img from "@/assets/about-2.jpg";
 import { FooterBuild } from "@/assets/FooterBuild";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/components/ui/input-newsletter";
 import Form from "next/form";
 import { saveEmail } from "@/components/Newsletter/actions";
 

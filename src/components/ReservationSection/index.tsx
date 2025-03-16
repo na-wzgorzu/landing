@@ -1,5 +1,5 @@
 "use client";
-import { DatePicker } from "@/components/DatePicker";
+import { ReservationDatePicker } from "@/components/ReservationDatePicker";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -9,8 +9,16 @@ export const ReservationSection = () => {
 
   return (
     <div className="bg-white min-h-12 gap-3 border-white justify-between border w-fit hidden sm:flex">
-      <DatePicker label="Przyjazd" value={fromDate} onChange={setFromDate} />
-      <DatePicker label="Wyjazd" value={toDate} onChange={setToDate} />
+      <ReservationDatePicker
+        label="Przyjazd"
+        value={fromDate}
+        onChange={setFromDate}
+      />
+      <ReservationDatePicker
+        label="Wyjazd"
+        value={toDate}
+        onChange={setToDate}
+      />
 
       <Button variant="green" size="lg">
         Rezerwuj

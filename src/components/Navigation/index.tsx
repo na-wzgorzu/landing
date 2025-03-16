@@ -11,7 +11,7 @@ const navLinks = [
   { href: "/atrakcje", label: "Atrakcje" },
   { href: "galeria", label: "Galeria" },
   { href: "/kontakt", label: "Kontakt" },
-  { href: "/rezerwuj", label: "Rezerwuj" },
+  { href: "/rezerwacja", label: "Rezerwuj" },
 ];
 
 export const Navigation = () => {

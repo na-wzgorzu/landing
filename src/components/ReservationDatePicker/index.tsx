@@ -22,7 +22,12 @@ type Props = {
 
 const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
-export function DatePicker({ label, value, onChange, ...props }: Props) {
+export function ReservationDatePicker({
+  label,
+  value,
+  onChange,
+  ...props
+}: Props) {
   const [open, setOpen] = React.useState(false);
 
   return (
