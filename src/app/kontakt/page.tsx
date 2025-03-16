@@ -14,7 +14,7 @@ export default function Contact() {
           <div className="flex flex-col gap-3">
             <div className="flex gap-2">
               <User className="size-6" />
-              <span>Andrzej Święcki</span>
+              <span>Konrad Kowalczewski</span>
             </div>
             <a href="tel:+48564939153" className="flex gap-2">
               <PhoneCall className="size-6" />
