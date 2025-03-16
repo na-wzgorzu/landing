@@ -1,21 +1,16 @@
+"use client";
+import { DatePicker } from "@/components/DatePicker";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 export const ReservationSection = () => {
-  return (
-    <div className="bg-white min-h-12 gap-4 border-white justify-between border w-fit hidden sm:flex">
-      <div className="flex text-sm font-light gap-3">
-        <div className="pt-1 pl-1">Przyjazd</div>
-        <div className="flex items-end">
-          <span className="font-normal text-4xl mr-1">11</span>Sty
-        </div>
-      </div>
+  const [fromDate, setFromDate] = useState<Date | undefined>(new Date());
+  const [toDate, setToDate] = useState<Date | undefined>(new Date());
 
-      <div className="flex text-sm font-light gap-3">
-        <div className="pt-1 pl-1">Wyjazd</div>
-        <div className="flex items-end">
-          <span className="font-normal text-4xl mr-1">12</span>Sty
-        </div>
-      </div>
+  return (
+    <div className="bg-white min-h-12 gap-3 border-white justify-between border w-fit hidden sm:flex">
+      <DatePicker label="Przyjazd" value={fromDate} onChange={setFromDate} />
+      <DatePicker label="Wyjazd" value={toDate} onChange={setToDate} />
 
       <Button variant="green" size="lg">
         Rezerwuj
