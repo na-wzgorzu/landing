@@ -1,38 +1,37 @@
 import { Button } from "@/components/ui/button";
 import { VerticalDivider } from "@/components/VerticalDivider";
-import { Calendar1Icon } from "lucide-react";
+import { houses } from "@/data/houses";
+import { Calendar1Icon, Expand, User } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-
-const housesDetails = {
-  header: "Domek parterowy 2-3 osobowy",
-  description: ` Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industrys standard dummy text
-        ever since the 1500s, when an unknown printer took a galley of type
-        and scrambled it to make a type specimen book. It has survived not
-        only five centuries, but also the leap into electronic typesetting,
-        remaining essentially unchanged.`,
-};
+import { House } from "@/components/Houses/types";
+import { amenitiesMap } from "@/components/Houses/tools";
 
 export const HousesPage = () => {
   return (
-    <div className="p-8 flex flex-col gap-6">
-      <House {...housesDetails} />
-
-      <VerticalDivider color={"black"} />
-
-      <House {...housesDetails} isReversedContent />
+    <div className="p-8 flex flex-col gap-10">
+      {houses.map((house, index) => (
+        <>
+          {index % 2 !== 0 && <VerticalDivider color={"black"} />}
+          <HouseDetails
+            key={index}
+            {...house}
+            isReversedContent={index % 2 !== 0}
+          />
+        </>
+      ))}
     </div>
   );
 };
 
-const House = ({
-  header,
+const HouseDetails = ({
+  name,
   description,
+  amenities,
+  guests,
+  size,
   isReversedContent = false,
-}: {
-  header: string;
-  description: string;
+}: House & {
   isReversedContent?: boolean;
 }) => {
   return (
@@ -44,7 +43,7 @@ const House = ({
       >
         <HousesGallery />
         <div className="w-full">
-          <h2 className="text-3xl p-4 bg-brand text-white">{header}</h2>
+          <h2 className="text-3xl p-4 bg-brand text-white">{name}</h2>
           <p className="py-4 text-justify">{description}</p>
 
           <Link href="/rezerwacja">
@@ -58,13 +57,46 @@ const House = ({
           </Link>
         </div>
       </div>
-      <HouseAmenities />
+      <div className="p-4 border border-brand rounded-lg grid grid-cols-4 gap-4">
+        <HouseAmenitiesItem
+          icon={<User />}
+          name={guests}
+          header="Ilość miejsc"
+        />
+
+        <HouseAmenitiesItem
+          icon={<Expand />}
+          name={`${size} m²`}
+          header="Powierzchnia"
+        />
+
+        {amenities.map((content, index) => {
+          return <HouseAmenitiesItem key={index} {...amenitiesMap[content]} />;
+        })}
+      </div>
     </div>
   );
 };
 
-const HouseAmenities = () => {
-  return <div className="p-4 border border-brand rounded-lg"></div>;
+const HouseAmenitiesItem = ({
+  name: content,
+  header,
+  icon,
+}: {
+  name: string;
+  icon: React.ReactNode;
+  header?: string;
+}) => {
+  return (
+    <div className="flex gap-2 [&>svg]:size-8 items-center">
+      {icon}
+
+      <div className="flex flex-col">
+        {header && <span className="text-xs">{header}</span>}
+        <span className="text-lg font-semibold leading-5">{content}</span>
+      </div>
+    </div>
+  );
 };
 
 const HousesGallery = () => {

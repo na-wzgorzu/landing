@@ -7,4 +7,5 @@ export type House = {
   price: number;
   size: number;
   guests: string;
+  amenities: string[];
 };
