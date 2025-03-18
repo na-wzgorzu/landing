@@ -5,7 +5,7 @@ export type House = {
   image: StaticImageData;
   description: string;
   price: number;
-  size: number;
+  size: string;
   guests: string;
   amenities: string[];
 };

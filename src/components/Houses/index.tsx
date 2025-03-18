@@ -1,13 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { VerticalDivider } from "@/components/VerticalDivider";
-import { houses } from "@/data/houses";
 import { Calendar1Icon, Expand, User } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { House } from "@/components/Houses/types";
 import { amenitiesMap } from "@/components/Houses/tools";
 
-export const HousesPage = () => {
+type Props = {
+  houses: House[];
+};
+
+export const HousesPage = ({ houses }: Props) => {
   return (
     <div className="p-8 flex flex-col gap-10">
       {houses.map((house, index) => (
@@ -44,7 +47,10 @@ const HouseDetails = ({
         <HousesGallery />
         <div className="w-full">
           <h2 className="text-3xl p-4 bg-brand text-white">{name}</h2>
-          <p className="py-4 text-justify">{description}</p>
+          <p
+            className="py-4 text-justify"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
 
           <Link href="/rezerwacja">
             <Button
@@ -66,7 +72,7 @@ const HouseDetails = ({
 
         <HouseAmenitiesItem
           icon={<Expand />}
-          name={`${size} m²`}
+          name={size}
           header="Powierzchnia"
         />
 
