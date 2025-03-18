@@ -36,26 +36,35 @@ const House = ({
   isReversedContent?: boolean;
 }) => {
   return (
-    <div
-      className={`flex gap-4 w-full ${isReversedContent && "flex-row-reverse"}`}
-    >
-      <HousesGallery />
-      <div className="w-full">
-        <h2 className="text-3xl p-4 bg-brand text-white">{header}</h2>
-        <p className="py-4 text-justify">{description}</p>
+    <div className="flex flex-col gap-6">
+      <div
+        className={`flex gap-4 w-full ${
+          isReversedContent && "flex-row-reverse"
+        }`}
+      >
+        <HousesGallery />
+        <div className="w-full">
+          <h2 className="text-3xl p-4 bg-brand text-white">{header}</h2>
+          <p className="py-4 text-justify">{description}</p>
 
-        <Link href="/rezerwacja">
-          <Button
-            variant={"green"}
-            className="text-lg rounded-xs p-6 cursor-pointer"
-          >
-            <Calendar1Icon className="size-6" />
-            Zarezerwuj termin
-          </Button>
-        </Link>
+          <Link href="/rezerwacja">
+            <Button
+              variant={"green"}
+              className="text-lg rounded-xs p-6 cursor-pointer"
+            >
+              <Calendar1Icon className="size-6" />
+              Zarezerwuj termin
+            </Button>
+          </Link>
+        </div>
       </div>
+      <HouseAmenities />
     </div>
   );
+};
+
+const HouseAmenities = () => {
+  return <div className="p-4 border border-brand rounded-lg"></div>;
 };
 
 const HousesGallery = () => {
