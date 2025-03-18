@@ -8,8 +8,10 @@ import React from "react";
 const navLinks = [
   { href: "/o-nas", label: "O nas" },
   { href: "/domki", label: "Domki" },
+  { href: "/pokoje", label: "Pokoje" },
   { href: "/atrakcje", label: "Atrakcje" },
   { href: "galeria", label: "Galeria" },
+  { href: "/gastronomia", label: "Gastronomia" },
   { href: "/kontakt", label: "Kontakt" },
   { href: "/rezerwacja", label: "Rezerwuj" },
 ];
