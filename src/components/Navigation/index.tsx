@@ -6,12 +6,14 @@ import Link from "next/link";
 import React from "react";
 
 const navLinks = [
-  { href: "#", label: "O nas" },
-  { href: "#", label: "Domki" },
-  { href: "#", label: "Atrakcje" },
-  { href: "#", label: "Galeria" },
-  { href: "#", label: "Kontakt" },
-  { href: "#", label: "Rezerwuj" },
+  { href: "/o-nas", label: "O nas" },
+  { href: "/domki", label: "Domki" },
+  { href: "/pokoje", label: "Pokoje" },
+  { href: "/atrakcje", label: "Atrakcje" },
+  { href: "galeria", label: "Galeria" },
+  { href: "/gastronomia", label: "Gastronomia" },
+  { href: "/kontakt", label: "Kontakt" },
+  { href: "/rezerwacja", label: "Rezerwuj" },
 ];
 
 export const Navigation = () => {
@@ -29,14 +31,14 @@ export const Navigation = () => {
         </SheetTrigger>
 
         <SheetContent side="right" className="pl-4">
-          <Link href="#" className="mr-6 hidden lg:flex z-10" prefetch={false}>
+          <Link href="/" className="mr-6 hidden lg:flex z-10" prefetch={false}>
             <Logo className="text-white size-20" />
           </Link>
           <div className="grid gap-2 py-6">
             {navLinks.map(({ href, label }, i) => (
               <Link
                 key={href + i}
-                href="#"
+                href={href}
                 className="flex w-full items-center py-2 text-lg font-semibold"
                 prefetch={false}
               >
@@ -47,7 +49,7 @@ export const Navigation = () => {
         </SheetContent>
       </Sheet>
 
-      <Link href="#" className="mr-6 flex" prefetch={false}>
+      <Link href="/" className="mr-6 flex" prefetch={false}>
         <Logo className="text-white size-20" />
       </Link>
 
@@ -55,7 +57,7 @@ export const Navigation = () => {
         {navLinks.map(({ href, label }, i) => (
           <Link
             key={href + i}
-            href="#"
+            href={href}
             className="group inline-flex h-9 w-max items-center justify-center px-4 py-2 transition-all hover:border-b hover:border-gray-400 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50"
             prefetch={false}
           >
