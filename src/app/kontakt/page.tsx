@@ -1,3 +1,4 @@
+import { GoogleMap } from "@/components/GoogleMap";
 import { MailIcon, MapPin, PhoneCall, User } from "lucide-react";
 import React from "react";
 
@@ -44,7 +45,7 @@ export default function Contact() {
 const Map = () => {
   return (
     <div className="flex-3 min-h-[400px] w-full bg-gray-600 text-4xl text-white flex items-center justify-center">
-      Mapa
+      <GoogleMap />
     </div>
   );
 };
