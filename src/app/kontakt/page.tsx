@@ -44,7 +44,7 @@ export default function Contact() {
 
 const Map = () => {
   return (
-    <div className="flex-3 min-h-[400px] w-full bg-gray-600 text-4xl text-white flex items-center justify-center">
+    <div className="flex-3 min-h-[400px] bg-gray-600 text-4xl text-white flex items-center justify-center">
       <GoogleMap />
     </div>
   );
