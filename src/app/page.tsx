@@ -1,6 +1,8 @@
 import { About } from "@/components/About";
 import { Attractions } from "@/components/Attractions";
+import { GoogleMap } from "@/components/GoogleMap";
 import { Hero } from "@/components/Hero";
+import { ApartmentsCarousel } from "@/components/Houses/ApartmentsCarousel";
 import { HousesCarousel } from "@/components/Houses/HousesCarousel";
 import { HousesBanner } from "@/components/HousesBanner";
 import { Newsletter } from "@/components/Newsletter";
@@ -12,12 +14,14 @@ export default function Home() {
     <div className="min-h-[calc(100vh-64px)] flex flex-col gap-10 overflow-hidden">
       <Hero />
       <VerticalDivider color={"black"} />
-      <HousesCarousel />
-      <VerticalDivider color={"black"} />
       <About />
+      <VerticalDivider color={"black"} />
+      <HousesCarousel />
+      <ApartmentsCarousel />
       <VerticalDivider color={"black"} />
       <Attractions />
       <HousesBanner />
+      <GoogleMap />
       <VerticalDivider color={"black"} />
       <Reviews />
       <Newsletter />

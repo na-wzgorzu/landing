@@ -7,5 +7,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/o-nas", "/atrakcje", "/gastronomia"],
+  matcher: ["/atrakcje", "/gastronomia"],
 };

@@ -32,7 +32,11 @@ export const HouseCard = ({
 
       {/* Image wrapper to ensure responsiveness */}
       <div className="relative w-full flex items-center">
-        <Image src={image} alt="house" className="w-full h-full object-cover" />
+        <Image
+          src={image}
+          alt="house"
+          className="w-full h-full max-h-[425px] object-cover"
+        />
       </div>
 
       <div className="md:max-w-[250px] min-w-[180px] w-full items-center flex flex-col justify-evenly gap-6 bg-brand text-white p-4">

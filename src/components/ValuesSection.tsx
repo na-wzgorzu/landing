@@ -40,7 +40,7 @@ export const ValuesSection = () => {
         <div className="absolute inset-0 backdrop-blur-sm"></div>
       </div>
 
-      <div className="section-container relative z-10">
+      <div className="section-container relative z-1 p-6">
         {/* Section header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="mx-auto w-16 h-[2px] bg-brand fade-in"></div>
@@ -55,7 +55,7 @@ export const ValuesSection = () => {
         </div>
 
         {/* Values cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 place-items-center">
           {values.map((value, index) => (
             <div
               key={index}
@@ -64,13 +64,13 @@ export const ValuesSection = () => {
             >
               <div className="value-icon">{value.icon}</div>
               <h3 className="text-xl font-medium mb-3">{value.title}</h3>
-              <p className="text-white/70">{value.description}</p>
+              <p className="text-gray-700">{value.description}</p>
             </div>
           ))}
         </div>
 
         {/* Quote */}
-        <div className="mt-16 text-center max-w-3xl mx-auto  fade-in animation-delay-800">
+        {/* <div className="mt-16 text-center max-w-3xl mx-auto  fade-in animation-delay-800">
           <blockquote className="text-xl italic font-serif text-resort-text/80">
             W Na Wzgórzu nie oferujemy tylko zakwaterowania; tworzymy
             doświadczenia, które łączą Cię z naturą, rodziną i prostą radością
@@ -79,7 +79,7 @@ export const ValuesSection = () => {
           <p className="mt-4 font-medium text-resort-text">
             — Rodzina Kowalskich, Założyciele
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -2,25 +2,18 @@ import { House } from "@/assets/House";
 import { Carousel } from "@/components/Carousel";
 import { HouseCard } from "@/components/Houses/HouseCard";
 import { CarouselItem } from "@/components/ui/carousel";
-import { houses } from "@/data/houses";
+import { rooms } from "@/data/houses";
 
-export function HousesCarousel() {
+export function ApartmentsCarousel() {
   return (
-    <div className="flex flex-col gap-6">
-      <div className="flex flex-col text-3xl text-gray-700 font-semibold font-mono mx-auto">
-        <div>Baza</div>
-        <div className="underline underline-offset-8 decoration-gray-700">
-          noclegowa
-        </div>
-      </div>
-
+    <div className="flex flex-col gap-6 md:mt-20">
       <div className="md:mx-auto relative px-4">
         <div className="absolute right-0 -top-[185px] -z-1">
           <House />
         </div>
 
         <Carousel>
-          {houses.map((house, index) => (
+          {rooms.map((house, index) => (
             <CarouselItem key={index}>
               <HouseCard {...house} />
             </CarouselItem>

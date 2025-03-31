@@ -7,7 +7,7 @@ export const StorySection = () => {
         {/* Left column: Image */}
         <div className=" fade-in">
           <img
-            src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb"
+            src="/gallery/kayak.jpg"
             alt="Rzeka pomiędzy górami w Brodnickim Parku Krajobrazowym"
             className="w-full h-[400px] sm:h-[500px] object-cover rounded-xl"
             loading="lazy"
