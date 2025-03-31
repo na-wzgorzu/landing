@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <div className="bg-gray-50 md:my-10 py-6 md:py-0">
       <div className="max-w-screen-xl w-full mx-auto flex flex-col md:flex-row gap-6">
-        <div className="p-4 flex flex-col gap-8 flex-2">
+        <div className="p-4 flex flex-col gap-8 flex-1">
           <h2 className="flex flex-col text-5xl border-b text-gray-700 border-gray-300 pb-4 font-semibold">
             <span className="uppercase text-2xl text-gray-400">Informacje</span>{" "}
             Kontaktowe
@@ -44,7 +44,7 @@ export default function Contact() {
 
 const Map = () => {
   return (
-    <div className="flex-3 min-h-[400px] bg-gray-600 text-4xl text-white flex items-center justify-center">
+    <div className="flex-2 min-h-[400px]">
       <GoogleMap />
     </div>
   );
