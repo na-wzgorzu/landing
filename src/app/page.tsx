@@ -1,5 +1,5 @@
 import { About } from "@/components/About";
-import { Attractions } from "@/components/Attractions";
+import { FoodService } from "@/components/FoodService";
 import { GoogleMap } from "@/components/GoogleMap";
 import { Hero } from "@/components/Hero";
 import { ApartmentsCarousel } from "@/components/Houses/ApartmentsCarousel";
@@ -19,7 +19,7 @@ export default function Home() {
       <HousesCarousel />
       <ApartmentsCarousel />
       <VerticalDivider color={"black"} />
-      <Attractions />
+      <FoodService />
       <HousesBanner />
       <GoogleMap />
       <VerticalDivider color={"black"} />
