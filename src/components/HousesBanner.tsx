@@ -2,6 +2,7 @@ import Image from "next/image";
 import buildImg from "@/assets/build-1.jpg";
 import { ButtonUnderline } from "@/components/ButtonUnderline";
 import { Trees } from "@/assets/Trees";
+import Link from "next/link";
 
 export const HousesBanner = () => {
   return (
@@ -18,9 +19,9 @@ export const HousesBanner = () => {
             łazienkę. Dodatkowo sześć domków ma przytulną
           </p>
 
-          <div className="justify-self-end">
+          <Link href="/domki" className="justify-self-end">
             <ButtonUnderline>Czytaj więcej</ButtonUnderline>
-          </div>
+          </Link>
 
           <div className="absolute bottom-0 right-0">
             <Trees />

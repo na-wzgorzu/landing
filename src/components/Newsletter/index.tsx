@@ -8,6 +8,7 @@ import { FooterBuild } from "@/assets/FooterBuild";
 import { Input } from "@/components/ui/input-newsletter";
 import Form from "next/form";
 import { saveEmail } from "@/components/Newsletter/actions";
+import Link from "next/link";
 
 export const Newsletter = () => {
   return (
@@ -60,7 +61,12 @@ export const Newsletter = () => {
           </div>
         </div>
 
-        <ButtonUnderline color={"black"}>Zobacz</ButtonUnderline>
+        <Link
+          target="_blank"
+          href="https://www.facebook.com/profile.php?id=100063631957611"
+        >
+          <ButtonUnderline color={"black"}>Zobacz</ButtonUnderline>
+        </Link>
       </div>
     </div>
   );

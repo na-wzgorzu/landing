@@ -179,6 +179,15 @@ export const Gastro = () => {
               </p>
             </div>
           </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/cennik"
+              className="px-5 py-3 bg-brand text-white rounded-md hover:bg-brand/90 transition-colors duration-200 inline-block"
+            >
+              Przejdź do cennika
+            </Link>
+          </div>
         </motion.div>
 
         <GallerySection
@@ -218,16 +227,6 @@ export const Gastro = () => {
             ))}
           </div>
         </motion.div>
-
-        {/* Back to Home */}
-        <div className="text-center mt-10">
-          <Link
-            href="/"
-            className="px-5 py-3 bg-brand text-white rounded-md hover:bg-brand/90 transition-colors duration-200 inline-block"
-          >
-            Powrót do strony głównej
-          </Link>
-        </div>
       </div>
     </div>
   );

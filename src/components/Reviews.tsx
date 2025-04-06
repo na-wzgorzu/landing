@@ -6,6 +6,7 @@ import kayakImg from "@/assets/kayak.jpg";
 import Image from "next/image";
 import { Carousel } from "@/components/Carousel";
 import { CarouselItem } from "@/components/ui/carousel";
+import Link from "next/link";
 
 export const Reviews = () => {
   return (
@@ -35,9 +36,13 @@ export const Reviews = () => {
 
             <ReviewItemsList />
 
-            <div className="md:hidden w-full flex justify-center md:mt-6">
+            <Link
+              target="_blank"
+              className="md:hidden w-full flex justify-center md:mt-6"
+              href="https://www.google.com/search?sca_esv=c558df6cbc6e058c&sxsrf=AHTn8zrnX4vw0B9Suqfo6dBSE6vOP90-2A:1743958286569&uds=ABqPDvztZD_Nu18FR6tNPw2cK_RR6HNxypcrNZ4-3WLqPg9orkoMzVeYiSvHs3CHlD9ReXkyCFRmVDJD4NFHwW982-8GI3cTzbaEYoyWig2Do5xF43HjCje6_NIMwNG5g1jIipUTMxx5iO8pN-zoPXbJ4RhFUlA7XDzzXW4NzPDOmKYLGyGZpGI&q=O%C5%9Brodek+Wypoczynkowy+Na+Wzg%C3%B3rzu+Opinie&si=APYL9btvhO6SAb8jF9HqTZMMa7vs_teLnZaEVrJZwRKFIIKjoeajurTBLcBVKSzYG7jU7wvuKtFmLMmM635NBvR6g9xsiKMlLlucCpATEAVMExteyrWDWZzzqBHcboloTr44B7USjgDECtjfmbS1Nq6rqYo_2goIQQ%3D%3D&hl=pl-PL&sa=X&ved=2ahUKEwjG_7Hx7sOMAxXPUXcKHWwhAmkQ_4MLegQILxAN&biw=1710&bih=862&dpr=2"
+            >
               <ButtonUnderline>Zobacz wszystkie</ButtonUnderline>
-            </div>
+            </Link>
           </div>
 
           <div className="w-full md:w-[310px] h-[413px] md:absolute right-0 -top-full">
@@ -49,9 +54,13 @@ export const Reviews = () => {
           </div>
         </div>
 
-        <div className="hidden md:block mx-auto whitespace-nowrap md:mt-6">
+        <Link
+          target="_blank"
+          className="hidden md:block mx-auto whitespace-nowrap md:mt-6"
+          href="https://www.google.com/search?sca_esv=c558df6cbc6e058c&sxsrf=AHTn8zrnX4vw0B9Suqfo6dBSE6vOP90-2A:1743958286569&uds=ABqPDvztZD_Nu18FR6tNPw2cK_RR6HNxypcrNZ4-3WLqPg9orkoMzVeYiSvHs3CHlD9ReXkyCFRmVDJD4NFHwW982-8GI3cTzbaEYoyWig2Do5xF43HjCje6_NIMwNG5g1jIipUTMxx5iO8pN-zoPXbJ4RhFUlA7XDzzXW4NzPDOmKYLGyGZpGI&q=O%C5%9Brodek+Wypoczynkowy+Na+Wzg%C3%B3rzu+Opinie&si=APYL9btvhO6SAb8jF9HqTZMMa7vs_teLnZaEVrJZwRKFIIKjoeajurTBLcBVKSzYG7jU7wvuKtFmLMmM635NBvR6g9xsiKMlLlucCpATEAVMExteyrWDWZzzqBHcboloTr44B7USjgDECtjfmbS1Nq6rqYo_2goIQQ%3D%3D&hl=pl-PL&sa=X&ved=2ahUKEwjG_7Hx7sOMAxXPUXcKHWwhAmkQ_4MLegQILxAN&biw=1710&bih=862&dpr=2"
+        >
           <ButtonUnderline>Zobacz wszystkie</ButtonUnderline>
-        </div>
+        </Link>
       </div>
     </div>
   );
