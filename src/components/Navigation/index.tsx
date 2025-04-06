@@ -59,7 +59,7 @@ export const Navigation = () => {
           <Link
             key={href + i}
             href={href}
-            className="group inline-flex h-9 w-max items-center justify-center px-4 py-2 transition-all hover:border-b hover:border-gray-400 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50"
+            className="group inline-flex h-9 w-max items-center justify-center px-4 py-2 transition-all border-b border-brand hover:border-white focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50"
             prefetch={false}
           >
             {label}
