@@ -15,7 +15,7 @@ export interface Accommodation {
   name: string;
   type: "domek" | "pokoj";
   image: StaticImageData;
-  images: string[];
+  images: StaticImageData[];
   description: string;
   capacity: string;
   bedrooms: number;

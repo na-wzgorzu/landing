@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface AccommodationGalleryProps {
   images: string[];
@@ -28,7 +29,7 @@ export const AccommodationGallery = ({
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
       >
-        <img
+        <Image
           src={images[mainImage]}
           alt={name}
           className="w-full h-full object-cover"
@@ -47,7 +48,7 @@ export const AccommodationGallery = ({
             }`}
             onClick={() => handleThumbnailClick(index)}
           >
-            <img
+            <Image
               src={image}
               alt={`${name} widok ${index + 1}`}
               className="w-full h-full object-cover"

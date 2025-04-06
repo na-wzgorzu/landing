@@ -2,6 +2,8 @@ import { Accommodation, House } from "@/components/Houses/types";
 import house1Img from "@/assets/hero.jpg";
 import room1Img from "@/../public/gallery/apartamenty100.jpg";
 import room2Img from "@/../public/gallery/apartamenty101.jpg";
+import house2Img from "@/../public/gallery/build-1.jpg";
+import house3Img from "@/../public/gallery/domki106.jpg";
 // import room3Img from "@/../public/gallery/apartamenty104.jpg";
 // import room4Img from "@/../public/gallery/apartamenty105.jpg";
 
@@ -135,14 +137,15 @@ export const accommodationList: Accommodation[] = [
     id: "1",
     name: "Domek parterowy 2-3 osobowy",
     type: "domek",
-    image: house1Img,
-    images: [
-      "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=1000",
-      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1000",
-      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=1000",
-      "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=1000",
-      "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?q=80&w=1000",
-    ],
+    image: house3Img,
+    // images: [
+    //   "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?q=80&w=1000",
+    // ],
+    images: [house3Img, house2Img, house1Img],
     description:
       "Przytulny domek dla dwóch osób o powierzchni 25 m². Wnętrze obejmuje salon z rozkładaną wersalką, aneks kuchenny oraz łazienkę. Położony w drugiej linii od jeziora zapewnia bliskość natury i kameralną atmosferę",
     capacity: "2-3",
@@ -168,14 +171,15 @@ export const accommodationList: Accommodation[] = [
     id: "2",
     name: "Domek parterowy 4-6 osobowy PREMIUM",
     type: "domek",
-    image: house1Img,
-    images: [
-      "https://images.unsplash.com/photo-1475087542963-13ab5e611954?q=80&w=1000",
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1000",
-      "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?q=80&w=1000",
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1000",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000",
-    ],
+    image: house2Img,
+    // images: [
+    //   "https://images.unsplash.com/photo-1475087542963-13ab5e611954?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000",
+    // ],
+    images: [house2Img, house1Img, house2Img],
     description:
       "Przytulny domek dla dwóch osób o powierzchni 45 m². Wnętrze obejmuje salon z rozkładaną wersalką, aneks kuchenny oraz łazienkę. Położony w drugiej linii od jeziora zapewnia bliskość natury i kameralną atmosferę",
     capacity: "4-6",
@@ -207,13 +211,14 @@ export const accommodationList: Accommodation[] = [
     name: "Domek parterowy 5-7 osobowy",
     type: "domek",
     image: house1Img,
-    images: [
-      "https://images.unsplash.com/photo-1475087542963-13ab5e611954?q=80&w=1000",
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1000",
-      "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?q=80&w=1000",
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1000",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000",
-    ],
+    // images: [
+    //   "https://images.unsplash.com/photo-1475087542963-13ab5e611954?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000",
+    // ],
+    images: [house1Img, house1Img, house1Img],
     description:
       "Przytulny domek dla dwóch osób o powierzchni 45 m². Wnętrze obejmuje salon z rozkładaną wersalką, aneks kuchenny oraz łazienkę. Położony w drugiej linii od jeziora zapewnia bliskość natury i kameralną atmosferę",
     capacity: "5-7",
@@ -246,13 +251,14 @@ export const accommodationList: Accommodation[] = [
     name: "Pokój 2 osobowy bez tarasu",
     type: "pokoj",
     image: room01Img,
-    images: [
-      "https://na-wzgorzu.pl/scripts/pokazRys.html?hotel02.jpg",
-      "https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=1000",
-      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=1000",
-      "https://images.unsplash.com/photo-1552902019-ebcd97aa9aa0?q=80&w=1000",
-      "https://images.unsplash.com/photo-1631049552057-403cdb8f0658?q=80&w=1000",
-    ],
+    // images: [
+    //   "https://na-wzgorzu.pl/scripts/pokazRys.html?hotel02.jpg",
+    //   "https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1552902019-ebcd97aa9aa0?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1631049552057-403cdb8f0658?q=80&w=1000",
+    // ],
+    images: [room01Img, room01Img, room01Img],
     description:
       "Przytulny pokój dwuosobowy to idealna opcja dla par lub dwóch osób szukających spokojnego wypoczynku w kameralnym budynku, zaledwie kilkanaście metrów od wyjścia na świeże powietrze. Pokój o funkcjonalnym układzie mieści się w zakresie metrażu od 12 m² do 27 m² i został w pełni umeblowany oraz wyposażony w niezbędne udogodnienia.",
     capacity: "2",
@@ -279,13 +285,14 @@ export const accommodationList: Accommodation[] = [
     name: "Pokój 3 osobowy z tarasem",
     type: "pokoj",
     image: room02Img,
-    images: [
-      "https://na-wzgorzu.pl/scripts/pokazRys.html?hotel03.jpg",
-      "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1000",
-      "https://images.unsplash.com/photo-1594130139005-3f0c0f0e7c5e?q=80&w=1000",
-      "https://images.unsplash.com/photo-1586105251261-72a756497a11?q=80&w=1000",
-      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=1000",
-    ],
+    // images: [
+    //   "https://na-wzgorzu.pl/scripts/pokazRys.html?hotel03.jpg",
+    //   "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1594130139005-3f0c0f0e7c5e?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1586105251261-72a756497a11?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=1000",
+    // ],
+    images: [room02Img, room02Img, room02Img],
     description:
       "Pokój trzyosobowy to komfortowe rozwiązanie dla rodzin z dzieckiem, grupy przyjaciół lub osób szukających przestronnego miejsca do wypoczynku. Pokoje dostępne są w dwóch wariantach – z tarasem lub bez – co pozwala dopasować wybór do indywidualnych preferencji. Budynek jest kameralny, a odległość od pokoju do wyjścia głównego to zaledwie kilka kroków. Dodatkowym atutem jest zagospodarowany teren wokół obiektu.",
     capacity: "3",
@@ -307,13 +314,14 @@ export const accommodationList: Accommodation[] = [
     name: "Pokój 3 osobowy z bez tarasu",
     type: "pokoj",
     image: room03Img,
-    images: [
-      "https://na-wzgorzu.pl/scripts/pokazRys.html?hotel11.jpg",
-      "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1000",
-      "https://images.unsplash.com/photo-1594130139005-3f0c0f0e7c5e?q=80&w=1000",
-      "https://images.unsplash.com/photo-1586105251261-72a756497a11?q=80&w=1000",
-      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=1000",
-    ],
+    // images: [
+    //   "https://na-wzgorzu.pl/scripts/pokazRys.html?hotel11.jpg",
+    //   "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1594130139005-3f0c0f0e7c5e?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1586105251261-72a756497a11?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=1000",
+    // ],
+    images: [room03Img, room03Img, room03Img],
     description:
       "Pokój trzyosobowy to komfortowe rozwiązanie dla rodzin z dzieckiem, grupy przyjaciół lub osób szukających przestronnego miejsca do wypoczynku. Pokoje dostępne są w dwóch wariantach – z tarasem lub bez – co pozwala dopasować wybór do indywidualnych preferencji. Budynek jest kameralny, a odległość od pokoju do wyjścia głównego to zaledwie kilka kroków. Dodatkowym atutem jest zagospodarowany teren wokół obiektu.",
     capacity: "3",
@@ -335,13 +343,14 @@ export const accommodationList: Accommodation[] = [
     name: "Pokój 4 osobowy bez tarasu",
     type: "pokoj",
     image: room04Img,
-    images: [
-      "https://na-wzgorzu.pl/scripts/pokazRys.html?hotel07.jpg",
-      "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=1000",
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1000",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1000",
-      "https://images.unsplash.com/photo-1569152811536-fb47aced8409?q=80&w=1000",
-    ],
+    // images: [
+    //   "https://na-wzgorzu.pl/scripts/pokazRys.html?hotel07.jpg",
+    //   "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1000",
+    //   "https://images.unsplash.com/photo-1569152811536-fb47aced8409?q=80&w=1000",
+    // ],
+    images: [room04Img, room04Img, room04Img, room04Img],
     description:
       "Apartament to przestronny lokal z aneksem kuchennym i osobną sypialnią. Idealny dla osób szukających większej niezależności i prywatności.\n\nApartament składa się z sypialni z łóżkiem małżeńskim, salonu z rozkładaną sofą, w pełni wyposażonego aneksu kuchennego oraz łazienki z prysznicem. Goście mają również dostęp do prywatnego tarasu.",
     capacity: "4",

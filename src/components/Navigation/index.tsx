@@ -9,11 +9,12 @@ const navLinks = [
   { href: "/o-nas", label: "O nas" },
   { href: "/domki", label: "Domki" },
   { href: "/pokoje", label: "Pokoje" },
-  { href: "/atrakcje", label: "Atrakcje" },
-  { href: "galeria", label: "Galeria" },
   { href: "/gastronomia", label: "Gastronomia" },
-  { href: "/kontakt", label: "Kontakt" },
+  { href: "/atrakcje", label: "Okolica" },
+  { href: "/cennik", label: "Cennik" },
   { href: "/rezerwacja", label: "Rezerwuj" },
+  { href: "galeria", label: "Galeria" },
+  { href: "/kontakt", label: "Kontakt" },
 ];
 
 export const Navigation = () => {
