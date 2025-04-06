@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Expand, User } from "lucide-react";
 import { House } from "@/components/Houses/types";
 import { ButtonUnderline } from "@/components/ButtonUnderline";
+import Link from "next/link";
 
 export const HouseCard = ({
   description,
@@ -27,7 +28,9 @@ export const HouseCard = ({
           Już od <span className="font-semibold">{price} zł</span> / noc
         </p>
 
-        <ButtonUnderline>Rezerwuj</ButtonUnderline>
+        <Link href="/rezerwacja">
+          <ButtonUnderline>Rezerwuj</ButtonUnderline>
+        </Link>
       </div>
 
       {/* Image wrapper to ensure responsiveness */}
@@ -40,7 +43,9 @@ export const HouseCard = ({
       </div>
 
       <div className="md:max-w-[250px] min-w-[180px] w-full items-center flex flex-col justify-evenly gap-6 bg-brand text-white p-4">
-        <ButtonUnderline>Galeria</ButtonUnderline>
+        <Link href="/galeria">
+          <ButtonUnderline>Galeria</ButtonUnderline>
+        </Link>
 
         <div className="flex flex-col gap-4">
           <div className="flex gap-2 items-center">
@@ -53,7 +58,13 @@ export const HouseCard = ({
           </div>
         </div>
 
-        <ButtonUnderline>Zobacz wszystkie</ButtonUnderline>
+        <Link
+          href={
+            name.toLocaleLowerCase().includes("domek") ? "/domki" : "/pokoje"
+          }
+        >
+          <ButtonUnderline>Zobacz wszystkie</ButtonUnderline>
+        </Link>
       </div>
     </div>
   );

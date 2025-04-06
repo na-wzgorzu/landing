@@ -4,7 +4,7 @@ import React from "react";
 import { ButtonUnderline } from "@/components/ButtonUnderline";
 import Link from "next/link";
 
-export const Attractions = () => {
+export const FoodService = () => {
   return (
     <div className="flex flex-col mx-auto max-w-screen-lg gap-6 text-gray-700 px-4">
       <Title title="Gastronomia" />

@@ -9,3 +9,18 @@ export type House = {
   guests: string;
   amenities: string[];
 };
+
+export interface Accommodation {
+  id: string;
+  name: string;
+  type: "domek" | "pokoj";
+  image: StaticImageData;
+  images: StaticImageData[];
+  description: string;
+  capacity: string;
+  bedrooms: number;
+  size: number;
+  price: number;
+  features: string[];
+  amenities: string[];
+}

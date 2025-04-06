@@ -158,6 +158,14 @@
     flex-direction: column;
     gap: 16px;
   }
+
+  .attraction-card {
+    @apply rounded-xl bg-white shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl;
+  }
+
+  .attraction-pill {
+    @apply inline-block px-3 py-1 text-xs font-medium rounded-full bg-brand/10 text-brand;
+  }
 }
 
 @keyframes accordion-down {

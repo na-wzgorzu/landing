@@ -9,29 +9,30 @@ const navLinks = [
   { href: "/o-nas", label: "O nas" },
   { href: "/domki", label: "Domki" },
   { href: "/pokoje", label: "Pokoje" },
-  { href: "/atrakcje", label: "Atrakcje" },
-  { href: "galeria", label: "Galeria" },
   { href: "/gastronomia", label: "Gastronomia" },
-  { href: "/kontakt", label: "Kontakt" },
+  { href: "/okolica", label: "Okolica" },
+  { href: "/cennik", label: "Cennik" },
   { href: "/rezerwacja", label: "Rezerwuj" },
+  { href: "galeria", label: "Galeria" },
+  { href: "/kontakt", label: "Kontakt" },
 ];
 
 export const Navigation = () => {
   return (
-    <header className="sticky z-2 top-0 inset-x-0 flex h-16 w-full shrink-0 items-center justify-between flex-row-reverse lg:flex-row px-4 bg-brand lg:text-white shadow-md">
+    <header className="sticky z-2 top-0 inset-x-0 flex h-16 w-full shrink-0 items-center justify-between flex-row-reverse md:flex-row px-4 bg-brand md:text-white shadow-md">
       <Sheet>
         <SheetTrigger asChild>
           <Button
             variant="outline"
             size="icon"
-            className="lg:hidden border border-white rounded-xs bg-brand text-white"
+            className="md:hidden border border-white rounded-xs bg-brand text-white"
           >
             <MenuIcon className="h-6 w-6" />
           </Button>
         </SheetTrigger>
 
         <SheetContent side="right" className="pl-4">
-          <Link href="/" className="mr-6 hidden lg:flex z-10" prefetch={false}>
+          <Link href="/" className="mr-6 hidden md:flex z-10" prefetch={false}>
             <Logo className="text-white size-20" />
           </Link>
           <div className="grid gap-2 py-6">
@@ -53,12 +54,12 @@ export const Navigation = () => {
         <Logo className="text-white size-20" />
       </Link>
 
-      <nav className="ml-auto hidden lg:flex gap-6">
+      <nav className="ml-auto hidden md:flex gap-2.5 lg:gap-4">
         {navLinks.map(({ href, label }, i) => (
           <Link
             key={href + i}
             href={href}
-            className="group inline-flex h-9 w-max items-center justify-center px-4 py-2 transition-all hover:border-b hover:border-gray-400 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50"
+            className="group inline-flex h-9 w-max items-center justify-center lg:p-2 transition-all border-b border-brand hover:border-white focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50"
             prefetch={false}
           >
             {label}

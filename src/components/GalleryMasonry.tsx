@@ -63,7 +63,7 @@ const images: Record<string, string[]> = {
   // : ["./src/assets/atrakcje1.jpg", "./src/assets/atrakcje2.jpg"],
 };
 
-export function Gallery() {
+export function GalleryMasonry() {
   const [selectedCategory, setSelectedCategory] = useState("Domki");
   const [lightboxIndex, setLightboxIndex] = useState(-1);
 
