@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface AccommodationGalleryProps {
-  images: string[];
+  images: StaticImageData[];
   name: string;
 }
 
