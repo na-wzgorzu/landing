@@ -10,7 +10,7 @@ const navLinks = [
   { href: "/domki", label: "Domki" },
   { href: "/pokoje", label: "Pokoje" },
   { href: "/gastronomia", label: "Gastronomia" },
-  { href: "/atrakcje", label: "Okolica" },
+  { href: "/okolica", label: "Okolica" },
   { href: "/cennik", label: "Cennik" },
   { href: "/rezerwacja", label: "Rezerwuj" },
   { href: "galeria", label: "Galeria" },
