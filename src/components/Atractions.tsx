@@ -217,7 +217,7 @@ export const Atractions: React.FC = () => {
                         href={attraction.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-4 inline-flex items-center justify-center px-5 py-2 border border-transparent text-base font-medium rounded-md text-white bg-attraction hover:bg-attraction/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-attraction transition-colors duration-200"
+                        className="mt-4 inline-flex items-center justify-center px-5 py-2 border border-transparent text-base font-medium rounded-md text-white bg-brand hover:bg-brand/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand transition-colors duration-200"
                       >
                         Więcej informacji
                       </a>
@@ -235,7 +235,7 @@ export const Atractions: React.FC = () => {
               transition={{ delay: 0.3 }}
               className="bg-white p-8 rounded-xl shadow-md"
             >
-              <h2 className="text-2xl font-bold mb-6 text-attraction">
+              <h2 className="text-2xl font-bold mb-6 text-brand">
                 Atrakcje w okolicy
               </h2>
               <p className="text-gray-600 mb-6">
@@ -250,7 +250,7 @@ export const Atractions: React.FC = () => {
               </p>
 
               <div className="space-y-6">
-                <div className="border-l-4 border-attraction pl-4 py-2">
+                <div className="border-l-4 border-brand pl-4 py-2">
                   <h3 className="font-semibold text-lg">
                     Brodnickie Jezioro Strażym
                   </h3>
@@ -264,13 +264,13 @@ export const Atractions: React.FC = () => {
                     href="https://pl.wikipedia.org/wiki/Strażym"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-attraction hover:underline mt-1 inline-block"
+                    className="text-brand hover:underline mt-1 inline-block"
                   >
                     Więcej informacji
                   </a>
                 </div>
 
-                <div className="border-l-4 border-attraction pl-4 py-2">
+                <div className="border-l-4 border-brand pl-4 py-2">
                   <h3 className="font-semibold text-lg">Rezerwaty przyrody</h3>
                   <p className="text-gray-600">
                     Tereny Brodnickiego Parku Krajobrazowego obfitują w
@@ -278,7 +278,7 @@ export const Atractions: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-attraction pl-4 py-2">
+                <div className="border-l-4 border-brand pl-4 py-2">
                   <h3 className="font-semibold text-lg">Trasy turystyczne</h3>
                   <p className="text-gray-600">
                     Liczne szlaki piesze, rowerowe oraz trasy kajakowe pozwalają
@@ -288,7 +288,7 @@ export const Atractions: React.FC = () => {
               </div>
 
               <div className="mt-8">
-                <h3 className="text-xl font-bold mb-4 text-attraction">
+                <h3 className="text-xl font-bold mb-4 text-brand">
                   Informacje praktyczne
                 </h3>
                 <ul className="list-disc pl-5 space-y-2 text-gray-600">
@@ -314,7 +314,7 @@ export const Atractions: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
         >
-          <h2 className="text-2xl font-bold mb-4 text-attraction">
+          <h2 className="text-2xl font-bold mb-4 text-brand">
             Inne przydatne linki
           </h2>
           <ul className="list-disc pl-5 space-y-2">
@@ -323,7 +323,7 @@ export const Atractions: React.FC = () => {
                 href="http://www.it.brodnica.pl"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-attraction hover:underline"
+                className="text-brand hover:underline"
               >
                 Informacja Turystyczna w Brodnicy
               </a>
@@ -333,7 +333,7 @@ export const Atractions: React.FC = () => {
                 href="https://pl.wikipedia.org/wiki/Zamek_w_Golubiu"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-attraction hover:underline"
+                className="text-brand hover:underline"
               >
                 Zamek w Golubiu-Dobrzyniu (60 km)
               </a>
@@ -343,7 +343,7 @@ export const Atractions: React.FC = () => {
                 href="https://pl.wikipedia.org/wiki/Zamek_w_Kwidzynie"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-attraction hover:underline"
+                className="text-brand hover:underline"
               >
                 Zamek w Kwidzynie (80 km)
               </a>
@@ -353,7 +353,7 @@ export const Atractions: React.FC = () => {
                 href="https://pl.wikipedia.org/wiki/Biskupin_stanowisko_archeologiczne"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-attraction hover:underline"
+                className="text-brand hover:underline"
               >
                 Osada Biskupin (120 km)
               </a>

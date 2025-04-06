@@ -42,7 +42,7 @@ export const AccommodationGallery = ({
             key={index}
             className={`rounded-lg overflow-hidden h-24 cursor-pointer transition-all duration-200 ${
               mainImage === index
-                ? "ring-2 ring-attraction ring-offset-2"
+                ? "ring-2 ring-brand ring-offset-2"
                 : "opacity-80 hover:opacity-100"
             }`}
             onClick={() => handleThumbnailClick(index)}

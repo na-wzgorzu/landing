@@ -25,7 +25,7 @@ export const AccommodationDetails = ({ id }: Props) => {
       <div className="min-h-screen flex flex-col items-center justify-center">
         <h1 className="text-2xl font-bold mb-4">Nie znaleziono noclegu</h1>
         <Link href="/domki">
-          <Button className="bg-attraction hover:bg-attraction/90">
+          <Button className="bg-brand hover:bg-brand/90">
             <ArrowLeft size={16} className="mr-2" /> Wróć do listy noclegów
           </Button>
         </Link>
@@ -53,7 +53,7 @@ export const AccommodationDetails = ({ id }: Props) => {
         <div className="mb-6">
           <Link
             href="/domki"
-            className="inline-flex items-center text-attraction hover:underline"
+            className="inline-flex items-center text-brand hover:underline"
           >
             <ArrowLeft size={16} className="mr-2" /> Wróć do listy noclegów
           </Link>
@@ -83,7 +83,7 @@ export const AccommodationDetails = ({ id }: Props) => {
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-3">
                   {amenities.map((amenity, index) => (
                     <div key={index} className="flex items-center">
-                      <Check size={16} className="text-attraction mr-2" />
+                      <Check size={16} className="text-brand mr-2" />
                       <span className="text-gray-600">{amenity}</span>
                     </div>
                   ))}
@@ -100,7 +100,7 @@ export const AccommodationDetails = ({ id }: Props) => {
                   {name}
                 </h1>
                 <Badge
-                  className="mb-4 bg-attraction text-white hover:bg-attraction"
+                  className="mb-4 bg-brand text-white hover:bg-brand"
                   variant="secondary"
                 >
                   {type === "domek" ? "Domek" : "Pokój"}
@@ -108,21 +108,21 @@ export const AccommodationDetails = ({ id }: Props) => {
 
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="flex items-center text-gray-600">
-                    <Users size={18} className="mr-2 text-attraction" />
+                    <Users size={18} className="mr-2 text-brand" />
                     <span>{capacity} osób</span>
                   </div>
                   <div className="flex items-center text-gray-600">
-                    <BedDouble size={18} className="mr-2 text-attraction" />
+                    <BedDouble size={18} className="mr-2 text-brand" />
                     <span>
                       {bedrooms} {bedrooms === 1 ? "sypialnia" : "sypialnie"}
                     </span>
                   </div>
                   <div className="flex items-center text-gray-600">
-                    <Maximize size={18} className="mr-2 text-attraction" />
+                    <Maximize size={18} className="mr-2 text-brand" />
                     <span>{size} m²</span>
                   </div>
                   <div className="flex items-center text-gray-600">
-                    <Coffee size={18} className="mr-2 text-attraction" />
+                    <Coffee size={18} className="mr-2 text-brand" />
                     <span>Opcja z wyżywieniem</span>
                   </div>
                 </div>
@@ -146,21 +146,29 @@ export const AccommodationDetails = ({ id }: Props) => {
                   <div className="flex justify-between items-end mb-6">
                     <div>
                       <p className="text-sm text-gray-500">Cena za dobę</p>
-                      <p className="text-3xl font-bold text-attraction">
+                      <p className="text-3xl font-bold text-brand">
                         {price} zł
                       </p>
                     </div>
-                    <p className="text-sm text-gray-500">Minimum 2 noce</p>
                   </div>
 
-                  <Button className="w-full bg-attraction hover:bg-attraction/90 py-6 text-base">
-                    Zarezerwuj teraz
-                  </Button>
-                </div>
+                  <div className="flex flex-col gap-4">
+                    <Link href="/rezerwacja">
+                      <Button className="w-full bg-brand hover:bg-brand/90 py-6 text-base transition-all duration-300">
+                        Zarezerwuj teraz
+                      </Button>
+                    </Link>
 
-                <p className="text-sm text-gray-500 text-center">
-                  Wymagana przedpłata 30% wartości pobytu
-                </p>
+                    <Link href="/cennik">
+                      <Button
+                        variant="outline"
+                        className="flex w-full text-base items-center justify-center py-6 transition-all duration-300 text-gray-700"
+                      >
+                        Cennik
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>

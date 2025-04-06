@@ -10,17 +10,17 @@ export type House = {
   amenities: string[];
 };
 
-export type Accommodation = {
+export interface Accommodation {
   id: string;
   name: string;
   type: "domek" | "pokoj";
-  image: string;
+  image: StaticImageData;
   images: string[];
   description: string;
-  capacity: number;
+  capacity: string;
   bedrooms: number;
   size: number;
   price: number;
   features: string[];
   amenities: string[];
-};
+}
