@@ -1,4 +1,5 @@
 "use client";
+import { GallerySection } from "@/components/GallerySection";
 import { motion } from "framer-motion";
 import {
   Utensils,
@@ -10,6 +11,12 @@ import {
   SaladIcon,
 } from "lucide-react";
 import Link from "next/link";
+
+const images = [
+  "/gallery/wyzywienie01.jpg",
+  "/gallery/wyzywienie02.jpg",
+  "/gallery/wyzywienie03.jpg",
+];
 
 export const Gastro = () => {
   const mealTimes = [
@@ -173,6 +180,12 @@ export const Gastro = () => {
             </div>
           </div>
         </motion.div>
+
+        <GallerySection
+          images={images}
+          title="Galeria"
+          description="Zobacz, jak wygląda nasza jadalnia i sposób serwowania posiłków."
+        />
 
         {/* Dietary Options */}
         <motion.div
