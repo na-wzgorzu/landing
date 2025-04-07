@@ -2,7 +2,7 @@ import { ReservationSection } from "@/components/ReservationSection";
 
 export const Hero = () => {
   return (
-    <div className="w-full bg-[url(/hero.jpg)] relative h-full bg-cover min-h-[calc(100vh-64px)] bg-no-repeat bg-center flex items-center justify-center md:justify-end">
+    <div className="w-full bg-[url(/hero.avif)] relative h-full bg-cover min-h-[calc(100vh-64px)] bg-no-repeat bg-center flex items-center justify-center md:justify-end">
       <div className="flex flex-col h-full min-h-[400px] justify-around z-1">
         <div />
 
@@ -12,7 +12,7 @@ export const Hero = () => {
       </div>
 
       {/* Tło z overlayem */}
-      <div className="absolute inset-0 bg-[url(/hero.jpg)] bg-cover bg-no-repeat bg-center" />
+      <div className="absolute inset-0 bg-[url(/hero.avif)] bg-cover bg-no-repeat bg-center" />
       <div className="absolute inset-0 bg-black/20 bg-opacity-50" />
     </div>
   );
