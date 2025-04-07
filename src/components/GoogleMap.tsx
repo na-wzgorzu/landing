@@ -5,7 +5,7 @@ export const GoogleMap = () => {
     <GoogleMapsEmbed
       apiKey="AIzaSyAYrcoNI_IcYodJBNOTrwFdqB5qpU3SLQ0"
       height="100%;"
-      style="min-height: 400px; height:100%; width:100%;"
+      style="min-height: 550px; height:100%; width:100%;"
       width="100%;"
       mode="place"
       q="Ośrodek+Wypoczynkowy+Na+Wzgórzu"

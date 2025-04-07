@@ -6,6 +6,7 @@ import Link from "next/link";
 import React from "react";
 
 const navLinks = [
+  { href: "/", label: "Start" },
   { href: "/o-nas", label: "O nas" },
   { href: "/domki", label: "Domki" },
   { href: "/pokoje", label: "Pokoje" },
@@ -19,20 +20,20 @@ const navLinks = [
 
 export const Navigation = () => {
   return (
-    <header className="sticky z-2 top-0 inset-x-0 flex h-16 w-full shrink-0 items-center justify-between flex-row-reverse md:flex-row px-4 bg-brand md:text-white shadow-md">
+    <header className="sticky z-2 top-0 inset-x-0 flex h-16 w-full shrink-0 items-center justify-between flex-row-reverse lg:flex-row px-4 bg-brand lg:text-white shadow-md">
       <Sheet>
         <SheetTrigger asChild>
           <Button
             variant="outline"
             size="icon"
-            className="md:hidden border border-white rounded-xs bg-brand text-white"
+            className="lg:hidden border border-white rounded-xs bg-brand text-white"
           >
             <MenuIcon className="h-6 w-6" />
           </Button>
         </SheetTrigger>
 
         <SheetContent side="right" className="pl-4">
-          <Link href="/" className="mr-6 hidden md:flex z-10" prefetch={false}>
+          <Link href="/" className="mr-6 hidden lg:flex z-10" prefetch={false}>
             <Logo className="text-white size-20" />
           </Link>
           <div className="grid gap-2 py-6">
@@ -54,7 +55,7 @@ export const Navigation = () => {
         <Logo className="text-white size-20" />
       </Link>
 
-      <nav className="ml-auto hidden md:flex gap-2.5 lg:gap-4">
+      <nav className="ml-auto hidden lg:flex gap-2.5 lg:gap-4">
         {navLinks.map(({ href, label }, i) => (
           <Link
             key={href + i}
