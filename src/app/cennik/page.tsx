@@ -4,8 +4,8 @@ export default function Page() {
   return (
     <div>
       <iframe
-        src="/cennik.html"
-        style={{ width: "100%", minHeight: "100vh", border: "none" }}
+        src="/api/cennik"
+        style={{ width: "100%", height: "100vh", border: "none" }}
         title="Cennik"
       />
     </div>
