@@ -1,7 +1,11 @@
 import React from "react";
 
 async function getHtml(): Promise<string> {
-  const res = await fetch("http://localhost:3000/api/cennik", {
+  const url =
+    process.env.NODE_ENV === "production"
+      ? "https://na-wzgorzu.vercel.app/api/cennik"
+      : "http://localhost:3000/api/cennik";
+  const res = await fetch(url, {
     cache: "no-store", // albo "force-cache" jeśli chcesz cachować
   });
 
