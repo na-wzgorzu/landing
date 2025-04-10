@@ -3,7 +3,7 @@ import { GoogleMapsEmbed } from "@next/third-parties/google";
 export const GoogleMap = () => {
   return (
     <GoogleMapsEmbed
-      apiKey="AIzaSyAYrcoNI_IcYodJBNOTrwFdqB5qpU3SLQ0"
+      apiKey={process.env.GOOGLE_MAPS_KEY ?? ""}
       height="100%;"
       style="min-height: 550px; height:100%; width:100%;"
       width="100%;"
