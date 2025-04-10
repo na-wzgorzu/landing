@@ -82,22 +82,6 @@ export const Atractions = () => {
               </div>
             ))}
           </div>
-          <div className="mt-8">
-            <h3 className="text-xl font-bold mb-4 text-brand">
-              Informacje praktyczne
-            </h3>
-            <ul className="list-disc pl-5 space-y-2 text-gray-600">
-              <li>
-                W recepcji ośrodka można uzyskać mapy okolicznych szlaków
-                turystycznych
-              </li>
-              <li>Możliwość wypożyczenia rowerów (za dodatkową opłatą)</li>
-              <li>
-                Organizacja spływów kajakowych (sezonowo, za dodatkową opłatą)
-              </li>
-              <li>Miejsca na ognisko i grilla na terenie ośrodka</li>
-            </ul>
-          </div>
         </motion.div>
 
         <GallerySection
@@ -148,7 +132,7 @@ export const Atractions = () => {
             </li>
             <li>
               <a
-                href="https://pl.wikipedia.org/wiki/Biskupin_stanowisko_archeologiczne"
+                href="https://pl.wikipedia.org/wiki/Biskupin"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-brand hover:underline"

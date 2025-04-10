@@ -30,10 +30,10 @@ export default function Contact() {
                 <p>Gaj-Grzmięca 30a 87-312 Pokrzydowo</p>
               </div>
             </a>
-            <a href="tel:+48564939153" className="flex gap-2">
+            <p className="flex gap-2">
               <PhoneCall className="size-6" />
               <span>+48 (56) 493 91 53</span>
-            </a>
+            </p>
             <a href="mailto:na-wzgorzu@na-wzgorzu.pl" className="flex gap-2">
               <MailIcon className="size-6" />
               <span>na-wzgorzu@na-wzgorzu.pl</span>
@@ -48,12 +48,17 @@ export default function Contact() {
               20948411502200001701650001
             </p>
 
-            <div className="font-semibold mx-auto">
-              <p>Informacja dotycząca oferty, ośrodka, rezerwacji:</p>
-              <p className="w-fit mx-auto">na-wzgorzu@na-wzgorzu.pl</p>
-            </div>
+            <p className="font-semibold">
+              Informacja dotycząca oferty, ośrodka, rezerwacji:
+            </p>
+            <a
+              href="mailto:na-wzgorzu@na-wzgorzu.pl"
+              className="w-fit font-semibold"
+            >
+              na-wzgorzu@na-wzgorzu.pl
+            </a>
 
-            <p className="mx-auto">
+            <p>
               <span className="font-medium">Osoba kontaktowa:</span> Konrad
               Kowalczewski
             </p>
