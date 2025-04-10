@@ -1,10 +1,9 @@
 "use server";
 
-export const saveEmail = async (
-  formData: FormData
-): Promise<{ success: boolean; message: string }> => {
-  const rawFormData = Object.fromEntries(formData) as { email: string };
-  const email = rawFormData.email;
+import { EmailFormValues } from "@/components/Newsletter";
+
+export const saveEmail = async (formData: EmailFormValues) => {
+  const email = formData.email;
 
   try {
     const response = await fetch(process.env.NEWSLETTER_SHEET_URL!, {
@@ -19,16 +18,8 @@ export const saveEmail = async (
       throw new Error(`Błąd sieci: ${response.status}`);
     }
 
-    const result = await response.json();
-    return {
-      success: result.success,
-      message: result.message || "Email zapisany",
-    };
+    await response.json();
   } catch (error) {
     console.error("Błąd podczas zapisu emaila:", error);
-    return {
-      success: false,
-      message: "Nie udało się zapisać e-maila. Spróbuj ponownie później.",
-    };
   }
 };

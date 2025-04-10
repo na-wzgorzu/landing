@@ -13,16 +13,19 @@ const buttonVariants = cva("", {
   },
 });
 
-type Props = VariantProps<typeof buttonVariants>;
+type Props = { disabled?: boolean } & VariantProps<typeof buttonVariants>;
 
 export const ButtonUnderline = ({
   children,
   color,
+  disabled,
 }: PropsWithChildren<Props>) => {
   const styles = buttonVariants({ color });
   return (
     <div className="w-fit cursor-pointer">
-      <button className="uppercase cursor-pointer">{children}</button>
+      <button disabled={disabled} className="uppercase cursor-pointer">
+        {children}
+      </button>
       <div className="max-w-32 flex flex-col gap-1">
         <div className={`h-px ${styles} w-5/8 mr-auto`} />
         <div className={`h-px ${styles} w-5/8 ml-auto`} />
