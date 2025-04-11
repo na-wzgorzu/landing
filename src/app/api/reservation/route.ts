@@ -1,44 +1,50 @@
-import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
-export async function GET() {
+export async function POST(req: Request) {
+  const body = await req.json();
+  const { name, email, phone, message } = body;
+
+  if (!name || !email || !message)  {
+    return NextResponse.json({ error: 'Brakuje wymaganych danych' }, { status: 400 });
+  }
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
+
   try {
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 587,
-      secure: false,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
+    await transporter.sendMail({
+      from: `"Rezerwacja" <${process.env.EMAIL_USER}>`,
+      to: "na-wzgorzu@na-wzgorzu.pl",
+      bcc: "kontakt@developio.pl",
+      subject: 'Zapytanie o Rezerwację.',
+      html: `
+          <div style="font-family: Arial, sans-serif; background-color: #f6f6f6; padding: 20px;">
+            <div style="max-width: 600px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden;">
+              <div style="background-color: #146143; color: white; padding: 16px 24px;">
+                <h2 style="margin: 0; font-size: 20px;">Nowa rezerwacja</h2>
+              </div>
+              <div style="padding: 24px;">
+                <p style="margin: 0 0 12px;"><strong>Imię i nazwisko:</strong> ${name}</p>
+                <p style="margin: 0 0 12px;"><strong>Email:</strong> ${email}</p>
+                ${phone ? `<p style="margin: 0 0 12px;"><strong>Telefon:</strong> ${phone}</p>` : ""}
+                <p style="margin: 0 0 12px;"><strong>Wiadomość:</strong><br/> ${message}</p>
+              </div>
+            </div>
+          </div>
+      `,
     });
 
-    try {
-      const mailOptions = {
-        from: "na.wzgorzu.reservation@gmail.com",
-        to: "xxx005@gmail.com",
-        subject: "Wycena fromatek meblowych",
-        text: "Dzien dobry, bardzo prosze o przysłanie wycny formatek z płyty meblowej PE 101 white. Pozdrawiam",
-      };
-
-      transporter.sendMail(mailOptions, function (error, info) {
-        if (error) {
-          console.log("Error:", error);
-        } else {
-          console.log("Email sent: ", info.response);
-        }
-      });
-    } catch (error) {
-      console.log(error); //logs any error
-    }
-
-    return new NextResponse("Success", {
-      status: 200,
-    });
-  } catch (e) {
-    console.log("🚀 :42 e:", e);
-    return new NextResponse("Nie znaleziono pliku cennik.html", {
-      status: 404,
-    });
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error('[MAIL ERROR]', error);
+    return NextResponse.json({ error: 'Błąd podczas wysyłania wiadomości' }, { status: 500 });
   }
 }

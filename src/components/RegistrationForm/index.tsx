@@ -5,47 +5,67 @@ import {
 } from "@/components/RegistrationForm/tools";
 import { Input } from "@/components/ui/input";
 import React from "react";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Form from "next/form";
-import { DatePicker } from "@/components/DatePicker";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
-import dayjs from "dayjs";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { toast, Toaster } from "sonner";
 
 export const RegistrationForm = () => {
   const {
+    reset,
     register,
     handleSubmit,
-    control,
-    formState: { errors },
-    watch,
+    formState: { errors, isSubmitting },
   } = useForm<Reservation>({
     mode: "onBlur",
     resolver: zodResolver(reservationSchema),
+    defaultValues: {
+      email: "",
+      message: "",
+      name: "",
+      phone: "",
+    },
   });
-  console.log("🚀 :32 errors:", errors);
 
-  const onSubmit = (data: Reservation) => {
-    console.log("🚀 ~ data:", data);
+  const onSubmit = async (data: Reservation) => {
+    try {
+      const res = await fetch("/api/reservation", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        toast.success("Wiadomość została wysłana!");
+      } else {
+        toast.error("Nie udało się wysłać formularza.");
+      }
+    } catch (err) {
+      console.error("Błąd podczas wysyłania formularza:", err);
+      toast.error("Wystąpił błąd przy wysyłce. Spróbuj ponownie.");
+    } finally {
+      reset();
+    }
   };
 
   return (
     <div className="max-w-screen-md w-full mx-auto flex flex-col gap-6 px-4 py-6">
       <div>
-        <h2 className="font-mono text-4xl text-gray-700 border-b border-gray-300 pb-4">
-          Zarezerwuj swoje miejsce
+        <h2 className="font-mono text-balance text-3xl md:text-4xl text-gray-700 border-b border-gray-300 pb-4">
+          Formularz zapytania dotyczącego ośrodka, dostępności, warunków i
+          wstępnej rezerwacji
         </h2>
+
+        <p className="pt-4 leading-5 md:leading-6">
+          Informujemy, że Państwa dane będą przetwarzane przez naszą firmę w
+          celu identyfikacji zapytania, możliwości odpowiedzi na nie oraz
+          procesu ewentualnej rezerwacji. Państwa danych nikomu nie
+          przekazujemy.
+        </p>
       </div>
 
       <Form
@@ -60,146 +80,54 @@ export const RegistrationForm = () => {
         </LabelWrapper>
 
         <LabelWrapper>
-          <Label htmlFor="phone">Numer telefonu*</Label>
+          <Label htmlFor="phone">Numer telefonu</Label>
           <Input {...register("phone")} />
           <Error error={errors["phone"]?.message} />
         </LabelWrapper>
 
         <LabelWrapper>
-          <Label htmlFor="email">Adres email</Label>
+          <Label
+            htmlFor="email"
+            className="flex gap-2 flex-col items-start md:flex-row whitespace-nowrap flex-wrap"
+          >
+            <span>Adres email*</span>
+
+            <span className="text-sm text-gray-600">
+              (Prosimy dokładnie sprawdzić)
+            </span>
+          </Label>
           <Input {...register("email")} />
           <Error error={errors["email"]?.message} />
         </LabelWrapper>
 
-        <div className="flex gap-2 w-full">
-          <LabelWrapper>
-            <Label htmlFor="from">Przyjazd*</Label>
-            <Controller
-              control={control}
-              name="from"
-              defaultValue={new Date()}
-              render={({ field: { onChange, value } }) => (
-                <DatePicker
-                  value={value}
-                  onChange={onChange}
-                  fromDate={dayjs(value).toDate()}
-                />
-              )}
-            />
-            <Error error={errors["from"]?.message} />
-          </LabelWrapper>
-
-          <LabelWrapper>
-            <Label htmlFor="to">Wyjazd*</Label>
-            <Controller
-              control={control}
-              name="to"
-              defaultValue={new Date()}
-              render={({ field: { onChange, value } }) => (
-                <DatePicker
-                  value={value}
-                  onChange={onChange}
-                  fromDate={dayjs(watch("from")).toDate()}
-                />
-              )}
-            />
-            <Error error={errors["to"]?.message} />
-          </LabelWrapper>
-        </div>
-
-        <LabelWrapper>
-          <Label>Udogodnienia</Label>
-
-          <div className="flex gap-4">
-            <Controller
-              control={control}
-              name="withAnimal"
-              render={({ field: { onChange, value } }) => (
-                <div className="flex gap-2">
-                  <Checkbox
-                    defaultChecked={false}
-                    checked={value}
-                    onCheckedChange={onChange}
-                    id="withAnimal"
-                  />
-                  <Label htmlFor="withAnimal">zwierzęta</Label>
-                </div>
-              )}
-            />
-
-            <Controller
-              control={control}
-              name="withBreakfast"
-              render={({ field: { onChange, value } }) => (
-                <div className="flex gap-2">
-                  <Checkbox
-                    defaultChecked={false}
-                    checked={value}
-                    onCheckedChange={onChange}
-                    id="withBreakfast"
-                  />
-                  <Label htmlFor="withBreakfast">śniadanie</Label>
-                </div>
-              )}
-            />
-          </div>
-        </LabelWrapper>
-
-        <div className="flex gap-2 w-fit">
-          <LabelWrapper>
-            <Label>Ilość dorosłych</Label>
-            <Input
-              {...register("adultAmount")}
-              type="number"
-              defaultValue={1}
-            />
-          </LabelWrapper>
-
-          <LabelWrapper>
-            <Label>Ilość dzieci</Label>
-            <Input
-              {...register("childAmount")}
-              defaultValue={0}
-              type="number"
-            />
-          </LabelWrapper>
-        </div>
-
-        <LabelWrapper>
-          <Label>Wybierz typ noclegu</Label>
-          <Controller
-            control={control}
-            name="buildType"
-            render={({ field: { value, onChange } }) => (
-              <Select value={value} onValueChange={onChange}>
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectItem value="house">Domek</SelectItem>
-                    <SelectItem value="room">Pokój</SelectItem>
-                    <SelectItem value="apartment">Apartament</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
-            )}
-          />
-
-          <Error error={errors["buildType"]?.message} />
-        </LabelWrapper>
-
         <LabelWrapper>
           <Label>Dodatkowe informacje</Label>
+          <p className="text-sm leading-4 text-gray-600">
+            Prosimy o podanie daty planowanego przyjazdu i wyjazdu, typu noclegu
+            (domek, pokój), informacji dotyczących ilości osób dorosłych, dzieci
+            i ich wieku, zwierząt oraz rodzaju wyżywienia:
+          </p>
           <Textarea
             {...register("message")}
             placeholder="Napisz wiadomość..."
+            rows={8}
+            className="min-h-[150px]"
           />
           <Error error={errors["message"]?.message} />
         </LabelWrapper>
 
-        <Button variant="green">Wyślij</Button>
+        <Button variant={"green"} disabled={isSubmitting}>
+          {isSubmitting ? "Wysyłanie..." : "Wyślij"}
+        </Button>
+
+        <p className="text-red-500 font-semibold">
+          UWAGA! Jeżeli nie dostaliście Państwo odpowiedzi prosimy o sprawdzenie
+          czy e-mail nie trafił do spamu lub o kontakt telefoniczny. Odpisujemy
+          na wszystkie zapytania!
+        </p>
       </Form>
+
+      <Toaster richColors />
     </div>
   );
 };

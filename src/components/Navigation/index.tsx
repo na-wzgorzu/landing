@@ -13,7 +13,7 @@ const navLinks = [
   { href: "/gastronomia", label: "Gastronomia" },
   { href: "/okolica", label: "Okolica" },
   { href: "/cennik", label: "Cennik" },
-  { href: "/rezerwacja", label: "Rezerwuj" },
+  { href: "/rezerwacja", label: "Rezerwacja" },
   { href: "galeria", label: "Galeria" },
   { href: "/kontakt", label: "Kontakt" },
 ];
