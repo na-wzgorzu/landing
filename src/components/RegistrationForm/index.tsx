@@ -25,7 +25,8 @@ export const RegistrationForm = () => {
     defaultValues: {
       email: "",
       message: "",
-      name: "",
+      firstName: "",
+      lastName: "",
       phone: "",
     },
   });
@@ -73,11 +74,19 @@ export const RegistrationForm = () => {
         className="flex flex-col gap-4 w-full"
         onSubmit={handleSubmit(onSubmit)}
       >
+        <div className="flex flex-col md:flex-row gap-4">
         <LabelWrapper>
-          <Label htmlFor="name">Imię i nazwisko*</Label>
-          <Input {...register("name")} />
-          <Error error={errors["name"]?.message} />
+          <Label htmlFor="lastName">Nazwisko*</Label>
+          <Input {...register("lastName")} />
+          <Error error={errors["lastName"]?.message} />
+          </LabelWrapper>
+          
+          <LabelWrapper>
+          <Label htmlFor="firstName">Imię*</Label>
+          <Input {...register("firstName")} />
+          <Error error={errors["firstName"]?.message} />
         </LabelWrapper>
+        </div>
 
         <LabelWrapper>
           <Label htmlFor="phone">Numer telefonu</Label>

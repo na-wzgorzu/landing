@@ -4,7 +4,11 @@ const requiredValidationMessage = "Pole jest wymagane";
 const maxValidationMessage = "Za duża ilość znakówe";
 
 export const reservationSchema = z.object({
-  name: z
+  firstName: z
+    .string({ message: requiredValidationMessage })
+    .min(1, requiredValidationMessage)
+    .max(50, maxValidationMessage),
+  lastName: z
     .string({ message: requiredValidationMessage })
     .min(1, requiredValidationMessage)
     .max(50, maxValidationMessage),

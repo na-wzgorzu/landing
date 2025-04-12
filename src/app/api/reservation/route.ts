@@ -3,9 +3,9 @@ import nodemailer from 'nodemailer';
 
 export async function POST(req: Request) {
   const body = await req.json();
-  const { name, email, phone, message } = body;
+  const { lastName, firstName, email, phone, message } = body;
 
-  if (!name || !email || !message)  {
+  if (!lastName || !firstName || !email || !message)  {
     return NextResponse.json({ error: 'Brakuje wymaganych danych' }, { status: 400 });
   }
 
@@ -22,8 +22,7 @@ export async function POST(req: Request) {
   try {
     await transporter.sendMail({
       from: `"Rezerwacja" <${process.env.EMAIL_USER}>`,
-      to: "na-wzgorzu@na-wzgorzu.pl",
-      bcc: "kontakt@developio.pl",
+      to: "na-wzgorzu@na-wzgorzu.pl",      
       subject: 'Zapytanie o Rezerwację.',
       html: `
           <div style="font-family: Arial, sans-serif; background-color: #f6f6f6; padding: 20px;">
@@ -32,9 +31,10 @@ export async function POST(req: Request) {
                 <h2 style="margin: 0; font-size: 20px;">Nowa rezerwacja</h2>
               </div>
               <div style="padding: 24px;">
-                <p style="margin: 0 0 12px;"><strong>Imię i nazwisko:</strong> ${name}</p>
-                <p style="margin: 0 0 12px;"><strong>Email:</strong> ${email}</p>
+              <p style="margin: 0 0 12px;"><strong>Nazwisko:</strong> ${lastName}</p>
+              <p style="margin: 0 0 12px;"><strong>Imię:</strong> ${firstName}</p>
                 ${phone ? `<p style="margin: 0 0 12px;"><strong>Telefon:</strong> ${phone}</p>` : ""}
+                <p style="margin: 0 0 12px;"><strong>Email:</strong> ${email}</p>
                 <p style="margin: 0 0 12px;"><strong>Wiadomość:</strong><br/> ${message}</p>
               </div>
             </div>

@@ -20,7 +20,7 @@ const images = [
 
 export const Gastro = () => {
   const mealTimes = [
-    { name: "Śniadanie", time: "9:00", icon: Coffee },
+    { name: "Śniadanie", time: "9:00 - 10:00", icon: Coffee },
     { name: "Obiad", time: "14:00", icon: Soup },
     { name: "Obiadokolacja", time: "17:00", icon: Utensils },
     { name: "Kolacja", time: "19:00", icon: Cake },
@@ -35,7 +35,7 @@ export const Gastro = () => {
     "Tylko obiadokolacje (tylko dla domków)",
   ];
 
-  const dietaryOptions = ["Wegetariańskie", "Wegańskie", "Bezglutenowe"];
+  const dietaryOptions = ["Wegetariańskie (prosimy o informację - z rybami czy bez)", "Wegańskie", "Bezglutenowe (prosimy o informację czy dopuszczalne są śladowe ilości)"];
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -123,9 +123,7 @@ export const Gastro = () => {
                 </h3>
               </div>
               <p className="mb-4 text-gray-700">
-                W okresie od początku czerwca do połowy września sprzedajemy
-                pobyty z wyżywieniem. Poza sezonem w zależności od okresu
-                możliwe są inne opcje.
+              W okresie wakacyjnym sprzedajemy tylko pobyty z wyżywieniem (warianty wypisane poniżej). Poza sezonem w zależności od okresu możliwe są inne opcje.
               </p>
               <ul className="space-y-2">
                 {mealOptions.map((option, index) => (
@@ -156,7 +154,7 @@ export const Gastro = () => {
               <p className="text-gray-700">
                 Śniadania serwowane są częściowo na szwedzkim stole (kawa,
                 herbata, mleko, dżemy, płatki, sałatki, itp.) oraz na
-                przypisanych do domków/pokoi/apartamentów stolikach (danie
+                przypisanych do domków / pokoi stolikach (danie
                 ciepłe, półmiski wędlin i serów, bułeczki, chleb, masło).
               </p>
             </div>
