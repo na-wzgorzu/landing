@@ -4,13 +4,12 @@ import room1Img from "@/../public/gallery/apartamenty100.jpg";
 import room2Img from "@/../public/gallery/apartamenty101.jpg";
 import house2Img from "@/../public/gallery/build-1.jpg";
 import house3Img from "@/../public/gallery/domki106.jpg";
-// import room3Img from "@/../public/gallery/apartamenty104.jpg";
-// import room4Img from "@/../public/gallery/apartamenty105.jpg";
-
 import room01Img from "@/../public/gallery/hotel02.jpg";
 import room02Img from "@/../public/gallery/hotel03.jpg";
 import room03Img from "@/../public/gallery/hotel11.jpg";
 import room04Img from "@/../public/gallery/hotel07.jpg";
+import room10Img from "@/../public/gallery/hotel10.jpg";
+import room13Img from "@/../public/gallery/hotel13.jpg";
 
 export const houses: House[] = [
   {
@@ -245,19 +244,33 @@ export const accommodationList: Accommodation[] = [
       "Miejsce na ognisko",
     ],
   },
-
+  {
+    id: "5",
+    name: "Pokóje 3 osobowe z tarasem",
+    type: "pokoj",
+    image: room02Img,
+    images: [room02Img, room10Img, room01Img, room13Img],
+    description:
+      "Pokój trzyosobowy to komfortowe rozwiązanie dla rodzin z dzieckiem, grupy przyjaciół lub osób szukających przestronnego miejsca do wypoczynku. Pokoje dostępne są w dwóch wariantach – z tarasem lub bez – co pozwala dopasować wybór do indywidualnych preferencji. Budynek jest kameralny, a odległość od pokoju do wyjścia głównego to zaledwie kilka kroków. Dodatkowym atutem jest zagospodarowany teren wokół obiektu.",
+    capacity: "3",
+    bedrooms: 1,
+    size: 20,
+    price: 280,
+    features: ["Balkon", "Widok na jezioro", "Łazienka w pokoju", "Wi-Fi"],
+    amenities: [
+      "Pościel i ręczniki",
+      "Telewizor",
+      "Mała lodówka",
+      "Czajnik",
+      "Podstawowe naczynia",
+      "Wspólna kuchnia na piętrze",
+    ],
+  },
   {
     id: "4",
-    name: "Pokój 2 osobowy bez tarasu",
+    name: "Pokóje 2 osobowe bez tarasu",
     type: "pokoj",
     image: room01Img,
-    // images: [
-    //   "https://na-wzgorzu.pl/scripts/pokazRys.html?hotel02.jpg",
-    //   "https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=1000",
-    //   "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=1000",
-    //   "https://images.unsplash.com/photo-1552902019-ebcd97aa9aa0?q=80&w=1000",
-    //   "https://images.unsplash.com/photo-1631049552057-403cdb8f0658?q=80&w=1000",
-    // ],
     images: [room01Img, room01Img, room01Img],
     description:
       "Przytulny pokój dwuosobowy to idealna opcja dla par lub dwóch osób szukających spokojnego wypoczynku w kameralnym budynku, zaledwie kilkanaście metrów od wyjścia na świeże powietrze. Pokój o funkcjonalnym układzie mieści się w zakresie metrażu od 12 m² do 27 m² i został w pełni umeblowany oraz wyposażony w niezbędne udogodnienia.",
@@ -281,46 +294,10 @@ export const accommodationList: Accommodation[] = [
     ],
   },
   {
-    id: "5",
-    name: "Pokój 3 osobowy z tarasem",
-    type: "pokoj",
-    image: room02Img,
-    // images: [
-    //   "https://na-wzgorzu.pl/scripts/pokazRys.html?hotel03.jpg",
-    //   "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1000",
-    //   "https://images.unsplash.com/photo-1594130139005-3f0c0f0e7c5e?q=80&w=1000",
-    //   "https://images.unsplash.com/photo-1586105251261-72a756497a11?q=80&w=1000",
-    //   "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=1000",
-    // ],
-    images: [room02Img, room02Img, room02Img],
-    description:
-      "Pokój trzyosobowy to komfortowe rozwiązanie dla rodzin z dzieckiem, grupy przyjaciół lub osób szukających przestronnego miejsca do wypoczynku. Pokoje dostępne są w dwóch wariantach – z tarasem lub bez – co pozwala dopasować wybór do indywidualnych preferencji. Budynek jest kameralny, a odległość od pokoju do wyjścia głównego to zaledwie kilka kroków. Dodatkowym atutem jest zagospodarowany teren wokół obiektu.",
-    capacity: "3",
-    bedrooms: 1,
-    size: 20,
-    price: 280,
-    features: ["Balkon", "Widok na jezioro", "Łazienka w pokoju", "Wi-Fi"],
-    amenities: [
-      "Pościel i ręczniki",
-      "Telewizor",
-      "Mała lodówka",
-      "Czajnik",
-      "Podstawowe naczynia",
-      "Wspólna kuchnia na piętrze",
-    ],
-  },
-  {
     id: "6",
-    name: "Pokój 3 osobowy z bez tarasu",
+    name: "Pokóje 3 osobowe bez tarasu",
     type: "pokoj",
     image: room03Img,
-    // images: [
-    //   "https://na-wzgorzu.pl/scripts/pokazRys.html?hotel11.jpg",
-    //   "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1000",
-    //   "https://images.unsplash.com/photo-1594130139005-3f0c0f0e7c5e?q=80&w=1000",
-    //   "https://images.unsplash.com/photo-1586105251261-72a756497a11?q=80&w=1000",
-    //   "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=1000",
-    // ],
     images: [room03Img, room03Img, room03Img],
     description:
       "Pokój trzyosobowy to komfortowe rozwiązanie dla rodzin z dzieckiem, grupy przyjaciół lub osób szukających przestronnego miejsca do wypoczynku. Pokoje dostępne są w dwóch wariantach – z tarasem lub bez – co pozwala dopasować wybór do indywidualnych preferencji. Budynek jest kameralny, a odległość od pokoju do wyjścia głównego to zaledwie kilka kroków. Dodatkowym atutem jest zagospodarowany teren wokół obiektu.",
@@ -340,16 +317,9 @@ export const accommodationList: Accommodation[] = [
   },
   {
     id: "7",
-    name: "Pokój 4 osobowy bez tarasu",
+    name: "Pokóje 4 osobowe bez tarasu",
     type: "pokoj",
     image: room04Img,
-    // images: [
-    //   "https://na-wzgorzu.pl/scripts/pokazRys.html?hotel07.jpg",
-    //   "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=1000",
-    //   "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1000",
-    //   "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1000",
-    //   "https://images.unsplash.com/photo-1569152811536-fb47aced8409?q=80&w=1000",
-    // ],
     images: [room04Img, room04Img, room04Img, room04Img],
     description:
       "Apartament to przestronny lokal z aneksem kuchennym i osobną sypialnią. Idealny dla osób szukających większej niezależności i prywatności.\n\nApartament składa się z sypialni z łóżkiem małżeńskim, salonu z rozkładaną sofą, w pełni wyposażonego aneksu kuchennego oraz łazienki z prysznicem. Goście mają również dostęp do prywatnego tarasu.",

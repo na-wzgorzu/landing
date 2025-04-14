@@ -41,7 +41,6 @@ export const AccommodationDetails = ({ id }: Props) => {
     capacity,
     bedrooms,
     size,
-    price,
     features,
     amenities,
   } = accommodation;
@@ -52,7 +51,7 @@ export const AccommodationDetails = ({ id }: Props) => {
         {/* Breadcrumb and back button */}
         <div className="mb-6">
           <Link
-            href="/domki"
+            href={type === "domek" ? "/domki" : "/pokoje"}
             className="inline-flex items-center text-brand hover:underline"
           >
             <ArrowLeft size={16} className="mr-2" /> Wróć do listy noclegów
@@ -122,7 +121,7 @@ export const AccommodationDetails = ({ id }: Props) => {
                     <span>{size} m²</span>
                   </div>
                   <div className="flex items-center text-gray-600">
-                    <Coffee size={18} className="mr-2 text-brand" />
+                    <Coffee size={24} className="mr-2 text-brand" />
                     <span>Opcja z wyżywieniem</span>
                   </div>
                 </div>
@@ -143,15 +142,6 @@ export const AccommodationDetails = ({ id }: Props) => {
                 </div>
 
                 <div className="border-t border-gray-200 pt-4 mb-6">
-                  <div className="flex justify-between items-end mb-6">
-                    <div>
-                      <p className="text-sm text-gray-500">Cena za dobę</p>
-                      <p className="text-3xl font-bold text-brand">
-                        {price} zł
-                      </p>
-                    </div>
-                  </div>
-
                   <div className="flex flex-col gap-4">
                     <Link href="/rezerwacja">
                       <Button className="w-full bg-brand hover:bg-brand/90 py-6 text-base transition-all duration-300">

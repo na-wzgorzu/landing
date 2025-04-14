@@ -112,13 +112,7 @@ export const AccommodationList = ({ type }: Props) => {
                         )}
                       </div>
 
-                      <div className="mt-auto flex justify-between items-center">
-                        <div className="text-brand font-bold">
-                          od {accommodation.price} zł{" "}
-                          <span className="text-sm font-normal text-gray-500">
-                            /doba
-                          </span>
-                        </div>
+                      <div className="mt-auto flex justify-end items-center">
                         <Link href={`/domki/${accommodation.id}`}>
                           <Button
                             size="sm"

@@ -37,11 +37,11 @@ export const AccommodationGallery = ({
       </motion.div>
 
       {/* Thumbnail gallery */}
-      <div className="grid grid-cols-5 gap-2 mb-6">
+      <div className="grid grid-flow-col md:grid-cols-5 gap-2 mb-6">
         {images.map((image, index) => (
           <div
             key={index}
-            className={`rounded-lg overflow-hidden h-24 cursor-pointer transition-all duration-200 ${
+            className={`rounded-lg overflow-hidden sm:h-24 aspect-square sm:aspect-auto cursor-pointer transition-all duration-200 ${
               mainImage === index
                 ? "ring-2 ring-brand ring-offset-2"
                 : "opacity-80 hover:opacity-100"
