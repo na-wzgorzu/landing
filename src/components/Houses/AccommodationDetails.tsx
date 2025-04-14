@@ -67,7 +67,7 @@ export const AccommodationDetails = ({ id }: Props) => {
 
             {/* Description */}
             <Card className="mb-8">
-              <CardContent className="pt-6">
+              <CardContent>
                 <h2 className="text-xl font-bold mb-4">Opis</h2>
                 <p className="text-gray-600 whitespace-pre-line">
                   {description}
@@ -77,7 +77,7 @@ export const AccommodationDetails = ({ id }: Props) => {
 
             {/* Amenities */}
             <Card>
-              <CardContent className="pt-6">
+              <CardContent>
                 <h2 className="text-xl font-bold mb-4">Udogodnienia</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-3">
                   {amenities.map((amenity, index) => (
@@ -93,8 +93,8 @@ export const AccommodationDetails = ({ id }: Props) => {
 
           {/* Right column - Summary and booking */}
           <div>
-            <Card className="sticky top-6">
-              <CardContent className="pt-6">
+            <Card className="sticky top-20">
+              <CardContent>
                 <h1 className="text-2xl font-bold mb-2 text-gray-800">
                   {name}
                 </h1>
