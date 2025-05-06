@@ -35,7 +35,11 @@ export const Gastro = () => {
     "Tylko obiadokolacje (tylko dla domków)",
   ];
 
-  const dietaryOptions = ["Wegetariańskie (prosimy o informację - z rybami czy bez)", "Wegańskie", "Bezglutenowe (prosimy o informację czy dopuszczalne są śladowe ilości)"];
+  const dietaryOptions = [
+    "Wegetariańskie (prosimy o informację - z rybami czy bez)",
+    "Wegańskie",
+    "Bezglutenowe (prosimy o informację czy dopuszczalne są śladowe ilości)",
+  ];
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -123,7 +127,9 @@ export const Gastro = () => {
                 </h3>
               </div>
               <p className="mb-4 text-gray-700">
-              W okresie wakacyjnym sprzedajemy tylko pobyty z wyżywieniem (warianty wypisane poniżej). Poza sezonem w zależności od okresu możliwe są inne opcje.
+                W okresie wakacyjnym sprzedajemy tylko pobyty z wyżywieniem
+                (warianty wypisane poniżej). Poza sezonem w zależności od okresu
+                możliwe są inne opcje.
               </p>
               <ul className="space-y-2">
                 {mealOptions.map((option, index) => (
@@ -154,8 +160,8 @@ export const Gastro = () => {
               <p className="text-gray-700">
                 Śniadania serwowane są częściowo na szwedzkim stole (kawa,
                 herbata, mleko, dżemy, płatki, sałatki, itp.) oraz na
-                przypisanych do domków / pokoi stolikach (danie
-                ciepłe, półmiski wędlin i serów, bułeczki, chleb, masło).
+                przypisanych do domków / pokoi stolikach (danie ciepłe, półmiski
+                wędlin i serów, bułeczki, chleb, masło).
               </p>
             </div>
 
@@ -188,11 +194,7 @@ export const Gastro = () => {
           </div>
         </motion.div>
 
-        <GallerySection
-          images={images}
-          title="Galeria"
-          description="Zobacz, jak wygląda nasza jadalnia i sposób serwowania posiłków."
-        />
+        <GallerySection images={images} title="Galeria" />
 
         {/* Dietary Options */}
         <motion.div

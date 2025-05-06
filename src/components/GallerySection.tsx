@@ -7,8 +7,8 @@ import "yet-another-react-lightbox/styles.css";
 
 type Props = {
   title: string;
-  description: string;
   images: string[];
+  description?: string;
 };
 
 export const GallerySection = ({ description, images, title }: Props) => {
@@ -24,7 +24,7 @@ export const GallerySection = ({ description, images, title }: Props) => {
       <h2 className="text-2xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-3">
         {title}
       </h2>
-      <p className="text-gray-700 mb-6">{description}</p>
+      {description && <p className="text-gray-700 mb-6">{description}</p>}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {images.map((src, index) => (
