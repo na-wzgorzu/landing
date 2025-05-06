@@ -20,7 +20,6 @@ export interface Accommodation {
   capacity: string;
   bedrooms: number;
   size: number;
-  price: number;
-  features: string[];
+  features?: string[];
   amenities: string[];
 }

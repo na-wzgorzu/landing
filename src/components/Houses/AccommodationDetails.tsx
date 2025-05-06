@@ -41,7 +41,6 @@ export const AccommodationDetails = ({ id }: Props) => {
     capacity,
     bedrooms,
     size,
-    features,
     amenities,
   } = accommodation;
 
@@ -69,20 +68,24 @@ export const AccommodationDetails = ({ id }: Props) => {
             <Card className="mb-8">
               <CardContent>
                 <h2 className="text-xl font-bold mb-4">Opis</h2>
-                <p className="text-gray-600 whitespace-pre-line">
+                <p className="text-gray-600 whitespace-pre-line mb-2">
                   {description}
                 </p>
+
+                <strong>Na wyposażeniu pokoi nie ma ręczników.</strong>
               </CardContent>
             </Card>
 
             {/* Amenities */}
             <Card>
               <CardContent>
-                <h2 className="text-xl font-bold mb-4">Udogodnienia</h2>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-3">
+                <h2 className="text-xl font-bold mb-4">Wyposażenie</h2>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-3 gap-x-2">
                   {amenities.map((amenity, index) => (
                     <div key={index} className="flex items-center">
-                      <Check size={16} className="text-brand mr-2" />
+                      <div>
+                        <Check size={16} className="text-brand mr-2" />
+                      </div>
                       <span className="text-gray-600">{amenity}</span>
                     </div>
                   ))}
@@ -108,7 +111,7 @@ export const AccommodationDetails = ({ id }: Props) => {
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="flex items-center text-gray-600">
                     <Users size={18} className="mr-2 text-brand" />
-                    <span>{capacity} osób</span>
+                    <span>{capacity} osoby</span>
                   </div>
                   <div className="flex items-center text-gray-600">
                     <BedDouble size={18} className="mr-2 text-brand" />
@@ -122,22 +125,7 @@ export const AccommodationDetails = ({ id }: Props) => {
                   </div>
                   <div className="flex items-center text-gray-600">
                     <Coffee size={24} className="mr-2 text-brand" />
-                    <span>Opcja z wyżywieniem</span>
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <h3 className="font-bold mb-2">Wyposażenie:</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {features.map((feature, index) => (
-                      <Badge
-                        key={index}
-                        variant="outline"
-                        className="bg-gray-100"
-                      >
-                        {feature}
-                      </Badge>
-                    ))}
+                    <span>Pobyt z wyżywieniem</span>
                   </div>
                 </div>
 
