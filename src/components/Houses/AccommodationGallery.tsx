@@ -23,7 +23,7 @@ export const AccommodationGallery = ({
     <>
       {/* Main image */}
       <motion.div
-        className="rounded-xl overflow-hidden mb-4 h-96"
+        className="rounded-xl overflow-hidden mb-4 h-96 md:h-[500px]"
         key={mainImage}
         initial={{ opacity: 0.8 }}
         animate={{ opacity: 1 }}
@@ -37,11 +37,11 @@ export const AccommodationGallery = ({
       </motion.div>
 
       {/* Thumbnail gallery */}
-      <div className="grid grid-flow-col md:grid-cols-5 gap-2 mb-6">
+      <div className="flex flex-wrap gap-2 mb-6">
         {images.map((image, index) => (
           <div
             key={index}
-            className={`rounded-lg overflow-hidden sm:h-24 aspect-square sm:aspect-auto cursor-pointer transition-all duration-200 ${
+            className={`w-24 sm:h-24 aspect-square cursor-pointer rounded-lg overflow-hidden transition-all duration-200 ${
               mainImage === index
                 ? "ring-2 ring-brand ring-offset-2"
                 : "opacity-80 hover:opacity-100"

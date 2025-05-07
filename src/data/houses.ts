@@ -2,8 +2,6 @@ import { Accommodation, House } from "@/components/Houses/types";
 import house1Img from "@/assets/hero.jpg";
 import room1Img from "@/../public/gallery/apartamenty100.jpg";
 import room2Img from "@/../public/gallery/apartamenty101.jpg";
-import house2Img from "@/../public/gallery/build-1.jpg";
-import house3Img from "@/../public/gallery/domki106.jpg";
 // 2rooms-bt
 import room21Img from "@/../public/2-room-bt/pokój_05.jpg";
 import room22Img from "@/../public/2-room-bt/pokój_06.jpg";
@@ -21,6 +19,28 @@ import room36Img from "@/../public/3-room-t/pokój15.jpg";
 // 4rooms-bt
 import room41Img from "@/../public/4-room-bt/pokój_10.jpeg";
 import room42Img from "@/../public/4-room-bt/pokój_18.jpeg";
+// 2-house
+import house21Img from "@/../public/2-house/domki1.jpg";
+import house22Img from "@/../public/2-house/domki2.jpg";
+// 4-house
+import house41Img from "@/../public/4-house/apartamenty1.jpg";
+import house42Img from "@/../public/4-house/apartamenty2.jpg";
+import house43Img from "@/../public/4-house/apartamenty3.jpg";
+import house44Img from "@/../public/4-house/apartamenty4.jpg";
+import house45Img from "@/../public/4-house/apartamenty04.jpg";
+import house46Img from "@/../public/4-house/apartamenty5.jpg";
+import house47Img from "@/../public/4-house/apartamenty6.jpg";
+import house48Img from "@/../public/4-house/apartamenty7.jpg";
+import house49Img from "@/../public/4-house/apartamenty8.jpg";
+// 5-house
+import house51Img from "@/../public/5-house/domki_nad_jeziorem1.jpg";
+import house52Img from "@/../public/5-house/domki_nad_jeziorem2.jpg";
+import house53Img from "@/../public/5-house/domki_nad_jeziorem3.jpg";
+import house54Img from "@/../public/5-house/domki_nad_jeziorem4.jpg";
+import house55Img from "@/../public/5-house/domki_nad_jeziorem5.jpg";
+import house56Img from "@/../public/5-house/domki_nad_jeziorem6.jpg";
+import house57Img from "@/../public/5-house/domki_nad_jeziorem7.jpg";
+import house58Img from "@/../public/5-house/domki_nad_jeziorem8.jpg";
 
 export const houses: House[] = [
   {
@@ -56,36 +76,6 @@ export const houses: House[] = [
       "wifi",
       "bigBed",
       "bath",
-      "dryer",
-      "tv",
-      "kettle",
-      "parking",
-      "animal",
-      "breakfast",
-      "playground",
-    ],
-  },
-];
-
-export const apartments: House[] = [
-  {
-    name: "Pokoje",
-    image: house1Img,
-    description: `
-      Przytulne pokoje o powierzchni od 12 m² do 27 m². </br>
-      <strong>- pokoje 2-osobowe bez tarasu</br></strong>
-      <strong>- pokoje 3-osobowe z tarasem oraz bez tarasu</br></strong>
-      <strong>- pokoje 4-osobowe bez tarasu</br></br></strong>
-      Wnętrze obejmuje salon z rozkładaną wersalką, aneks kuchenny oraz łazienkę.
-      Położony w drugiej linii od jeziora zapewnia bliskość natury i kameralną atmosferę
-      `,
-    price: 255,
-    size: "12 - 27m²",
-    guests: "2-4",
-    amenities: [
-      "wifi",
-      "bigBed",
-      "shower",
       "dryer",
       "tv",
       "kettle",
@@ -145,34 +135,60 @@ export const rooms = [
 export const accommodationList: Accommodation[] = [
   {
     id: "1",
-    name: "Domek parterowy 2-3 osobowy",
+    name: "Domek parterowy 5-7 osobowy",
     type: "domek",
-    image: house3Img,
-    images: [house3Img, house2Img, house1Img],
+    image: house51Img,
+    images: [
+      house51Img,
+      house52Img,
+      house53Img,
+      house54Img,
+      house55Img,
+      house56Img,
+      house57Img,
+      house58Img,
+    ],
     description:
-      "Przytulny domek dla dwóch osób o powierzchni 25 m². Wnętrze obejmuje salon z rozkładaną wersalką, aneks kuchenny oraz łazienkę. Położony w drugiej linii od jeziora zapewnia bliskość natury i kameralną atmosferę",
-    capacity: "2-3",
-    bedrooms: 2,
-    size: 25,
-    features: ["Widok na jezioro", "Kominek", "Taras", "Parking", "Wi-Fi"],
+      "Przytulny domek dla dwóch osób o powierzchni 45 m². Wnętrze obejmuje salon z rozkładaną wersalką, aneks kuchenny oraz łazienkę. Położony w drugiej linii od jeziora zapewnia bliskość natury i kameralną atmosferę",
+    capacity: "5-7",
+    bedrooms: 3,
+    size: 45,
+    features: [
+      "Duży taras",
+      "Grill",
+      "Dwie łazienki",
+      "Blisko plaży",
+      "Parking",
+    ],
     amenities: [
       "Pełne wyposażenie kuchni",
-      "Prysznic",
-      "Suszarka do włosów",
+      "Pościel i ręczniki",
       "Telewizor",
       "Lodówka",
       "Czajnik",
       "Kuchenka",
+      "Zmywarka",
       "Grill",
-      "Plac zabaw",
+      "Meble ogrodowe",
+      "Miejsce na ognisko",
     ],
   },
   {
     id: "2",
     name: "Domek parterowy 4-6 osobowy PREMIUM",
     type: "domek",
-    image: house2Img,
-    images: [house2Img, house1Img, house2Img],
+    image: house41Img,
+    images: [
+      house41Img,
+      house42Img,
+      house43Img,
+      house44Img,
+      house45Img,
+      house46Img,
+      house47Img,
+      house48Img,
+      house49Img,
+    ],
     description:
       "Przytulny domek dla dwóch osób o powierzchni 45 m². Wnętrze obejmuje salon z rozkładaną wersalką, aneks kuchenny oraz łazienkę. Położony w drugiej linii od jeziora zapewnia bliskość natury i kameralną atmosferę",
     capacity: "4-6",
@@ -200,33 +216,26 @@ export const accommodationList: Accommodation[] = [
   },
   {
     id: "3",
-    name: "Domek parterowy 5-7 osobowy",
+    name: "Domek parterowy 2-3 osobowy",
     type: "domek",
-    image: house1Img,
-    images: [house1Img, house1Img, house1Img],
+    image: house21Img,
+    images: [house21Img, house22Img],
     description:
-      "Przytulny domek dla dwóch osób o powierzchni 45 m². Wnętrze obejmuje salon z rozkładaną wersalką, aneks kuchenny oraz łazienkę. Położony w drugiej linii od jeziora zapewnia bliskość natury i kameralną atmosferę",
-    capacity: "5-7",
-    bedrooms: 3,
-    size: 45,
-    features: [
-      "Duży taras",
-      "Grill",
-      "Dwie łazienki",
-      "Blisko plaży",
-      "Parking",
-    ],
+      "Przytulny domek dla dwóch osób o powierzchni 25 m². Wnętrze obejmuje salon z rozkładaną wersalką, aneks kuchenny oraz łazienkę. Położony w drugiej linii od jeziora zapewnia bliskość natury i kameralną atmosferę",
+    capacity: "2-3",
+    bedrooms: 2,
+    size: 25,
+    features: ["Widok na jezioro", "Kominek", "Taras", "Parking", "Wi-Fi"],
     amenities: [
       "Pełne wyposażenie kuchni",
-      "Pościel i ręczniki",
+      "Prysznic",
+      "Suszarka do włosów",
       "Telewizor",
       "Lodówka",
       "Czajnik",
       "Kuchenka",
-      "Zmywarka",
       "Grill",
-      "Meble ogrodowe",
-      "Miejsce na ognisko",
+      "Plac zabaw",
     ],
   },
   // done
