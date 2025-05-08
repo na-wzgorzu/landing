@@ -4,12 +4,20 @@ import React from "react";
 
 export default function Houses() {
   return (
-    <div className="w-full flex flex-col items-center gap-4 bg-gray-50">
+    <div className="w-full flex flex-col items-center bg-gray-50">
       {/* <HousesPage houses={houses} /> */}
       <AccommodationList
         type="pokoj"
-        descriptionComponent={<DescriptionComponent />}
+        descriptionComponent={
+          <p className="text-lg text-gray-600 mb-4 text-center">
+            Do dyspozycji Gości oddajemy trzynaście pokoi w budynku głównym
+          </p>
+        }
       />
+
+      <div className="min-h-screen max-w-screen-lg px-4 sm:px-6 lg:px-8">
+        <DescriptionComponent />
+      </div>
     </div>
   );
 }
@@ -17,11 +25,10 @@ export default function Houses() {
 const DescriptionComponent = () => {
   return (
     <div className="mb-8 flex flex-col gap-8">
+      <div className="border-b-2 border-gray-300 rounded-full" />
+
       <div className="bg-white rounded-lg shadow-md p-4 border border-gray-200 w-full flex flex-col gap-4">
-        <p className="text-lg text-gray-600">
-          Do dyspozycji Gości oddajemy trzynaście pokoi w budynku głównym
-        </p>
-        <ul className="space-y-2 pl-3">
+        {/* <ul className="space-y-2 pl-3">
           <li className="flex items-center">
             <span className="h-2 w-2 rounded-full bg-brand mr-2"></span>
             <span className="text-gray-700">3 os. z tarasem</span>
@@ -38,7 +45,7 @@ const DescriptionComponent = () => {
             <span className="h-2 w-2 rounded-full bg-brand mr-2"></span>
             <span className="text-gray-700">4 os. bez tarasu</span>
           </li>
-        </ul>
+        </ul> */}
 
         <div className="flex md:flex-row flex-col w-full gap-4">
           <div className="md:w-1/2 w-full">
@@ -76,8 +83,6 @@ const DescriptionComponent = () => {
         className="w-full h-full min-h-64 object-cover rounded-xl"
         loading="lazy"
       />
-
-      <div className="border-b-2 border-gray-300 rounded-full" />
     </div>
   );
 };

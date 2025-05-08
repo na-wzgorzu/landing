@@ -135,7 +135,7 @@ export const rooms = [
 export const accommodationList: Accommodation[] = [
   {
     id: "1",
-    name: "Domek parterowy 5-7 osobowy",
+    name: "DOMIKI PIĘTROWE 5-7 osobowe",
     type: "domek",
     image: house51Img,
     images: [
@@ -175,7 +175,7 @@ export const accommodationList: Accommodation[] = [
   },
   {
     id: "2",
-    name: "Domek parterowy 4-6 osobowy PREMIUM",
+    name: "DOMKI PARTEROWE APARTAMENTY 4-6 osobowe",
     type: "domek",
     image: house41Img,
     images: [
@@ -216,7 +216,7 @@ export const accommodationList: Accommodation[] = [
   },
   {
     id: "3",
-    name: "Domek parterowy 2-3 osobowy",
+    name: "DOMKI PARTEROWE 2-3 osobowe",
     type: "domek",
     image: house21Img,
     images: [house21Img, house22Img],
@@ -243,8 +243,8 @@ export const accommodationList: Accommodation[] = [
     id: "5",
     name: "Pokoje 3 os. z tarasami",
     type: "pokoj",
-    image: room36Img,
-    images: [room36Img, room34Img, room35Img, room33Img],
+    image: room34Img,
+    images: [room34Img, room36Img, room35Img, room33Img],
     description:
       "Mają powierzchnię około 20 m2 (pokój, przedpokój z szafą i łazienka) oraz taras 7 m2. Są umeblowane i wyposażone w łazienkę (prysznic, toaleta, umywalka), małą lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna), pościel, moskitiery w oknach. Mamy trzy takie pokoje.",
     capacity: "3",

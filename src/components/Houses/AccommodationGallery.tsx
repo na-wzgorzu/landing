@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 interface AccommodationGalleryProps {
   images: StaticImageData[];
@@ -13,30 +15,54 @@ export const AccommodationGallery = ({
   name,
 }: AccommodationGalleryProps) => {
   const [mainImage, setMainImage] = useState(0);
+  const [aspectRatio, setAspectRatio] = useState<number | null>(null);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
-  // Handler for when a thumbnail is clicked
   const handleThumbnailClick = (index: number) => {
     setMainImage(index);
+    setAspectRatio(null);
   };
+
+  const isUnusualAspect =
+    aspectRatio !== null && (aspectRatio > 2 || aspectRatio < 0.8);
+
+  const imageClass = isUnusualAspect
+    ? "object-contain z-10 relative"
+    : "object-cover z-10 relative";
 
   return (
     <>
-      {/* Main image */}
+      {/* Main image with blurred background */}
       <motion.div
-        className="rounded-xl overflow-hidden mb-4 h-96 md:h-[500px]"
+        className="relative w-full max-h-[500px] aspect-video mx-auto rounded-xl overflow-hidden mb-4 cursor-pointer"
         key={mainImage}
         initial={{ opacity: 0.8 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
+        onClick={() => setIsLightboxOpen(true)}
       >
+        {isUnusualAspect && (
+          <Image
+            src={images[mainImage]}
+            alt={`${name} tło`}
+            fill
+            className="object-cover blur-xl scale-110 absolute"
+          />
+        )}
+
         <Image
           src={images[mainImage]}
           alt={name}
-          className="w-full h-full object-cover"
+          fill
+          className={imageClass}
+          onLoadingComplete={(img) => {
+            const ratio = img.naturalWidth / img.naturalHeight;
+            setAspectRatio(ratio);
+          }}
         />
       </motion.div>
 
-      {/* Thumbnail gallery */}
+      {/* Thumbnails */}
       <div className="flex flex-wrap gap-2 mb-6">
         {images.map((image, index) => (
           <div
@@ -56,6 +82,14 @@ export const AccommodationGallery = ({
           </div>
         ))}
       </div>
+
+      {/* Lightbox */}
+      <Lightbox
+        open={isLightboxOpen}
+        close={() => setIsLightboxOpen(false)}
+        slides={images.map((img) => ({ src: img.src }))}
+        index={mainImage}
+      />
     </>
   );
 };
