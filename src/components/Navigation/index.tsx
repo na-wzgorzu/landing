@@ -6,7 +6,7 @@ import React from "react";
 
 export const Navigation = () => {
   return (
-    <header className="sticky z-2 top-0 inset-x-0 flex h-16 w-full shrink-0 items-center justify-between flex-row-reverse lg:flex-row px-4 bg-brand lg:text-white shadow-md">
+    <header className="sticky z-[1000] top-0 inset-x-0 flex h-16 w-full shrink-0 items-center justify-between flex-row-reverse lg:flex-row px-4 bg-brand lg:text-white shadow-md">
       <MobileNav />
 
       <Link href="/" className="mr-6 flex" prefetch={false}>

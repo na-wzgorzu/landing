@@ -27,8 +27,8 @@ export const AccommodationGallery = ({
     aspectRatio !== null && (aspectRatio > 2 || aspectRatio < 0.8);
 
   const imageClass = isUnusualAspect
-    ? "object-contain z-10 relative"
-    : "object-cover z-10 relative";
+    ? "object-contain z-1 relative"
+    : "object-cover z-1 relative";
 
   return (
     <>
