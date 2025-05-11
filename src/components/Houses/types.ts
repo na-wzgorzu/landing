@@ -18,7 +18,7 @@ export interface Accommodation {
   images: StaticImageData[];
   description: string;
   capacity: string;
-  bedrooms: number;
+  bedrooms: number | string;
   size: number;
   features?: string[];
   amenities: string[];

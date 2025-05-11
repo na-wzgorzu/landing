@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { accommodationList } from "@/data/houses";
 import Link from "next/link";
 import Image from "next/image";
+import { getBedroomLabel } from "@/components/Houses/tools";
 
 type Props = {
   type: "domek" | "pokoj";
@@ -61,16 +62,14 @@ export const AccommodationList = ({ type, descriptionComponent }: Props) => {
                       <div className="flex items-center text-gray-600">
                         <Users size={16} className="mr-2" />
                         <span className="text-sm">
-                          {accommodation.capacity} osoby
+                          {accommodation.capacity}{" "}
+                          {type === "domek" ? "osób" : "osoby"}
                         </span>
                       </div>
                       <div className="flex items-center text-gray-600">
                         <BedDouble size={16} className="mr-2" />
                         <span className="text-sm">
-                          {accommodation.bedrooms}{" "}
-                          {accommodation.bedrooms === 1
-                            ? "sypialnia"
-                            : "sypialnie"}
+                          {getBedroomLabel(accommodation.bedrooms)}
                         </span>
                       </div>
                       <div className="flex items-center text-gray-600">

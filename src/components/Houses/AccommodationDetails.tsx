@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { accommodationList } from "@/data/houses";
 import Link from "next/link";
 import { AccommodationGallery } from "@/components/Houses/AccommodationGallery";
+import { getBedroomLabel } from "@/components/Houses/tools";
 
 type Props = {
   id: string;
@@ -43,6 +44,8 @@ export const AccommodationDetails = ({ id }: Props) => {
     size,
     amenities,
   } = accommodation;
+
+  const bedroomLabel = getBedroomLabel(bedrooms);
 
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-4 sm:px-6 lg:px-8">
@@ -111,13 +114,13 @@ export const AccommodationDetails = ({ id }: Props) => {
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="flex items-center text-gray-600">
                     <Users size={18} className="mr-2 text-brand" />
-                    <span>{capacity} osoby</span>
+                    <span>
+                      {capacity} {type === "domek" ? "osób" : "osoby"}
+                    </span>
                   </div>
                   <div className="flex items-center text-gray-600">
                     <BedDouble size={18} className="mr-2 text-brand" />
-                    <span>
-                      {bedrooms} {bedrooms === 1 ? "sypialnia" : "sypialnie"}
-                    </span>
+                    <span>{bedroomLabel}</span>
                   </div>
                   <div className="flex items-center text-gray-600">
                     <Maximize size={18} className="mr-2 text-brand" />

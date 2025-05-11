@@ -29,3 +29,13 @@ export const amenitiesMap: Record<
   shower: { name: "Prysznicem", icon: <ShowerHead />, header: "Łazienka z" },
   bath: { name: "Wanną", icon: <Bath />, header: "Łazienka z" },
 };
+
+export function getBedroomLabel(bedrooms: string | number): string {
+  if (typeof bedrooms === "number") {
+    console.log("🚀 :21 bedrooms:", bedrooms);
+
+    return bedrooms === 1 ? "sypialnia" : "sypialnie";
+  }
+
+  return String(bedrooms);
+}
