@@ -25,7 +25,7 @@ export default function Contact() {
               <MapPin className="size-6" />
               <div>
                 <p className="font-medium">
-                  Ośrodek wypoczynkowy {'"Na Wzgórzu"'}
+                  Ośrodek Wypoczynkowy {'"Na Wzgórzu"'}
                 </p>
                 <p>Gaj-Grzmięca 30a 87-312 Pokrzydowo</p>
               </div>
