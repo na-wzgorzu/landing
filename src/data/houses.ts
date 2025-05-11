@@ -22,16 +22,18 @@ import room42Img from "@/../public/4-room-bt/pokój_18.jpeg";
 // 2-house
 import house21Img from "@/../public/2-house/domki1.jpg";
 import house22Img from "@/../public/2-house/domki2.jpg";
+import house23Img from "@/../public/2-house/domki3.jpg";
 // 4-house
 import house41Img from "@/../public/4-house/apartamenty1.jpg";
 import house42Img from "@/../public/4-house/apartamenty2.jpg";
 import house43Img from "@/../public/4-house/apartamenty3.jpg";
 import house44Img from "@/../public/4-house/apartamenty4.jpg";
-import house45Img from "@/../public/4-house/apartamenty04.jpg";
-import house46Img from "@/../public/4-house/apartamenty5.jpg";
-import house47Img from "@/../public/4-house/apartamenty6.jpg";
-import house48Img from "@/../public/4-house/apartamenty7.jpg";
-import house49Img from "@/../public/4-house/apartamenty8.jpg";
+import house45Img from "@/../public/4-house/apartamenty5.jpg";
+import house46Img from "@/../public/4-house/apartamenty6.jpg";
+import house47Img from "@/../public/4-house/apartamenty7.jpg";
+import house48Img from "@/../public/4-house/apartamenty8.jpg";
+import house49Img from "@/../public/4-house/apartamenty9.jpg";
+import house410Img from "@/../public/4-house/apartamenty10.jpg";
 // 5-house
 import house51Img from "@/../public/5-house/domki_nad_jeziorem1.jpg";
 import house52Img from "@/../public/5-house/domki_nad_jeziorem2.jpg";
@@ -188,6 +190,7 @@ export const accommodationList: Accommodation[] = [
       house47Img,
       house48Img,
       house49Img,
+      house410Img,
     ],
     description:
       "Przytulny domek dla dwóch osób o powierzchni 45 m². Wnętrze obejmuje salon z rozkładaną wersalką, aneks kuchenny oraz łazienkę. Położony w drugiej linii od jeziora zapewnia bliskość natury i kameralną atmosferę",
@@ -219,7 +222,7 @@ export const accommodationList: Accommodation[] = [
     name: "DOMKI PARTEROWE 2-3 osobowe",
     type: "domek",
     image: house21Img,
-    images: [house21Img, house22Img],
+    images: [house21Img, house22Img, house23Img],
     description:
       "Przytulny domek dla dwóch osób o powierzchni 25 m². Wnętrze obejmuje salon z rozkładaną wersalką, aneks kuchenny oraz łazienkę. Położony w drugiej linii od jeziora zapewnia bliskość natury i kameralną atmosferę",
     capacity: "2-3",
@@ -241,7 +244,7 @@ export const accommodationList: Accommodation[] = [
   // done
   {
     id: "5",
-    name: "Pokoje 3 os. z tarasami",
+    name: "Pokoje 3 osobowe z tarasami",
     type: "pokoj",
     image: room34Img,
     images: [room34Img, room36Img, room35Img, room33Img],
@@ -264,7 +267,7 @@ export const accommodationList: Accommodation[] = [
   // Rooms
   {
     id: "4",
-    name: "Pokoje 2 os. bez tarasów",
+    name: "Pokoje 2 osobowe bez tarasów",
     type: "pokoj",
     image: room24Img,
     images: [room24Img, room23Img, room22Img, room21Img, room25Img],
@@ -306,7 +309,7 @@ export const accommodationList: Accommodation[] = [
   },
   {
     id: "7",
-    name: "Pokoje 4 os. bez tarasów",
+    name: "Pokoje 4 osobowe bez tarasów",
     type: "pokoj",
     image: room41Img,
     images: [room41Img, room42Img],

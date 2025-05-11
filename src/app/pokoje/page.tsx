@@ -28,25 +28,6 @@ const DescriptionComponent = () => {
       <div className="border-b-2 border-gray-300 rounded-full" />
 
       <div className="bg-white rounded-lg shadow-md p-4 border border-gray-200 w-full flex flex-col gap-4">
-        {/* <ul className="space-y-2 pl-3">
-          <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-brand mr-2"></span>
-            <span className="text-gray-700">3 os. z tarasem</span>
-          </li>
-          <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-brand mr-2"></span>
-            <span className="text-gray-700">2 os. bez tarasu</span>
-          </li>
-          <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-brand mr-2"></span>
-            <span className="text-gray-700">3 os. bez tarasu</span>
-          </li>
-          <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-brand mr-2"></span>
-            <span className="text-gray-700">4 os. bez tarasu</span>
-          </li>
-        </ul> */}
-
         <div className="flex md:flex-row flex-col w-full gap-4">
           <div className="md:w-1/2 w-full">
             <img
@@ -74,6 +55,11 @@ const DescriptionComponent = () => {
           oraz dostęp do internetu Wi-Fi. Odległość z pokoi do jeziora to około
           250 metrów, plac zabaw jest oddalony o 50 metrów, podobnie jak parking
           (na rozpakowanie można podjechać samochodem bliżej wejścia).
+        </p>
+
+        <p className="text-gray-600">
+          Mieszkając w pokojach, można grillować na terenie ośrodka – na
+          przykład przy altankach lub w wiacie grillowej.
         </p>
       </div>
 

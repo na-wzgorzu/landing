@@ -7,6 +7,6 @@ export const navLinks = [
   { href: "/okolica", label: "Okolica" },
   { href: "/cennik", label: "Cennik" },
   { href: "/rezerwacja", label: "Rezerwacja" },
-  { href: "galeria", label: "Galeria" },
+  { href: "/galeria", label: "Galeria" },
   { href: "/kontakt", label: "Kontakt" },
 ];
