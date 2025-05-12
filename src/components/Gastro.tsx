@@ -16,6 +16,9 @@ const images = [
   "/gallery/wyzywienie01.jpg",
   "/gallery/wyzywienie02.jpg",
   "/gallery/wyzywienie03.jpg",
+  "/gallery/gastronomia4.jpg",
+  "/gallery/gastronomia5.jpg",
+  "/gallery/gastronomia6.jpg",
 ];
 
 export const Gastro = () => {

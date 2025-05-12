@@ -55,9 +55,6 @@ const DescriptionComponent = () => {
           oraz dostęp do internetu Wi-Fi. Odległość z pokoi do jeziora to około
           250 metrów, plac zabaw jest oddalony o 50 metrów, podobnie jak parking
           (na rozpakowanie można podjechać samochodem bliżej wejścia).
-        </p>
-
-        <p className="text-gray-600">
           Mieszkając w pokojach, można grillować na terenie ośrodka – na
           przykład przy altankach lub w wiacie grillowej.
         </p>

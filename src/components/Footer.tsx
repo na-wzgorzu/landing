@@ -22,11 +22,12 @@ export const Footer = () => {
       </div>
 
       <div className="flex flex-col gap-2">
-        <Link href="#">O nas</Link>
-        <Link href="#">Domki</Link>
-        <Link href="#">Atrakcje</Link>
-        <Link href="#">Galeria</Link>
-        <Link href="#">Kontakt</Link>
+        <Link href="/o-nas">O nas</Link>
+        <Link href="/domki">Domki</Link>
+        <Link href="/pokoje">Pokoje</Link>
+        <Link href="/cennik">Cennik</Link>
+        <Link href="/rezerwacja">Rezerwacja</Link>
+        <Link href="/kontakt">Kontakt</Link>
       </div>
 
       <div className="md:hidden w-[80%]">

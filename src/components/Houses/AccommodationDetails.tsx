@@ -75,7 +75,10 @@ export const AccommodationDetails = ({ id }: Props) => {
                   {description}
                 </p>
 
-                <strong>Na wyposażeniu pokoi nie ma ręczników.</strong>
+                <strong>
+                  Na wyposażeniu {type === "domek" ? "domków" : "pokoi"} nie ma
+                  ręczników.
+                </strong>
               </CardContent>
             </Card>
 
