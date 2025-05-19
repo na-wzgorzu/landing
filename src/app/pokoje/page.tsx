@@ -25,7 +25,7 @@ export default function Houses() {
 const DescriptionComponent = () => {
   return (
     <div className="mb-8 flex flex-col gap-8">
-      <div className="border-b-2 border-gray-300 rounded-full" />
+      {/* <div className="border-b-2 border-gray-300 rounded-full" /> */}
 
       <div className="bg-white rounded-lg shadow-md p-4 border border-gray-200 w-full flex flex-col gap-4">
         <div className="flex md:flex-row flex-col w-full gap-4">
