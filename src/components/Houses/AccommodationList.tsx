@@ -19,9 +19,9 @@ export const AccommodationList = ({ type, descriptionComponent }: Props) => {
   return (
     <div className="min-h-screen max-w-screen-lg py-8 pb-6 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-4 text-brand">
+        <h2 className="text-4xl font-bold text-center mb-4 text-brand">
           {typeText}
-        </h1>
+        </h2>
 
         {descriptionComponent}
 

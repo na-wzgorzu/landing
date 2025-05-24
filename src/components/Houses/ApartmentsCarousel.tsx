@@ -2,7 +2,7 @@ import { House } from "@/assets/House";
 import { Carousel } from "@/components/Carousel";
 import { HouseCard } from "@/components/Houses/HouseCard";
 import { CarouselItem } from "@/components/ui/carousel";
-import { rooms } from "@/data/houses";
+import { accommodationList } from "@/data/houses";
 
 export function ApartmentsCarousel() {
   return (
@@ -12,12 +12,18 @@ export function ApartmentsCarousel() {
           <House />
         </div>
 
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-brand">
+          Pokoje
+        </h2>
+
         <Carousel>
-          {rooms.map((house, index) => (
-            <CarouselItem key={index}>
-              <HouseCard {...house} />
-            </CarouselItem>
-          ))}
+          {accommodationList
+            .filter((h) => h.type === "pokoj")
+            .map((house, index) => (
+              <CarouselItem key={index}>
+                <HouseCard {...house} />
+              </CarouselItem>
+            ))}
         </Carousel>
       </div>
     </div>

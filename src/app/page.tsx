@@ -5,7 +5,7 @@ import { Hero } from "@/components/Hero";
 import { ApartmentsCarousel } from "@/components/Houses/ApartmentsCarousel";
 import { HousesCarousel } from "@/components/Houses/HousesCarousel";
 import { HousesBanner } from "@/components/HousesBanner";
-import { Newsletter } from "@/components/Newsletter";
+// import { Newsletter } from "@/components/Newsletter";
 import { Reviews } from "@/components/Reviews";
 import { VerticalDivider } from "@/components/VerticalDivider";
 
@@ -24,7 +24,9 @@ export default function Home() {
       <GoogleMap />
       <VerticalDivider color={"black"} />
       <Reviews />
-      <Newsletter />
+      <VerticalDivider color={"black"} />
+      {/* <Newsletter /> */}
+      <div />
     </div>
   );
 }
