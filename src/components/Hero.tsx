@@ -19,7 +19,7 @@ export const Hero = () => {
 
       {/* Tło z overlayem */}
       <div className="absolute inset-0 bg-[url(/hero.avif)] bg-cover bg-no-repeat bg-center" />
-      <div className="absolute inset-0 bg-black/20 bg-opacity-50" />
+      <div className="absolute inset-0 bg-black/10 bg-opacity-50" />
     </div>
   );
 };
