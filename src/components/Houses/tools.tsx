@@ -32,8 +32,6 @@ export const amenitiesMap: Record<
 
 export function getBedroomLabel(bedrooms: string | number): string {
   if (typeof bedrooms === "number") {
-    console.log("🚀 :21 bedrooms:", bedrooms);
-
     return bedrooms === 1 ? "sypialnia" : "sypialnie";
   }
 
