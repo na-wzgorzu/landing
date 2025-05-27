@@ -5,12 +5,13 @@
 // import { accommodationList } from "@/data/houses";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const images = ["/gallery/hotel03.jpg", "", "/gallery/hotel07.jpg"];
 
 export function ApartmentsCarousel() {
   return (
-    <div className="flex flex-col gap-8">
+    <Link href="/pokoje" className="flex flex-col gap-8">
       <div className="flex flex-col  gap-4 sm:gap-8 bg-brand text-white p-6">
         <h2 className="text-3xl sm:text-4xl font-bold text-center">Pokoje</h2>
 
@@ -31,7 +32,7 @@ export function ApartmentsCarousel() {
           ))}
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

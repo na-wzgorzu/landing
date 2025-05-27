@@ -1,9 +1,19 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const images = [
-  "/gallery/domki105.jpg",
-  "/gallery/apartamenty102.jpg",
-  "/gallery/domki11.jpg",
+  {
+    image: "/gallery/domki105.jpg",
+    title: "Domki piętrowe 5-7 osobowe",
+  },
+  {
+    image: "/gallery/apartamenty102.jpg",
+    title: "Domki parterowe apartamenty 4-6 osobowe",
+  },
+  {
+    image: "/gallery/domki11.jpg",
+    title: "Domki parterowe 2-3 osobowe",
+  },
 ];
 
 export function HousesCarousel() {
@@ -18,22 +28,27 @@ export function HousesCarousel() {
         </div>
       </div>
 
-      <div className="flex flex-col  gap-4 sm:gap-8 bg-brand text-white p-6">
+      <Link
+        href="/domki"
+        className="flex flex-col  gap-4 sm:gap-8 bg-brand text-white p-6"
+      >
         <h2 className="text-3xl sm:text-4xl font-bold text-center">Domki</h2>
 
-        <div className="flex flex-col lg:flex-row gap-3">
-          {images.map((image, index) => (
-            <Image
-              key={index}
-              src={image}
-              alt="Gallery item"
-              width={300}
-              height={200}
-              className="w-full rounded-lg cursor-pointer"
-            />
+        <div className="flex flex-col lg:flex-row gap-3 w-full">
+          {images.map(({ image, title }, index) => (
+            <div key={index} className="w-full flex flex-col gap-3">
+              <Image
+                src={image}
+                alt="Gallery item"
+                width={300}
+                height={200}
+                className="w-full rounded-lg cursor-pointer"
+              />
+              <p className="font-semibold">{title}</p>
+            </div>
           ))}
         </div>
-      </div>
+      </Link>
     </div>
   );
 }
