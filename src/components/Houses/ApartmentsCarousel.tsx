@@ -23,7 +23,7 @@ export function ApartmentsCarousel() {
               alt="Gallery item"
               width={300}
               height={200}
-              className={`w-full rounded-lg even:opacity-0 even:hidden lg:even:block cursor-pointer ${
+              className={`w-full rounded-lg even:opacity-0 even:hidden lg:even:block cursor-pointer aspect-video ${
                 index === 0 ? "lg:translate-x-1/4" : "translate-0"
               }
                 ${index === 2 ? "lg:-translate-x-1/4" : "translate-0"}
