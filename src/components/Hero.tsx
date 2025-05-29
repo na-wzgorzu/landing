@@ -19,14 +19,14 @@ export const Hero = () => {
 
       {/* Tło z overlayem */}
       <div className="absolute inset-0 bg-[url(/hero.avif)] bg-cover bg-no-repeat bg-center" />
-      <div className="absolute inset-0 bg-black/10 bg-opacity-50" />
+      <div className="absolute inset-0 bg-black/30" />
     </div>
   );
 };
 
 export const HeroHeader = () => {
   return (
-    <div className=" text-gray-900 text-center sm:text-right font-mono font-medium max-w-5xl text-balance px-4 sm:px-6">
+    <div className=" text-white text-center sm:text-right font-mono font-medium max-w-5xl text-balance px-4 sm:px-6">
       <p className="text-5xl sm:text-6xl">Ośrodek Wypoczynkowy</p>
       <p className="text-5xl sm:text-6xl mt-2">Na Wzgórzu</p>
       <p className="text-2xl sm:text-3xl">

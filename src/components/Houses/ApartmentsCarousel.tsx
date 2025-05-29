@@ -11,11 +11,11 @@ const images = ["/gallery/hotel03.jpg", "", "/gallery/hotel07.jpg"];
 
 export function ApartmentsCarousel() {
   return (
-    <Link href="/pokoje" className="flex flex-col gap-8">
-      <div className="flex flex-col  gap-4 sm:gap-8 bg-brand text-white p-6">
+    <Link href="/pokoje" className="bg-brand text-white p-6">
+      <div className="flex flex-col gap-4 sm:gap-8 mx-auto max-w-screen-lg">
         <h2 className="text-3xl sm:text-4xl font-bold text-center">Pokoje</h2>
 
-        <div className="flex flex-col lg:flex-row gap-3 justify-around">
+        <div className="flex flex-col lg:flex-row gap-3 justify-between">
           {images.map((image, index) => (
             <Image
               key={index}

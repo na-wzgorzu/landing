@@ -28,25 +28,24 @@ export function HousesCarousel() {
         </div>
       </div>
 
-      <Link
-        href="/domki"
-        className="flex flex-col  gap-4 sm:gap-8 bg-brand text-white p-6"
-      >
-        <h2 className="text-3xl sm:text-4xl font-bold text-center">Domki</h2>
+      <Link href="/domki" className="bg-brand text-white p-6">
+        <div className="flex flex-col  gap-4 sm:gap-8 mx-auto max-w-screen-lg">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center">Domki</h2>
 
-        <div className="flex flex-col lg:flex-row gap-3 w-full">
-          {images.map(({ image, title }, index) => (
-            <div key={index} className="w-full flex flex-col gap-3">
-              <Image
-                src={image}
-                alt="Gallery item"
-                width={300}
-                height={200}
-                className="w-full rounded-lg cursor-pointer"
-              />
-              <p className="font-semibold">{title}</p>
-            </div>
-          ))}
+          <div className="flex flex-col lg:flex-row gap-3 w-full">
+            {images.map(({ image }, index) => (
+              <div key={index} className="w-full flex flex-col gap-3">
+                <Image
+                  src={image}
+                  alt="Gallery item"
+                  width={300}
+                  height={200}
+                  className="w-full rounded-lg cursor-pointer"
+                />
+                {/* <p className="font-semibold">{title}</p> */}
+              </div>
+            ))}
+          </div>
         </div>
       </Link>
     </div>
