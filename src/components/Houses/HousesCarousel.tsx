@@ -40,7 +40,7 @@ export function HousesCarousel() {
                   alt="Gallery item"
                   width={300}
                   height={200}
-                  className="w-full rounded-lg cursor-pointer"
+                  className="w-full rounded-lg cursor-pointer aspect-video object-cover"
                 />
                 {/* <p className="font-semibold">{title}</p> */}
               </div>

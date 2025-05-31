@@ -1,6 +1,4 @@
-import about1Img from "@/assets/about-1.jpg";
-import about2Img from "@/assets/about-2.jpg";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 export const About = () => {
   return (
@@ -18,10 +16,10 @@ const AboutHeader = () => {
       </div>
 
       <div className="flex gap-4 flex-col md:flex-row">
-        <AboutContent key="firstImg" img={about2Img} />
+        <AboutContent key="firstImg" img="/gallery/bridge.jpg" />
         <AboutContent
           key="SecondImg"
-          img={about1Img}
+          img="/gallery/inne102.jpg"
           classNames="md:flex-col-reverse"
         />
       </div>
@@ -34,12 +32,18 @@ const AboutContent = ({
   classNames,
 }: {
   classNames?: string;
-  img: StaticImageData;
+  img: string;
 }) => {
   return (
     <div className={`flex flex-col gap-4 ${classNames}`}>
       <div>
-        <Image alt="About image" src={img} />
+        <Image
+          width={300}
+          height={300}
+          alt="About image"
+          src={img}
+          className="w-full"
+        />
       </div>
       <div>
         Lorem Ipsum is simply dummy text of the printing and typesetting
