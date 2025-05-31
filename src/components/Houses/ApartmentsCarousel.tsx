@@ -9,7 +9,8 @@ import Link from "next/link";
 
 const images = [
   "/gallery/hotel03.jpg",
-  "/gallery/hotel07.jpg",
+  // "/gallery/hotel07.jpg",
+  "/3-room-t/pokój15.jpg",
   "/gallery/hotel01.jpg",
 ];
 

@@ -17,7 +17,7 @@ export default function Home() {
       <About />
       <VerticalDivider color={"black"} />
       <HousesCarousel />
-      <VerticalDivider color={"black"} />
+      {/* <VerticalDivider color={"black"} /> */}
       <ApartmentsCarousel />
       <VerticalDivider color={"black"} />
       <FoodService />
