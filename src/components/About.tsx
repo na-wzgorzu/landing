@@ -19,7 +19,7 @@ const AboutHeader = () => {
   return (
     <div className="flex flex-col mx-auto max-w-screen-lg gap-6 px-4">
       <div className="underline text-gray-700 font-semibold font-mono text-3xl underline-offset-8 decoration-gray-700">
-        O nas
+        Położenie
       </div>
 
       <div className="flex gap-4 flex-col md:flex-row">

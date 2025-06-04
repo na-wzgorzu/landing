@@ -14,13 +14,13 @@ export default function Home() {
     <div className="min-h-[calc(100vh-64px)] flex flex-col gap-10 overflow-hidden">
       <Hero />
       <VerticalDivider color={"black"} />
-      <About />
-      <VerticalDivider color={"black"} />
       <div className=" flex flex-col">
         <HousesCarousel />
         {/* <VerticalDivider color={"black"} /> */}
         <ApartmentsCarousel />
       </div>
+      <VerticalDivider color={"black"} />
+      <About />
       <VerticalDivider color={"black"} />
       <FoodService />
       <HousesBanner />
