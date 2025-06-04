@@ -16,9 +16,11 @@ export default function Home() {
       <VerticalDivider color={"black"} />
       <About />
       <VerticalDivider color={"black"} />
-      <HousesCarousel />
-      {/* <VerticalDivider color={"black"} /> */}
-      <ApartmentsCarousel />
+      <div className=" flex flex-col">
+        <HousesCarousel />
+        {/* <VerticalDivider color={"black"} /> */}
+        <ApartmentsCarousel />
+      </div>
       <VerticalDivider color={"black"} />
       <FoodService />
       <HousesBanner />
