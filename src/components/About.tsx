@@ -26,12 +26,12 @@ const AboutHeader = () => {
         <AboutContent
           key="firstImg"
           img="/gallery/bridge.jpg"
+          classNames="md:flex-col-reverse justify-end"
           content={aboutContent.first}
         />
         <AboutContent
           key="SecondImg"
           img="/gallery/inne102.jpg"
-          classNames="md:flex-col-reverse justify-end"
           content={aboutContent.second}
         />
       </div>
@@ -43,8 +43,9 @@ const AboutHeader = () => {
         </h3>
         <div>
           <Image
-            width={800}
-            height={800}
+            width={1000}
+            height={1000}
+            quality={100}
             alt="About image"
             src="/gallery/jezioro.jpg"
             className="w-full"
