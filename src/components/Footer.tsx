@@ -22,6 +22,7 @@ export const Footer = () => {
       </div>
 
       <div className="flex flex-col gap-2">
+        <Link href="/">Start</Link>
         <Link href="/o-nas">O nas</Link>
         <Link href="/domki">Domki</Link>
         <Link href="/pokoje">Pokoje</Link>

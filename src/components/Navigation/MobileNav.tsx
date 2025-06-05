@@ -21,7 +21,7 @@ export const MobileNav = () => {
         </Button>
       </SheetTrigger>
 
-      <SheetContent side="right" className="pl-4">
+      <SheetContent side="right" className="pl-4 pt-10">
         <Link href="/" className="mr-6 hidden lg:flex z-10" prefetch={false}>
           <Logo className="text-white size-20" />
         </Link>
