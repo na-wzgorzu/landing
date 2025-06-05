@@ -181,10 +181,9 @@ export const accommodationList: Accommodation[] = [
       "Możliwość grillowania w ogródku",
     ],
   },
-  // done
   {
     id: "5",
-    name: "Pokoje 3 osobowe z tarasami",
+    name: "Pokoje 3 osobowe z tarasem",
     type: "pokoj",
     image: room34Img,
     images: [room34Img, room36Img, room35Img, room33Img],
@@ -207,7 +206,7 @@ export const accommodationList: Accommodation[] = [
   // Rooms
   {
     id: "4",
-    name: "Pokoje 2 osobowe bez tarasów",
+    name: "Pokoje 2 osobowe bez tarasu",
     type: "pokoj",
     image: room24Img,
     images: [room24Img, room23Img, room22Img, room21Img, room25Img],
@@ -228,7 +227,7 @@ export const accommodationList: Accommodation[] = [
   },
   {
     id: "6",
-    name: "Pokóje 3 osobowe bez tarasu",
+    name: "Pokoje 3 osobowe bez tarasu",
     type: "pokoj",
     image: room32Img,
     images: [room32Img, room31Img],
@@ -249,7 +248,7 @@ export const accommodationList: Accommodation[] = [
   },
   {
     id: "7",
-    name: "Pokoje 4 osobowe bez tarasów",
+    name: "Pokoje 4 osobowe bez tarasu",
     type: "pokoj",
     image: room41Img,
     images: [room41Img, room42Img],
