@@ -1,7 +1,7 @@
 import { ButtonUnderline } from "@/components/ButtonUnderline";
 import { Title } from "@/components/Title";
 import { reviews } from "@/data/reviews";
-import bridgeImg from "@/assets/bridge.jpg";
+import bridgeImg from "@/assets/bridge-dark.jpg";
 import kayakImg from "@/assets/kayak.jpg";
 import Image from "next/image";
 import { Carousel } from "@/components/Carousel";

@@ -10,7 +10,7 @@ const categories = ["Domki", "Pokoje", "Atrakcje"];
 
 const images: Record<string, string[]> = {
   Domki: [
-    "/hero.jpg",
+    "/hero.avif",
     "/gallery/domki100.jpg",
     "/gallery/domki12.jpg",
     "/gallery/domki102.jpg",

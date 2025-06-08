@@ -34,8 +34,8 @@ export const Gastro = () => {
     "Śniadania + obiadokoalcje",
     "Obiady + koalcje",
     "Śniadania + obiady + koalcje",
-    "Tylko obiady (tylko dla domków)",
-    "Tylko obiadokolacje (tylko dla domków)",
+    "Same obiady (tylko dla domków)",
+    "Same obiadokolacje",
   ];
 
   const dietaryOptions = [

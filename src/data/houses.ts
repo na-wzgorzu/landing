@@ -1,5 +1,4 @@
 import { Accommodation } from "@/components/Houses/types";
-// import house1Img from "@/assets/hero.jpg";
 import room1Img from "@/../public/gallery/apartamenty100.jpg";
 import room2Img from "@/../public/gallery/apartamenty101.jpg";
 // 2rooms-bt

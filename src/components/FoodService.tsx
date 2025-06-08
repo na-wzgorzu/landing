@@ -10,31 +10,31 @@ export const FoodService = () => {
       <Title title="Gastronomia" />
 
       <p>
-        Nasz ośrodek oferuje pełne zaplecze gastronomiczne i komfortową
-        jadalnię. Wiemy, że smaczne, lekkie i pożywne jedzenie to kluczowy
-        element udanego wypoczynku. Wszystkie posiłki przygotowujemy ze świeżych
-        produktów, dbając o wysoką jakość i różnorodność smaków.
+        Ośrodek posiada pełne zaplecze gastronomiczne i jadalnię. Wiemy, że
+        smaczne, lekkie i pożywne jedzenie to kluczowy element udanego
+        wypoczynku. Posiłki przygotowujemy ze świeżych produktów, dbając o
+        wysoką jakość i różnorodność smaków.
       </p>
 
       <div className="flex gap-6 flex-col sm:flex-row">
         <div className="flex-2">
           <Image
-            src="/gallery/wyzywienie02.jpg"
-            width={400}
-            height={300}
+            src="/gallery/wyzywienie02-horizontal.png"
+            width={650}
+            height={360}
             alt="Jadalnia z widokiem na jezioro"
-            className="bg-cover object-top w-full object-cover rounded-md"
+            className="bg-cover object-center w-full object-cover rounded-md aspect-video"
           />
         </div>
 
-        <div className="flex-1 flex flex-col gap-4">
+        <div className="flex-1 flex flex-col gap-4 w-full">
           <h4 className="font-semibold text-lg">Nasza kuchnia</h4>
           <p>
-            W sezonie (czerwiec – połowa września) oferujemy pobyty z
-            wyżywieniem: śniadania, obiady, obiadokolacje i kolacje, w różnych
-            konfiguracjach. W domkach można dodatkowo zamówić same obiady lub
-            obiadokolacje. Poza sezonem dostępność posiłków ustalana jest
-            indywidualnie.
+            Od początku czerwca do końca pierwszego tygodnia września oferujemy
+            pobyty z wyżywieniem. W ścisłym sezonie (lipiec - sierpień)
+            serwujemy: śniadania, obiady, obiadokolacje i kolacje, w wariantach
+            podanych na kolejnej stronie. W pozostałych okresach możliwe są inne
+            opcje, w zależności od dostępności.
           </p>
 
           <Link href={"/gastronomia"} className="cursor-pointer">
