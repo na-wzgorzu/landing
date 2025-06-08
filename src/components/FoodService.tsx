@@ -4,7 +4,7 @@ import React from "react";
 import { ButtonUnderline } from "@/components/ButtonUnderline";
 import Link from "next/link";
 
-export const FoodService = () => {
+export const FoodService = ({ isTest = false }: { isTest?: boolean }) => {
   return (
     <div className="flex flex-col mx-auto max-w-screen-lg gap-6 text-gray-700 px-4">
       <Title title="Gastronomia" />
@@ -19,7 +19,11 @@ export const FoodService = () => {
       <div className="flex gap-6 flex-col sm:flex-row">
         <div className="flex-2">
           <Image
-            src="/gallery/wyzywienie02-horizontal.png"
+            src={
+              isTest
+                ? "/gallery/wyzywienie01.jpg"
+                : "/gallery/wyzywienie02-horizontal.png"
+            }
             width={650}
             height={360}
             alt="Jadalnia z widokiem na jezioro"

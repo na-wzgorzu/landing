@@ -21,6 +21,7 @@ export default function Home() {
       </div>
       <VerticalDivider color={"black"} />
       <FoodService />
+      <FoodService isTest />
       <VerticalDivider color={"black"} />
       <Services />
       <VerticalDivider color={"black"} />
