@@ -16,7 +16,7 @@ const freeServices = [
   "altanki, bujawki, zagospodarowany teren",
 ];
 
-export const Services = () => {
+export const OfferSection = () => {
   return (
     <div className="flex flex-col mx-auto max-w-screen-lg gap-6 text-gray-700 px-4">
       <Title title="Oferujemy" />
