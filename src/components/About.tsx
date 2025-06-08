@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const aboutContent = {
   first:
-    "Ośrodek Wypoczynkowy „Na Wzgórzu” jest położony na terenie Brodnickiego Parku Krajobrazowego, nad jeziorem Strażym (73 ha), w odległości 12 km od miasta Brodnica, 60 km od Torunia i 200 km od Warszawy, na pograniczu województw Kujawsko-Pomorskiego oraz Warmińsko-Mazurskiego.",
+    "Ośrodek Wypoczynkowy „Na Wzgórzu” jest zlokalizowany na terenie Brodnickiego Parku Krajobrazowego, nad jeziorem Strażym, w odległości 12 km od miasta Brodnica, 60 km od Torunia i 200 km od Warszawy, na pograniczu województw Kujawsko-Pomorskiego oraz Warmińsko-Mazurskiego.",
   second:
     "Urozmaicony teren, czyste lasy i jeziora, rezerwaty przyrody, wiele malowniczych zakątków oraz brak większych miast i przemysłu sprawiają, że okolica stanowi idealne miejsce na wypoczynek, jednocześnie wciąż pozostając nieodkrytą przez masową turystykę.",
 };
@@ -17,8 +17,8 @@ export const About = () => {
 
 const AboutHeader = () => {
   return (
-    <div className="flex flex-col mx-auto max-w-screen-lg gap-6 px-4">
-      <div className="underline text-gray-700 font-semibold font-mono text-3xl underline-offset-8 decoration-gray-700">
+    <div className="flex flex-col mx-auto max-w-screen-lg gap-2 px-4">
+      <div className=" text-center underline text-gray-700 font-semibold font-mono text-3xl underline-offset-8 decoration-gray-700">
         Położenie
       </div>
 
@@ -38,10 +38,10 @@ const AboutHeader = () => {
 
       <div>
         <h3>
-          Jezioro Strażym, nad którym zlokalizowany jest ośrodek stanowi część
-          głównego szlaku wodnego łączącego całe Pojezierze Brodnickie.
+          Jezioro Strażym (73 ha) stanowi część głównego szlaku wodnego
+          łączącego całe Pojezierze Brodnickie.
         </h3>
-        <div>
+        <div className="mt-2">
           <Image
             width={1000}
             height={1000}
@@ -66,10 +66,10 @@ const AboutContent = ({
   content: string;
 }) => {
   return (
-    <div className={`flex flex-col gap-4 ${classNames}`}>
+    <div className={`flex flex-1 flex-col gap-4 ${classNames}`}>
       <div>
         <Image
-          width={300}
+          width={450}
           height={300}
           alt="About image"
           src={img}
