@@ -24,7 +24,7 @@ export const ValuesSection = () => {
       icon: <Bike className="h-7 w-7 text-resort-green" />,
       title: "Aktywny wypoczynek",
       description:
-        "Oferujemy wiele atrakcji, od sportów wodnych po gry zespołowe i wycieczki rowerowe.",
+        "Nasza lokalizacja i oferta sprzyjają aktywnemu wypoczynkowi – od atrakcji wodnych, przez gry zespołowe, po wycieczki piesze i rowerowe.",
     },
   ];
 
@@ -47,11 +47,11 @@ export const ValuesSection = () => {
           <h2 className="text-3xl sm:text-4xl font-medium fade-in animation-delay-200">
             Nasze wartości
           </h2>
-          <p className="text-resort-text/80  fade-in animation-delay-400">
+          {/* <p className="text-resort-text/80  fade-in animation-delay-400">
             Te podstawowe zasady kierują wszystkim, co robimy w Na Wzgórzu, od
             projektowania naszych przestrzeni po sposób interakcji z gośćmi i
             środowiskiem.
-          </p>
+          </p> */}
         </div>
 
         {/* Values cards */}

@@ -86,6 +86,7 @@ export const Atractions = () => {
           title="Galeria"
           description="Odkryj niezwykłe miejsca w naszej okolicy, idealne dla miłośników natury, historii i aktywnego wypoczynku."
           images={images}
+          columns={4}
         />
 
         <motion.div

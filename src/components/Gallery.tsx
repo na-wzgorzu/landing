@@ -7,14 +7,19 @@ import "yet-another-react-lightbox/styles.css";
 
 type Props = {
   images: string[];
+  columns?: 4 | 3;
 };
 
-export const Gallery = ({ images }: Props) => {
+export const Gallery = ({ images, columns }: Props) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div
+        className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ${
+          columns === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3"
+        }`}
+      >
         {images.map((src, index) => (
           <div
             key={index}

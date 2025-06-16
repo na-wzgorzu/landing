@@ -80,11 +80,11 @@ export const FeaturesSection = () => {
           <h2 className="text-3xl sm:text-4xl font-medium text-resort-text  fade-in animation-delay-200">
             Dlaczego warto nas wybrać?
           </h2>
-          <p className="text-resort-text/80  fade-in animation-delay-400">
+          {/* <p className="text-resort-text/80  fade-in animation-delay-400">
             Na Wzgórzu oferuje wyjątkowe połączenie piękna natury, komfortu i
             przemyślanej infrastruktury, które wyróżnia nas jako najlepszy
-            nadjeziory ośrodek wypoczynkowy w regionie.
-          </p>
+            ośrodek wypoczynkowy w regionie.
+          </p> */}
         </div>
 
         {/* Features grid */}
@@ -125,7 +125,7 @@ export const FeaturesSection = () => {
             ))}
           </ul>
 
-          <Gallery images={images} />
+          <Gallery images={images} columns={4} />
         </div>
       </div>
     </section>

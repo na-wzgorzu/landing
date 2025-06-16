@@ -10,9 +10,15 @@ type Props = {
   title: string;
   images: string[];
   description?: string;
+  columns?: 4 | 3;
 };
 
-export const GallerySection = ({ description, images, title }: Props) => {
+export const GallerySection = ({
+  description,
+  images,
+  title,
+  columns,
+}: Props) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   return (
     <motion.div
@@ -27,7 +33,7 @@ export const GallerySection = ({ description, images, title }: Props) => {
       </h2>
       {description && <p className="text-gray-700 mb-6">{description}</p>}
 
-      <Gallery images={images} />
+      <Gallery images={images} columns={columns} />
 
       <Lightbox
         open={openIndex !== null}
