@@ -1,5 +1,4 @@
 "use client";
-
 import { GallerySection } from "@/components/GallerySection";
 import { attractions } from "@/data/attractions";
 import { motion } from "framer-motion";
