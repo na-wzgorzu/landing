@@ -2,18 +2,20 @@ import { Title } from "@/components/Title";
 
 const freeServices = [
   "bezpłatny parking",
-  "boiska do siatkówki, koszykówki i badmintona",
   "plażę",
   "mini marinę z wypożyczalnią: łódek, kajaków i rowerów wodnych",
   "wypożyczalnię rowerów górskich",
+  "boiska (siatkówka, koszykówka i badminton oraz małe bramki do piłki nożnej)",
   "pokój zabaw dla dzieci",
   "salę gier (bilard, tenis stołowy, piłkarzyki)",
   "atrakcje dla dzieci (piaskownica, huśtawki, karuzele, itp.)",
   "wiatę grillową",
-  "miejsce na ognisko - w okresie wakacyjnym raz w tygodniu organizujemy ognisko dla gości z kiełbaskami i dodatkami",
-  "internet wi-fi (na ograniczonym obszarze)",
+  "miejsce na ognisko - w okresie wakacyjnym raz w tygodniu organizujemy dla gości ognisko z kiełbaskami i dodatkami",
+  "internet Wi-Fi (nie obejmuje całej powierzchni ośrodka)",
   "bibliotekę",
-  "altanki, bujawki, zagospodarowany teren",
+  "altanki, bujawki, komplet wypoczynkowy",
+  "zagospodarowany i zadbany teren ośrodka",
+  "możliwość przyjazdu ze zwierzętami",
 ];
 
 export const OfferSection = () => {
@@ -23,7 +25,7 @@ export const OfferSection = () => {
 
       <p className="sm:text-lg font-medium">
         W ramach pobytu, oprócz noclegu, wyżywienia oraz możliwości wypoczynku w
-        ciszy i spokoju, oferujemy Państwu również:
+        ciszy i spokoju oferujemy Państwu również:
       </p>
 
       <ul className="space-y-2">

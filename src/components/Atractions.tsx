@@ -50,10 +50,8 @@ export const Atractions = () => {
               Atrakcje
             </h1>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Ośrodek Wypoczynkowy Na Wzgórzu jest położony na terenie
-              Brodnickiego Parku Krajobrazowego nad jeziorem Strażym. Odkryj
-              niezwykłe miejsca w naszej okolicy, idealne dla miłośników natury,
-              historii i aktywnego wypoczynku.
+              Odkryj niezwykłe miejsca w naszej okolicy, idealne dla miłośników
+              natury, historii i aktywnego wypoczynku.
             </p>
           </motion.div>
         </div>

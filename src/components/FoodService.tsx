@@ -4,7 +4,7 @@ import React from "react";
 import { ButtonUnderline } from "@/components/ButtonUnderline";
 import Link from "next/link";
 
-export const FoodService = ({ isTest = false }: { isTest?: boolean }) => {
+export const FoodService = () => {
   return (
     <div className="flex flex-col mx-auto max-w-screen-lg gap-6 text-gray-700 px-4">
       <Title title="Gastronomia" />
@@ -19,11 +19,7 @@ export const FoodService = ({ isTest = false }: { isTest?: boolean }) => {
       <div className="flex gap-6 flex-col sm:flex-row">
         <div className="flex-2">
           <Image
-            src={
-              isTest
-                ? "/gallery/wyzywienie01.jpg"
-                : "/gallery/wyzywienie02-horizontal.png"
-            }
+            src={"/gallery/wyzywienie02-horizontal.png"}
             width={650}
             height={360}
             alt="Jadalnia z widokiem na jezioro"
@@ -37,8 +33,8 @@ export const FoodService = ({ isTest = false }: { isTest?: boolean }) => {
             Od początku czerwca do końca pierwszego tygodnia września oferujemy
             pobyty z wyżywieniem. W ścisłym sezonie (lipiec - sierpień)
             serwujemy: śniadania, obiady, obiadokolacje i kolacje, w wariantach
-            podanych na kolejnej stronie. W pozostałych okresach możliwe są inne
-            opcje, w zależności od dostępności.
+            podanych w zakładce gastronomia. W pozostałych okresach możliwe są
+            inne opcje, w zależności od dostępności.
           </p>
 
           <Link href={"/gastronomia"} className="cursor-pointer">
