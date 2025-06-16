@@ -3,6 +3,11 @@ import { FeaturesSection } from "@/components/FeaturesSection";
 import { StorySection } from "@/components/StorySection";
 import { ValuesSection } from "@/components/ValuesSection";
 import React from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Na wzgórzu - O nas",
+};
 
 export default function Page() {
   return (

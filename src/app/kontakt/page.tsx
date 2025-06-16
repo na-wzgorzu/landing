@@ -1,6 +1,11 @@
 import { GoogleMap } from "@/components/GoogleMap";
 import { MailIcon, MapPin, PhoneCall, User } from "lucide-react";
 import React from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Na wzgórzu - Kontakt",
+};
 
 export default function Contact() {
   return (

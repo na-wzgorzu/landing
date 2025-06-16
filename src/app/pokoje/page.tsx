@@ -1,6 +1,11 @@
 import { AccommodationList } from "@/components/Houses/AccommodationList";
 
 import React from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Na wzgórzu - Pokoje",
+};
 
 export default function Houses() {
   return (

@@ -1,5 +1,19 @@
 import { AccommodationDetails } from "@/components/Houses/AccommodationDetails";
 import React from "react";
+import { Metadata } from "next";
+import { accommodationList } from "@/data/houses";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  const accommodation = accommodationList.find((acc) => acc.id === params.id);
+
+  return {
+    title: accommodation ? `Na wzgórzu - ${accommodation.name}` : "Na wzgórzu",
+  };
+}
 
 type Props = {
   params: Promise<{ id: string }>;

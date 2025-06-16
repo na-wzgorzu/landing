@@ -7,6 +7,11 @@ import { HousesCarousel } from "@/components/Houses/HousesCarousel";
 import { Reviews } from "@/components/Reviews";
 import { OfferSection } from "@/components/OfferSection";
 import { VerticalDivider } from "@/components/VerticalDivider";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Na wzgórzu - Strona główna",
+};
 
 export default function Home() {
   return (
