@@ -1,4 +1,5 @@
 "use client";
+import { Gallery } from "@/components/Gallery";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import React from "react";
@@ -26,25 +27,7 @@ export const GallerySection = ({ description, images, title }: Props) => {
       </h2>
       {description && <p className="text-gray-700 mb-6">{description}</p>}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {images.map((src, index) => (
-          <div
-            key={index}
-            className="w-full h-48 overflow-hidden rounded-lg cursor-pointer group"
-            onClick={() => setOpenIndex(index)}
-          >
-            <motion.img
-              src={src}
-              alt={`Zdjęcie gastronomii ${index + 1}`}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-            />
-          </div>
-        ))}
-      </div>
+      <Gallery images={images} />
 
       <Lightbox
         open={openIndex !== null}

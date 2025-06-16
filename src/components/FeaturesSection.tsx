@@ -1,3 +1,4 @@
+import { Gallery } from "@/components/Gallery";
 import { Check } from "lucide-react";
 
 const resortFeatures: string[] = [
@@ -14,6 +15,21 @@ const resortFeatures: string[] = [
   "Ogniska z kiełbaskami",
   "Możliwość przyjazdu ze zwierzętami",
   "Zadbany i zagospodarowany teren, altanki, bujawki, komplet wypoczynkowy, itp.",
+];
+
+const images = [
+  "/about/oferujemy1.jpg",
+  "/about/oferujemy2.jpg",
+  "/about/oferujemy3.jpg",
+  "/about/oferujemy4.jpg",
+  "/about/oferujemy5.jpg",
+  "/about/oferujemy6.jpg",
+  "/about/oferujemy7.jpg",
+  "/about/oferujemy8.jpg",
+  "/about/oferujemy09.jpg",
+  "/about/oferujemy10.jpg",
+  "/about/oferujemy11.jpg",
+  "/about/oferujemy12.jpg",
 ];
 
 export const FeaturesSection = () => {
@@ -95,12 +111,12 @@ export const FeaturesSection = () => {
         </div>
 
         {/* Additional benefits list */}
-        <div className="mt-16 bg-white rounded-xl p-8 shadow-sm  fade-in animation-delay-800">
+        <div className="mt-16 bg-white rounded-xl p-8 shadow-sm fade-in animation-delay-800">
           <h3 className="text-lg font-medium text-resort-text mb-6">
             Co oferujemy
           </h3>
 
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-4">
             {resortFeatures.map((feature, index) => (
               <li key={index} className="flex gap-2">
                 <div className="w-2 h-2 rounded-full bg-brand mt-2" />
@@ -108,6 +124,8 @@ export const FeaturesSection = () => {
               </li>
             ))}
           </ul>
+
+          <Gallery images={images} />
         </div>
       </div>
     </section>
