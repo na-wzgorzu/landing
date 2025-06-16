@@ -2,12 +2,12 @@ import { MoveRight } from "lucide-react";
 
 export const StorySection = () => {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-16 md:py-24 px-4">
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left column: Image */}
         <div className=" fade-in">
           <img
-            src="/gallery/kayak.jpg"
+            src="/about/domek.jpg"
             alt="Rzeka pomiędzy górami w Brodnickim Parku Krajobrazowym"
             className="w-full h-[400px] sm:h-[500px] object-cover rounded-xl"
             loading="lazy"
@@ -22,31 +22,29 @@ export const StorySection = () => {
           </div>
 
           <h3 className="text-3xl sm:text-4xl font-medium text-resort-text  fade-in animation-delay-200">
-            Rodzinny wypoczynek w otoczeniu natury
+            Rodzinny wypoczynek w otoczeniu przyrody
           </h3>
 
           <div className="space-y-4  fade-in animation-delay-400">
             <p className="text-resort-text/80 leading-relaxed">
-              Ośrodek Wypoczynkowy Na Wzgórzu to miejsce stworzone z myślą o
-              rodzinach, które szukają spokoju, bliskości natury i komfortowego
-              wypoczynku. Położony na terenie malowniczego Brodnickiego Parku
-              Krajobrazowego, nad czystym i urokliwym Jezioro Strażym, stanowi
-              idealne miejsce na relaks z dala od miejskiego zgiełku.
+              Ośrodek Wypoczynkowy Na Wzgórzu to miejsce stworzone dla osób
+              szukających spokoju, bliskości natury i wypoczynku w domowej
+              atmosferze. Obiekt jest kameralny, położony na terenie
+              malowniczego Brodnickiego Parku Krajobrazowego, w otoczeniu
+              rezerwatów przyrody, nad urokliwym Jeziorem Strażym. Idealnie
+              nadaje się na relaks z dala od miejskiego zgiełku oraz natłoku
+              turystów.
             </p>
             <p className="text-resort-text/80 leading-relaxed">
-              Od lat przyjmujemy rodziny z dziećmi oraz dziadków z wnukami,
-              dbając o domową atmosferę, bezpieczeństwo i niezapomniane
-              wspomnienia naszych gości.
+              Naszymi klientami są głównie rodziny z dziećmi oraz dziadkowie z
+              wnukami. Teren obiektu jest ogrodzony i bezpieczny. Nie
+              przyjmujemy kolonii, a w okresie wakacyjnym również innych grup
+              zorganizowanych, nie ma tu wesel ani imprez, jest za to cicho.
             </p>
           </div>
 
-          <div className="pt-2  fade-in animation-delay-600">
-            <a
-              href="#values"
-              className="inline-flex items-center text-resort-green hover:underline font-medium"
-            >
-              Poznaj nasze wartości <MoveRight size={16} className="ml-1" />
-            </a>
+          <div className="fade-in animation-delay-600 inline-flex items-center text-resort-green hover:underline font-medium">
+            Poznaj nasze wartości <MoveRight size={16} className="ml-1" />
           </div>
         </div>
       </div>
