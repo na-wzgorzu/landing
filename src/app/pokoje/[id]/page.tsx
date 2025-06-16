@@ -3,21 +3,23 @@ import { accommodationList } from "@/data/houses";
 import { Metadata } from "next";
 import React from "react";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { id: string };
-}): Promise<Metadata> {
-  const accommodation = accommodationList.find((acc) => acc.id === params.id);
+interface HouseDetailsParams {
+  id: string;
+}
+
+type Props = {
+  params: Promise<HouseDetailsParams>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const accommodation = accommodationList.find((acc) => acc.id === id);
 
   return {
     title: accommodation ? `Na wzgórzu - ${accommodation.name}` : "Na wzgórzu",
   };
 }
 
-type Props = {
-  params: Promise<{ id: string }>;
-};
 export default async function HousesDetails({ params }: Props) {
   const { id } = await params;
   return (
