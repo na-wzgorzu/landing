@@ -23,7 +23,7 @@ const images = [
 
 export const Gastro = () => {
   const mealTimes = [
-    { name: "Śniadanie", time: "9:00 - 10:00", icon: Coffee },
+    { name: "Śniadanie", time: "9:00", icon: Coffee },
     { name: "Obiad", time: "14:00", icon: Soup },
     { name: "Obiadokolacja", time: "17:00", icon: Utensils },
     { name: "Kolacja", time: "19:00", icon: Cake },
@@ -35,7 +35,7 @@ export const Gastro = () => {
     "Obiady + koalcje",
     "Śniadania + obiady + koalcje",
     "Same obiady (tylko dla domków)",
-    "Same obiadokolacje",
+    "Same obiadokolacje (tylko dla domków)",
   ];
 
   const dietaryOptions = [
@@ -83,7 +83,7 @@ export const Gastro = () => {
           </div>
 
           <p className="text-lg text-gray-700 mb-6">
-            Ośrodek posiada pełne zaplecze gastronomiczne i jadalnię. Zdajemy
+            Ośrodek posiada pełne zaplecze gastronomiczne oraz jadalnię. Zdajemy
             sobie sprawę, że smaczne, lekkie i pożywne jedzenie jest ważnym
             elementem udanego wypoczynku. U nas jedzenie jest zawsze
             przyrządzane ze świeżych produktów. Staramy się o wysoką jakość, a
@@ -182,7 +182,7 @@ export const Gastro = () => {
             <div>
               <h3 className="text-xl text-brand font-bold mb-2">Kolacje</h3>
               <p className="text-gray-700">
-                Kolacje serwujemy częściowo na bufecie oraz na stoliki.
+                Kolacje serwujemy do stolika oraz częściowo na bufecie.
               </p>
             </div>
           </div>

@@ -17,8 +17,8 @@ export const About = () => {
 
 const AboutHeader = () => {
   return (
-    <div className="flex flex-col mx-auto max-w-screen-lg gap-2 px-4">
-      <div className=" text-center underline text-gray-700 mb-6 font-semibold font-mono text-3xl underline-offset-8 decoration-gray-700">
+    <div className="flex flex-col mx-auto max-w-screen-lg gap-3 px-4">
+      <div className=" text-center underline text-gray-700 mb-5 font-semibold font-mono text-3xl underline-offset-8 decoration-gray-700">
         Położenie
       </div>
 
@@ -43,8 +43,8 @@ const AboutHeader = () => {
           popularnością wśród wędkarzy. W naturalnych zatoczkach, będących
           ulubionymi miejscami połowowymi, często można natrafić na dorodne
           szczupaki i liny oraz wiele innych gatunków ryb (m. in płoć, leszcz,
-          węgorz, karp, okoń, wzdręga, krąp). Pobliskie lasy obfitują w
-          borowiki, podgrzybki, maślaki oraz koźlarze.
+          węgorz, karp, okoń). Pobliskie lasy obfitują w borowiki, podgrzybki,
+          maślaki oraz koźlarze.
         </h3>
         <div className="mt-2">
           <Image

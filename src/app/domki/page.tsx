@@ -13,7 +13,7 @@ export default function Houses() {
         type="domek"
         descriptionComponent={
           <p className="text-lg text-gray-600 mb-4 text-center">
-            Oferujemy trzy typy domków
+            Oferujemy trzynaście domków różnego typu
           </p>
         }
       />

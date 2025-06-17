@@ -5,7 +5,7 @@ const freeServices = [
   "plażę",
   "mini marinę z wypożyczalnią: łódek, kajaków i rowerów wodnych",
   "wypożyczalnię rowerów górskich",
-  "boiska (siatkówka, koszykówka i badminton oraz małe bramki do piłki nożnej)",
+  "boiska (siatkówka, koszykówka, badminton oraz małe bramki do piłki nożnej)",
   "pokój zabaw dla dzieci",
   "salę gier (bilard, tenis stołowy, piłkarzyki)",
   "atrakcje dla dzieci (piaskownica, huśtawki, karuzele, itp.)",

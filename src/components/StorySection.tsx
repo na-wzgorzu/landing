@@ -1,5 +1,3 @@
-import { MoveRight } from "lucide-react";
-
 export const StorySection = () => {
   return (
     <section className="py-16 md:py-24 px-4">
@@ -41,10 +39,6 @@ export const StorySection = () => {
               przyjmujemy kolonii, a w okresie wakacyjnym również innych grup
               zorganizowanych, nie ma tu wesel ani imprez, jest za to cicho.
             </p>
-          </div>
-
-          <div className="fade-in animation-delay-600 inline-flex items-center text-resort-green hover:underline font-medium">
-            Poznaj nasze wartości <MoveRight size={16} className="ml-1" />
           </div>
         </div>
       </div>

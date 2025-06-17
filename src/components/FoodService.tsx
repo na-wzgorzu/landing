@@ -10,7 +10,7 @@ export const FoodService = () => {
       <Title title="Gastronomia" />
 
       <p>
-        Ośrodek posiada pełne zaplecze gastronomiczne i jadalnię. Wiemy, że
+        Ośrodek posiada pełne zaplecze gastronomiczne oraz jadalnię. Wiemy, że
         smaczne, lekkie i pożywne jedzenie to kluczowy element udanego
         wypoczynku. Posiłki przygotowujemy ze świeżych produktów, dbając o
         wysoką jakość i różnorodność smaków.
