@@ -26,9 +26,6 @@ export const Carousel = ({
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [, setCount] = React.useState(0);
-  // const [emblaRef, emblaApi] = useEmblaCarousel({ active: true });
-  // const { onDotButtonClick, scrollSnaps, selectedIndex } =
-  //   useDotButton(emblaApi);
 
   useEffect(() => {
     if (!api) {
@@ -90,6 +87,7 @@ const CarouselDots = ({
 
         return (
           <button
+            aria-label={`Opinia ${index + 1}`}
             key={index}
             className={`cursor-pointer size-3 border-1 rounded-full ${colorDots}`}
             onClick={() => {
