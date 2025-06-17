@@ -7,14 +7,27 @@ export const Hero = () => {
       <div className="flex flex-col h-full min-h-[400px] gap-6 z-1 mt-20">
         <HeroHeader />
 
-        <Link
-          href="/rezerwacja"
-          className="border border-white w-10/12 sm:w-1/2 md:w-1/3 ml-auto md:mr-6 mx-auto"
-        >
-          <Button variant="green" size="lg" className="w-full">
-            Rezerwuj
-          </Button>
-        </Link>
+        <div className="flex flex-col items-center sm:items-end md:justify-end md:flex-row gap-2 w-full px-6">
+          <Link
+            href="/rezerwacja"
+            // className="border border-white   md:w-1/3 ml-auto md:mr-6 mx-auto"
+            className="border border-white w-full sm:w-1/2 lg:w-1/3"
+          >
+            <Button variant="green" size="lg" className="w-full">
+              Rezerwuj
+            </Button>
+          </Link>
+
+          <Link
+            href="/cennik"
+            // className="border border-white   md:w-1/3 ml-auto md:mr-6 mx-auto"
+            className="border border-white w-full sm:w-1/2 lg:w-1/3"
+          >
+            <Button variant="green" size="lg" className="w-full">
+              Cennik
+            </Button>
+          </Link>
+        </div>
       </div>
 
       {/* Tło z overlayem */}
