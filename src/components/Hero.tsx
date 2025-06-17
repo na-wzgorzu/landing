@@ -9,22 +9,20 @@ export const Hero = () => {
 
         <div className="flex flex-col items-center sm:items-end md:justify-end md:flex-row gap-2 w-full px-6">
           <Link
-            href="/rezerwacja"
-            // className="border border-white   md:w-1/3 ml-auto md:mr-6 mx-auto"
-            className="border border-white w-full sm:w-1/2 lg:w-1/3"
-          >
-            <Button variant="green" size="lg" className="w-full">
-              Rezerwuj
-            </Button>
-          </Link>
-
-          <Link
             href="/cennik"
-            // className="border border-white   md:w-1/3 ml-auto md:mr-6 mx-auto"
             className="border border-white w-full sm:w-1/2 lg:w-1/3"
           >
             <Button variant="green" size="lg" className="w-full">
               Cennik
+            </Button>
+          </Link>
+
+          <Link
+            href="/rezerwacja"
+            className="border border-white w-full sm:w-1/2 lg:w-1/3"
+          >
+            <Button variant="green" size="lg" className="w-full">
+              Rezerwuj
             </Button>
           </Link>
         </div>

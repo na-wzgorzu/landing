@@ -37,10 +37,15 @@ const images: Record<string, string[]> = {
     "/gallery/hotel01.jpg",
     "/gallery/hotel02.jpg",
     "/gallery/hotel08.jpg",
+    "/gallery/pokój_07.jpg",
     "/gallery/hotel03.jpg",
     "/gallery/hotel06.jpg",
     "/gallery/hotel07.jpg",
-    "/gallery/hotel10.jpg",
+    // "/gallery/hotel10.jpg",
+    "/gallery/pokój_06.jpg",
+    "/gallery/pokój_17.jpg",
+    //
+    "/gallery/pokój_05.jpg",
     "/gallery/hotel13.jpg",
   ],
   "Atrakcje i okolica": [
