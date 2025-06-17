@@ -6,7 +6,7 @@ import "yet-another-react-lightbox/styles.css";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-const categories = ["Domki", "Pokoje", "Atrakcje"];
+const categories = ["Domki", "Pokoje", "Atrakcje i okolica"];
 
 const images: Record<string, string[]> = {
   Domki: [
@@ -20,8 +20,16 @@ const images: Record<string, string[]> = {
     "/gallery/domki105.jpg",
     "/gallery/domki104.jpg",
     "/gallery/domki106.jpg",
-    "/gallery/domki107.jpg",
     "/gallery/domki11.jpg",
+    "/gallery/apartamenty03.jpg",
+    "/gallery/apartamenty06.jpg",
+    "/gallery/apartamenty04.jpg",
+    "/gallery/apartamenty103.jpg",
+    "/gallery/apartamenty101.jpg",
+    "/gallery/apartamenty100.jpg",
+    "/gallery/apartamenty104.jpg",
+    "/gallery/apartamenty105.jpg",
+    "/gallery/apartamenty102.jpg",
   ],
   Pokoje: [
     "/gallery/hotel11.jpg",
@@ -34,21 +42,10 @@ const images: Record<string, string[]> = {
     "/gallery/hotel07.jpg",
     "/gallery/hotel10.jpg",
     "/gallery/hotel13.jpg",
-    "/gallery/hotel14.jpg",
-    "/gallery/apartamenty03.jpg",
-    "/gallery/apartamenty04.jpg",
-    "/gallery/apartamenty06.jpg",
-    "/gallery/apartamenty101.jpg",
-    "/gallery/apartamenty100.jpg",
-    "/gallery/apartamenty103.jpg",
-    "/gallery/apartamenty102.jpg",
-    "/gallery/apartamenty105.jpg",
-    "/gallery/apartamenty104.jpg",
   ],
-  Atrakcje: [
+  "Atrakcje i okolica": [
     "/gallery/inne103.jpg",
     "/gallery/inne104.jpg",
-    //
     "/gallery/about-1.jpg",
     "/gallery/about-2.jpg",
     "/gallery/bridge.jpg",
@@ -61,8 +58,9 @@ const images: Record<string, string[]> = {
     "/gallery/inne115.jpg",
     "/gallery/inne116.jpg",
     "/gallery/inne117.jpg",
+    "/gallery/domki107.jpg",
+    "/gallery/hotel14.jpg",
   ],
-  // : ["./src/assets/atrakcje1.jpg", "./src/assets/atrakcje2.jpg"],
 };
 
 export function GalleryMasonry() {
