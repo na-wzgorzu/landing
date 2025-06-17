@@ -37,7 +37,7 @@ const AboutHeader = () => {
       </div>
 
       <div>
-        <h3>
+        <p>
           Jezioro Strażym (73 ha) stanowi część głównego szlaku wodnego
           łączącego całe Pojezierze Brodnickie. Akwen cieszy się dużą
           popularnością wśród wędkarzy. W naturalnych zatoczkach, będących
@@ -45,7 +45,7 @@ const AboutHeader = () => {
           szczupaki i liny oraz wiele innych gatunków ryb (m. in płoć, leszcz,
           węgorz, karp, okoń). Pobliskie lasy obfitują w borowiki, podgrzybki,
           maślaki oraz koźlarze.
-        </h3>
+        </p>
         <div className="mt-2">
           <Image
             width={1000}

@@ -28,7 +28,7 @@ export const FoodService = () => {
         </div>
 
         <div className="flex-1 flex flex-col gap-4 w-full">
-          <h4 className="font-semibold text-lg">Nasza kuchnia</h4>
+          <h2 className="font-semibold text-lg">Nasza kuchnia</h2>
           <p>
             Od początku czerwca do końca pierwszego tygodnia września oferujemy
             pobyty z wyżywieniem. W ścisłym sezonie (lipiec - sierpień)
