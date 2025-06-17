@@ -64,6 +64,33 @@ const images: Record<string, string[]> = {
     "/gallery/inne117.jpg",
     "/gallery/domki107.jpg",
     "/gallery/hotel14.jpg",
+
+    "/gallery/inne1.jpg",
+    "/gallery/inne2.jpg",
+    "/gallery/inne3.jpg",
+    "/gallery/inne4.jpg",
+    "/gallery/inne5.jpg",
+    "/gallery/inne6.jpg",
+    "/gallery/inne7.jpg",
+    "/gallery/inne8.jpg",
+    "/gallery/inne9.jpg",
+    "/gallery/inne10.jpg",
+    "/gallery/inne11.jpg",
+    "/gallery/inne12.jpg",
+    "/gallery/inne13.jpg",
+    "/gallery/inne14.jpg",
+
+    "/gallery/grzyby01.jpg",
+    "/gallery/grzyby03.jpg",
+    "/gallery/grzyby05.jpg",
+    "/gallery/grzyby06.jpg",
+
+    "/gallery/gal01.jpg",
+    "/gallery/gal02.jpg",
+
+    "/gallery/ryby01.jpg",
+    "/gallery/ryby02.jpg",
+    "/gallery/ryby03.jpg",
   ],
 };
 
