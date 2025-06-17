@@ -16,9 +16,9 @@ export const Reviews = () => {
       </div>
 
       <div className="w-full bg-brand md:py-6 text-white flex flex-col items-center gap-6">
-        <h5 className="hidden md:block uppercase w-full text-xl text-center tracking-wider font-medium">
+        <p className="hidden md:block uppercase w-full text-xl text-center tracking-wider font-medium">
           Wspaniałe miejsce!
-        </h5>
+        </p>
 
         <div className="p-4 md:p-0 relative flex flex-col md:flex-row mx-auto max-w-screen-lg gap-4 justify-center w-full">
           <div className="w-full md:w-[310px] h-[413px] md:absolute left-0 -top-full">
@@ -30,9 +30,9 @@ export const Reviews = () => {
           </div>
 
           <div className="flex flex-col gap-6">
-            <h6 className="md:hidden uppercase w-full text-xl text-center tracking-wider font-medium">
+            <p className="md:hidden uppercase w-full text-xl text-center tracking-wider font-medium">
               Wspaniałe miejsce!
-            </h6>
+            </p>
 
             <ReviewItemsList />
 
