@@ -30,9 +30,9 @@ export const Reviews = () => {
           </div>
 
           <div className="flex flex-col gap-6">
-            <h5 className="md:hidden uppercase w-full text-xl text-center tracking-wider font-medium">
+            <h6 className="md:hidden uppercase w-full text-xl text-center tracking-wider font-medium">
               Wspaniałe miejsce!
-            </h5>
+            </h6>
 
             <ReviewItemsList />
 
