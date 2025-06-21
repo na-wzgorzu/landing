@@ -1,6 +1,8 @@
 import { GoogleMapsEmbed } from "@next/third-parties/google";
 
 export const GoogleMap = () => {
+  console.log("process.env.GOOGLE_MAPS_KEY", process.env.GOOGLE_MAPS_KEY);
+
   return (
     <GoogleMapsEmbed
       apiKey={process.env.GOOGLE_MAPS_KEY ?? ""}
