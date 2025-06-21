@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 async function getHtml(): Promise<string> {
   const url =
     process.env.NODE_ENV === "production"
-      ? "https://na-wzgorzu.vercel.app/api/cennik"
+      ? "https://na-wzgorzu.pl/api/cennik"
       : "http://localhost:3000/api/cennik";
   const res = await fetch(url, {
     cache: "no-store",
