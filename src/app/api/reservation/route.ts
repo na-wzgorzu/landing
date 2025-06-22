@@ -25,8 +25,7 @@ export async function POST(req: Request) {
   try {
     await transporter.sendMail({
       from: `"Rezerwacja" <${process.env.EMAIL_USER}>`,
-      // to: "na-wzgorzu@na-wzgorzu.pl",
-      to: "zakrzewski.ka@gmail.com",
+      to: "na-wzgorzu@na-wzgorzu.pl",
       subject: "Zapytanie o Rezerwację.",
       html: `
           <div style="font-family: Arial, sans-serif; background-color: #f6f6f6; padding: 20px;">
