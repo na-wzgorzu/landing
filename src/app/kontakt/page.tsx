@@ -39,9 +39,9 @@ export default function Contact() {
               <PhoneCall className="size-6" />
               <span>+48 (56) 493 91 53</span>
             </p>
-            <a href="mailto:na-wzgorzu@na-wzgorzu.pl" className="flex gap-2">
+            <a href="mailto:na-wzgorzu@home.pl" className="flex gap-2">
               <MailIcon className="size-6" />
-              <span>na-wzgorzu@na-wzgorzu.pl</span>
+              <span>na-wzgorzu@home.pl</span>
             </a>
 
             <p className="mt-2">
@@ -56,11 +56,8 @@ export default function Contact() {
             <p className="font-semibold">
               Informacja dotycząca oferty, ośrodka, rezerwacji:
             </p>
-            <a
-              href="mailto:na-wzgorzu@na-wzgorzu.pl"
-              className="w-fit font-semibold"
-            >
-              na-wzgorzu@na-wzgorzu.pl
+            <a href="mailto:na-wzgorzu@home.pl" className="w-fit font-semibold">
+              na-wzgorzu@home.pl
             </a>
 
             <p>

@@ -10,7 +10,7 @@ export const Footer = () => {
         <p>OŚRODEK WYPOCZYNKOWY {'"NA WZGÓRZU"'}</p>
         <p>Gaj-Grzmięca 30a, 87-312 Pokrzydowo</p>
         <p>tel. (56) 4939153</p>
-        <p>na-wzgorzu@na-wzgorzu.pl</p>
+        <p>na-wzgorzu@home.pl</p>
       </div>
 
       <div className="md:hidden w-[80%]">
