@@ -27,6 +27,7 @@ export async function POST(req: Request) {
       from: `"Rezerwacja" <${process.env.EMAIL_USER}>`,
       to: "na-wzgorzu@home.pl",
       subject: "Zapytanie o Rezerwację.",
+      replyTo: email,
       html: `
           <div style="font-family: Arial, sans-serif; background-color: #f6f6f6; padding: 20px;">
             <div style="max-width: 600px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden;">
