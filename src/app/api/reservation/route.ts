@@ -30,7 +30,7 @@ export async function POST(req: Request) {
       replyTo: email,
       html: `
           <div style="font-family: Arial, sans-serif; background-color: #f6f6f6; padding: 20px;">
-            <div style="max-width: 600px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden;">
+            <div style="max-width: 600px; background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden;">
               <div style="background-color: #146143; color: white; padding: 16px 24px;">
                 <h2 style="margin: 0; font-size: 20px;">ZAPYTANIE REZERWACYJNE</h2>
               </div>
