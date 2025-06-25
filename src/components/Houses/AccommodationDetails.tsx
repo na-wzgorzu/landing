@@ -9,18 +9,16 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { accommodationList } from "@/data/houses";
 import Link from "next/link";
 import { AccommodationGallery } from "@/components/Houses/AccommodationGallery";
 import { getBedroomLabel } from "@/components/Houses/tools";
+import { Accommodation } from "@/components/Houses/types";
 
 type Props = {
-  id: string;
+  accommodation: Accommodation;
 };
 
-export const AccommodationDetails = ({ id }: Props) => {
-  const accommodation = accommodationList.find((acc) => acc.id === id);
-
+export const AccommodationDetails = ({ accommodation }: Props) => {
   if (!accommodation) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center">

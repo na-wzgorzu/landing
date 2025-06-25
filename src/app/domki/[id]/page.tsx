@@ -1,7 +1,7 @@
 import { AccommodationDetails } from "@/components/Houses/AccommodationDetails";
 import React from "react";
 import { Metadata } from "next";
-import { accommodationList } from "@/data/houses";
+import { houses } from "@/data/houses";
 
 interface HouseDetailsParams {
   id: string;
@@ -13,7 +13,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
-  const accommodation = accommodationList.find((acc) => acc.id === id);
+  const accommodation = houses.find((acc) => acc.id === id);
 
   return {
     title: accommodation ? `Na wzgórzu - ${accommodation.name}` : "Na wzgórzu",
@@ -22,10 +22,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function HousesDetails({ params }: Props) {
   const { id } = await params;
+  const accommodation = houses.find((acc) => acc.id === id);
+
+  if (!accommodation) {
+    return null;
+  }
+
   return (
     <div className="w-full flex flex-col items-center gap-4 bg-gray-50">
-      {/* <HousesPage houses={houses} /> */}
-      <AccommodationDetails id={id} />
+      <AccommodationDetails accommodation={accommodation} />
     </div>
   );
 }

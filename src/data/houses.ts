@@ -1,6 +1,4 @@
 import { Accommodation } from "@/components/Houses/types";
-import room1Img from "@/../public/gallery/apartamenty100.jpg";
-import room2Img from "@/../public/gallery/apartamenty101.jpg";
 // 2rooms-bt
 import room21Img from "@/../public/2-room-bt/pokój_05.jpg";
 import room22Img from "@/../public/2-room-bt/pokój_06.jpg";
@@ -43,52 +41,96 @@ import house56Img from "@/../public/5-house/domki_nad_jeziorem6.jpg";
 import house57Img from "@/../public/5-house/domki_nad_jeziorem7.jpg";
 import house58Img from "@/../public/5-house/domki_nad_jeziorem8.jpg";
 
-export const rooms = [
+export const rooms: Accommodation[] = [
   {
-    name: "Pokój piętrowy 5-7 osobowy",
-    image: room1Img,
+    id: "1",
+    name: "Pokoje 3 osobowe z tarasem",
+    type: "pokoj",
+    image: room34Img,
+    images: [room34Img, room36Img, room35Img, room33Img],
     description:
-      "Przestronny pokój o powierzchni 60 m². Na piętrze dwie sypialnie (2- i 3-osobowa) oraz loggia, na parterze salon z rozkładaną wersalką, łazienka, aneks kuchenny i taras. Położony w pierwszej linii od jeziora, zapewnia piękne widoki i wygodę.",
-    price: 480,
-    size: "60 m²",
-    guests: "5-7",
+      "Mają powierzchnię około 20 m2 (pokój + przedpokój z szafą + łazienka) oraz taras 7 m2. Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna), pościel, moskitiery w oknach. Mamy trzy takie pokoje.",
+    capacity: "3",
+    bedrooms: 1,
+    size: 20,
     amenities: [
-      "wifi",
-      "bigBed",
-      "shower",
-      "dryer",
-      "tv",
-      "kettle",
-      "parking",
-      "animal",
-      "breakfast",
-      "playground",
+      "Łazienka (prysznic, toaleta, umywalka)",
+      "Czajnik elektryczny",
+      "Szklanki",
+      "Lodówka",
+      "Telewizor LCD",
+      "Pościel",
+      "Moskitiery w oknach",
+      "Taras",
+    ],
+  },
+  // Rooms
+  {
+    id: "2",
+    name: "Pokoje 2 osobowe bez tarasu",
+    type: "pokoj",
+    image: room24Img,
+    images: [room24Img, room23Img, room22Img, room21Img, room25Img],
+    description:
+      "Mają powierzchnię około 15 m2 (pokój + przedpokój z szafą + łazienka). Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna, na zdjęciach są jeszcze stare telewizory), pościel, moskitiery w oknach. Mamy sześć takich pokoi.",
+    capacity: "2",
+    bedrooms: 1,
+    size: 15,
+    amenities: [
+      "Łazienka (prysznic, toaleta, umywalka)",
+      "Czajnik elektryczny",
+      "Szklanki",
+      "Lodówka",
+      "Telewizor LCD",
+      "Pościel",
+      "Moskitiery w oknach",
     ],
   },
   {
-    name: "Pokój parterowy 2-3 osobowy",
-    image: room2Img,
+    id: "3",
+    name: "Pokoje 3 osobowe bez tarasu",
+    type: "pokoj",
+    image: room32Img,
+    images: [room32Img, room31Img],
     description:
-      "Kompaktowy pokój o powierzchni 25 m². Posiada salon z rozkładaną wersalką i tapczanem, aneks kuchenny, łazienkę oraz taras. Położony w drugiej linii od jeziora, zapewnia spokojną atmosferę i komfortowy wypoczynek.",
-    price: 255,
-    size: "25 m²",
-    guests: "2-3",
+      "Mają powierzchnię około 20 m2 (pokój + przedpokój z szafą + łazienka). Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna, na zdjęciach są jeszcze stare telewizory), pościel, moskitiery w oknach. Mamy dwa takie pokoje.",
+    capacity: "3",
+    bedrooms: 1,
+    size: 20,
     amenities: [
-      "wifi",
-      "bigBed",
-      "shower",
-      "dryer",
-      "tv",
-      "kettle",
-      "parking",
-      "animal",
-      "breakfast",
-      "playground",
+      "Łazienka (prysznic, toaleta, umywalka)",
+      "Czajnik elektryczny",
+      "Szklanki",
+      "Lodówka",
+      "Telewizor LCD",
+      "Pościel",
+      "Moskitiery w oknach",
+    ],
+  },
+  {
+    id: "4",
+    name: "Pokoje 4 osobowe bez tarasu",
+    type: "pokoj",
+    image: room41Img,
+    images: [room41Img, room42Img],
+    description:
+      "Mają powierzchnię około 25 m2 (pokój + przedpokój z szafą + łazienka). Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna, na zdjęciach są jeszcze stare telewizory), pościel, moskitiery w oknach. Mamy dwa takie pokoje.",
+    capacity: "4",
+    bedrooms: 1,
+    size: 25,
+    amenities: [
+      "Łazienka (prysznic, toaleta, umywalka)",
+      "Czajnik elektryczny",
+      "Szklanki",
+      "Lodówka",
+      "Telewizor LCD",
+      "Pościel",
+      "Moskitiery w oknach",
     ],
   },
 ];
 
-export const accommodationList: Accommodation[] = [
+export const houses: Accommodation[] = [
   {
     id: "1",
     name: "Domki piętrowe 5-7 osobowe",
@@ -178,92 +220,6 @@ export const accommodationList: Accommodation[] = [
       "Meble ogrodowe",
       "Naścienne grzejniki elektryczne",
       "Możliwość grillowania w ogródku",
-    ],
-  },
-  {
-    id: "5",
-    name: "Pokoje 3 osobowe z tarasem",
-    type: "pokoj",
-    image: room34Img,
-    images: [room34Img, room36Img, room35Img, room33Img],
-    description:
-      "Mają powierzchnię około 20 m2 (pokój + przedpokój z szafą + łazienka) oraz taras 7 m2. Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna), pościel, moskitiery w oknach. Mamy trzy takie pokoje.",
-    capacity: "3",
-    bedrooms: 1,
-    size: 20,
-    amenities: [
-      "Łazienka (prysznic, toaleta, umywalka)",
-      "Czajnik elektryczny",
-      "Szklanki",
-      "Lodówka",
-      "Telewizor LCD",
-      "Pościel",
-      "Moskitiery w oknach",
-      "Taras",
-    ],
-  },
-  // Rooms
-  {
-    id: "4",
-    name: "Pokoje 2 osobowe bez tarasu",
-    type: "pokoj",
-    image: room24Img,
-    images: [room24Img, room23Img, room22Img, room21Img, room25Img],
-    description:
-      "Mają powierzchnię około 15 m2 (pokój + przedpokój z szafą + łazienka). Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna, na zdjęciach są jeszcze stare telewizory), pościel, moskitiery w oknach. Mamy sześć takich pokoi.",
-    capacity: "2",
-    bedrooms: 1,
-    size: 15,
-    amenities: [
-      "Łazienka (prysznic, toaleta, umywalka)",
-      "Czajnik elektryczny",
-      "Szklanki",
-      "Lodówka",
-      "Telewizor LCD",
-      "Pościel",
-      "Moskitiery w oknach",
-    ],
-  },
-  {
-    id: "6",
-    name: "Pokoje 3 osobowe bez tarasu",
-    type: "pokoj",
-    image: room32Img,
-    images: [room32Img, room31Img],
-    description:
-      "Mają powierzchnię około 20 m2 (pokój + przedpokój z szafą + łazienka). Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna, na zdjęciach są jeszcze stare telewizory), pościel, moskitiery w oknach. Mamy dwa takie pokoje.",
-    capacity: "3",
-    bedrooms: 1,
-    size: 20,
-    amenities: [
-      "Łazienka (prysznic, toaleta, umywalka)",
-      "Czajnik elektryczny",
-      "Szklanki",
-      "Lodówka",
-      "Telewizor LCD",
-      "Pościel",
-      "Moskitiery w oknach",
-    ],
-  },
-  {
-    id: "7",
-    name: "Pokoje 4 osobowe bez tarasu",
-    type: "pokoj",
-    image: room41Img,
-    images: [room41Img, room42Img],
-    description:
-      "Mają powierzchnię około 25 m2 (pokój + przedpokój z szafą + łazienka). Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna, na zdjęciach są jeszcze stare telewizory), pościel, moskitiery w oknach. Mamy dwa takie pokoje.",
-    capacity: "4",
-    bedrooms: 1,
-    size: 25,
-    amenities: [
-      "Łazienka (prysznic, toaleta, umywalka)",
-      "Czajnik elektryczny",
-      "Szklanki",
-      "Lodówka",
-      "Telewizor LCD",
-      "Pościel",
-      "Moskitiery w oknach",
     ],
   },
 ];
