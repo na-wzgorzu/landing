@@ -1,0 +1,33 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.na-wzgorzu.pl" }],
+      "destination": "https://na-wzgorzu.pl/:1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "http://na-wzgorzu.pl" }],
+      "destination": "https://na-wzgorzu.pl/:1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "http://www.na-wzgorzu.pl" }],
+      "destination": "https://na-wzgorzu.pl/:1",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        }
+      ]
+    }
+  ]
+}
