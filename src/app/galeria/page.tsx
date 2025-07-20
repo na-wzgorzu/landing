@@ -3,6 +3,9 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Na wzgórzu - Galeria",
+  alternates: {
+    canonical: "https://na-wzgorzu.pl/galeria",
+  },
 };
 
 export default function Page() {

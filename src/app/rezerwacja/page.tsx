@@ -4,6 +4,9 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Na wzgórzu - Rezerwacja",
+  alternates: {
+    canonical: "https://na-wzgorzu.pl/rezerwacja",
+  },
 };
 
 export default function ReservationFormPage() {

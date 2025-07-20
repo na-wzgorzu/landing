@@ -3,6 +3,9 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Na wzgórzu - Cennik",
+  alternates: {
+    canonical: "https://na-wzgorzu.pl/cennik",
+  },
 };
 
 async function getHtml(): Promise<string> {

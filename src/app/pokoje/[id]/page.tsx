@@ -11,12 +11,16 @@ type Props = {
   params: Promise<HouseDetailsParams>;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const { params } = props;
   const { id } = await params;
   const accommodation = rooms.find((acc) => acc.id === id);
 
   return {
     title: accommodation ? `Na wzgórzu - ${accommodation.name}` : "Na wzgórzu",
+    alternates: {
+      canonical: `https://na-wzgorzu.pl/pokoje/${id}`,
+    },
   };
 }
 

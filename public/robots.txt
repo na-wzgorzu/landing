@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+Disallow: /?utm_
+Disallow: /zak_
+
 Sitemap: https://na-wzgorzu.pl/sitemap.xml

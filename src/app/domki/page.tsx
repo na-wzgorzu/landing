@@ -5,6 +5,9 @@ import { houses } from "@/data/houses";
 
 export const metadata: Metadata = {
   title: "Na wzgórzu - Domki",
+  alternates: {
+    canonical: "https://na-wzgorzu.pl/domki",
+  },
 };
 
 export default function Houses() {

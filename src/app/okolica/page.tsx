@@ -4,6 +4,9 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Na wzgórzu - Okolica",
+  alternates: {
+    canonical: "https://na-wzgorzu.pl/okolica",
+  },
 };
 
 export default function AtractionsPage() {

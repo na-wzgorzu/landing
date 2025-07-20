@@ -17,6 +17,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: accommodation ? `Na wzgórzu - ${accommodation.name}` : "Na wzgórzu",
+    alternates: {
+      canonical: `https://na-wzgorzu.pl/domki/${id}`,
+    },
   };
 }
 

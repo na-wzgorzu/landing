@@ -6,6 +6,9 @@ import { rooms } from "@/data/houses";
 
 export const metadata: Metadata = {
   title: "Na wzgórzu - Pokoje",
+  alternates: {
+    canonical: "https://na-wzgorzu.pl/pokoje",
+  },
 };
 
 export default function Houses() {
