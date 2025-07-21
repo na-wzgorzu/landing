@@ -1,0 +1,39 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Custom styles */
+.max-w-screen-xl { max-width: 1280px; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.bg-resort-beige { background-color: #f5f5f0; }
+.text-resort-green { color: #146143; }
+.text-resort-text { color: #333333; }
+.rounded-xl { border-radius: 0.75rem; }
+.fade-in { 
+  opacity: 0;
+  animation: fade-in 0.5s ease-in-out forwards;
+}
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+.animation-delay-800 { animation-delay: 800ms; }
+
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.cta-button {
+  @apply bg-resort-green text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all;
+}
+
+.section-container {
+  @apply px-4;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid styles */
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.gap-12 { gap: 3rem; }
