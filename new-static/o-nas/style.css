@@ -1,0 +1,152 @@
+/* globals.css */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css');
+
+:root {
+  --brand: #146143;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --resort-beige: #f5f5dc;
+  --resort-green: #146143;
+  --resort-text: #333;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-sans {
+    font-family: "Montserrat", sans-serif;
+}
+
+.font-mono {
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.bg-brand {
+  background-color: var(--brand);
+}
+
+.text-brand {
+  color: var(--brand);
+}
+
+.bg-resort-beige {
+    background-color: var(--resort-beige);
+}
+
+.text-resort-text {
+    color: var(--resort-text);
+}
+
+.text-resort-green {
+    color: var(--resort-green);
+}
+
+.bg-resort-green\/10 {
+    background-color: rgba(20, 97, 67, 0.1);
+}
+
+.text-resort-text\/80 {
+    color: rgba(51, 51, 51, 0.8);
+}
+
+.text-resort-text\/70 {
+    color: rgba(51, 51, 51, 0.7);
+}
+
+.bg-brand\/10 {
+    background-color: rgba(20, 97, 67, 0.1);
+}
+
+.hover\:bg-brand\/5:hover {
+    background-color: rgba(20, 97, 67, 0.05);
+}
+
+.fade-in {
+    animation: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animation-delay-200 {
+    animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+    animation-delay: 400ms;
+}
+
+.animation-delay-800 {
+    animation-delay: 800ms;
+}
+
+.feature-card {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.value-card {
+    text-align: center;
+}
+
+.value-icon {
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    background-color: var(--brand);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #104d36;
+}
+
+.section-container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Additional styles from globals.css that might be needed */
+.heading-with-line {
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.heading-with-line::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 4rem;
+    height: 2px;
+    background-color: var(--resort-green);
+}
