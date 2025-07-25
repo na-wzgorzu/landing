@@ -1,0 +1,104 @@
+body {
+        font-family: "Verdana", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+        color: #333;
+      }
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 16px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow-x: scroll;
+        min-width: 465px;
+      }
+      .main-title {
+        font-size: 2.5em;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 40px;
+        color: #374151;
+        padding-top: 8px;
+      }
+      .section-title {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-top: 30px;
+        margin-bottom: 16px;
+        color: #3d3d3d;
+        text-align: center;
+      }
+      .price-table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #d1d5db;
+        margin-top: 10px;
+        margin-bottom: 4px;
+        font-size: 0.75em;
+        line-height: 12px;
+      }
+      .price-table th,
+      .price-table td {
+        border: 1px solid #d1d5db;
+        padding: 8px;
+        text-align: left;
+      }
+      .price-table th {
+        background-color: #f3f4f6;
+        font-weight: bold;
+        color: #4a5568;
+      }
+      .price-table th.center,
+      .price-table td.center {
+        text-align: center;
+      }
+      .price-highlight {
+        color: #ef4444;
+        font-size: 0.8em;
+      }
+      .additional-info-box {
+        background-color: #e5e7eb;
+        color: #374151;
+        padding: 8px;
+        font-weight: 600;
+        font-size: 0.75em;
+      }
+      .important-note {
+        font-size: 0.75em;
+        color: #4b5563;
+        margin-top: 15px;
+        text-align: center;
+      }
+      .payment-info {
+        font-size: 0.75em;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px;
+        color: #1f2937;
+      }
+      .equipment-table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #d1d5db;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-size: 0.75em;
+      }
+      .equipment-table th,
+      .equipment-table td {
+        border: 1px solid #d1d5db;
+        padding: 8px;
+        text-align: left;
+      }
+      .equipment-table th {
+        background-color: #f3f4f6;
+        font-weight: bold;
+        color: #4a5568;
+      }
+      .equipment-table th.center,
+      .equipment-table td.center {
+        text-align: center;
+      }
