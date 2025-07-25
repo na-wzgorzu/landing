@@ -1,0 +1,73 @@
+<header
+  class="sticky z-[1000] top-0 inset-x-0 flex h-16 w-full shrink-0 items-center justify-between flex-row-reverse lg:flex-row px-4 bg-brand lg:text-white shadow-md"
+>
+  <div class="lg:hidden">
+    <button id="mobile-menu-button" class="text-white">
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7"
+        ></path>
+      </svg>
+    </button>
+  </div>
+
+  <a href="/" class="mr-6 flex" aria-label="Navigation Logo">
+    <img src="../public/logo.svg" class="text-white size-20" />
+  </a>
+
+  <nav id="desktop-nav" class="ml-auto hidden lg:flex gap-2.5 lg:gap-4">
+    <a
+      href="/"
+      class="group inline-flex h-9 w-max items-center justify-center lg:p-2 transition-all border-b border-brand hover:border-white focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+      >Start</a
+    >
+    <a
+      href="/o-nas"
+      class="group inline-flex h-9 w-max items-center justify-center lg:p-2 transition-all border-b border-brand hover:border-white focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+      >O nas</a
+    >
+    <a
+      href="/domki"
+      class="group inline-flex h-9 w-max items-center justify-center lg:p-2 transition-all border-b border-brand hover:border-white focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+      >Domki</a
+    >
+    <a
+      href="/pokoje"
+      class="group inline-flex h-9 w-max items-center justify-center lg:p-2 transition-all border-b border-brand hover:border-white focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+      >Pokoje</a
+    >
+    <a
+      href="/cennik"
+      class="group inline-flex h-9 w-max items-center justify-center lg:p-2 transition-all border-b border-brand hover:border-white focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+      >Cennik</a
+    >
+    <a
+      href="/rezerwacja"
+      class="group inline-flex h-9 w-max items-center justify-center lg:p-2 transition-all border-b border-brand hover:border-white focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+      >Rezerwacja</a
+    >
+    <a
+      href="/kontakt"
+      class="group inline-flex h-9 w-max items-center justify-center lg:p-2 transition-all border-b border-brand hover:border-white focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+      >Kontakt</a
+    >
+  </nav>
+</header>
+<div id="mobile-menu" class="hidden lg:hidden bg-brand text-white p-4">
+  <a href="/" class="block py-2">Start</a>
+  <a href="/o-nas" class="block py-2">O nas</a>
+  <a href="/domki" class="block py-2">Domki</a>
+  <a href="/pokoje" class="block py-2">Pokoje</a>
+  <a href="/cennik" class="block py-2">Cennik</a>
+  <a href="/rezerwacja" class="block py-2">Rezerwacja</a>
+  <a href="/kontakt" class="block py-2">Kontakt</a>
+</div>
