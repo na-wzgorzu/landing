@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Expand, User } from "lucide-react";
 import { Accommodation } from "@/components/Houses/types";
 import { ButtonUnderline } from "@/components/ButtonUnderline";
@@ -33,7 +32,7 @@ export const HouseCard = ({
 
       {/* Image wrapper to ensure responsiveness */}
       <div className="relative w-full flex items-center">
-        <Image
+        <img
           src={image}
           alt="house"
           className="w-full h-[268px] md:h-full md:max-h-[425px] object-cover"

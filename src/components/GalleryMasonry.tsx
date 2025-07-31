@@ -3,7 +3,6 @@ import { useState } from "react";
 import Masonry from "react-masonry-css";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 const categories = ["Domki", "Pokoje", "Atrakcje i okolica"];
@@ -121,7 +120,7 @@ export function GalleryMasonry() {
         columnClassName="flex flex-col gap-4"
       >
         {images[selectedCategory].map((src, index) => (
-          <Image
+          <img
             key={src + index + selectedCategory}
             src={src}
             alt="Gallery item"

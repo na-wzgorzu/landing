@@ -1,5 +1,3 @@
-import Image from "next/image";
-import buildImg from "@/assets/build-1.jpg";
 import { ButtonUnderline } from "@/components/ButtonUnderline";
 import { Trees } from "@/assets/Trees";
 import Link from "next/link";
@@ -29,11 +27,10 @@ export const HousesBanner = () => {
         </div>
 
         <div className="flex-">
-          <Image
-            src={buildImg}
+          <img
+            src="/build-1.jpg"
             alt="build"
             className="w-full h-full object-cover"
-            priority={true}
           />
         </div>
       </div>
