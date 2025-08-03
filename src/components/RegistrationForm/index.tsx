@@ -33,7 +33,7 @@ export const RegistrationForm = () => {
 
   const onSubmit = async (data: Reservation) => {
     try {
-      const res = await fetch("/api/reservation", {
+      const res = await fetch("https://na-wzgorzu.vercel.app/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -75,17 +75,17 @@ export const RegistrationForm = () => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="flex flex-col md:flex-row gap-4">
-        <LabelWrapper>
-          <Label htmlFor="lastName">Nazwisko*</Label>
-          <Input {...register("lastName")} />
-          <Error error={errors["lastName"]?.message} />
-          </LabelWrapper>
-          
           <LabelWrapper>
-          <Label htmlFor="firstName">Imię*</Label>
-          <Input {...register("firstName")} />
-          <Error error={errors["firstName"]?.message} />
-        </LabelWrapper>
+            <Label htmlFor="lastName">Nazwisko*</Label>
+            <Input {...register("lastName")} />
+            <Error error={errors["lastName"]?.message} />
+          </LabelWrapper>
+
+          <LabelWrapper>
+            <Label htmlFor="firstName">Imię*</Label>
+            <Input {...register("firstName")} />
+            <Error error={errors["firstName"]?.message} />
+          </LabelWrapper>
         </div>
 
         <LabelWrapper>
