@@ -33,7 +33,7 @@ export const RegistrationForm = () => {
 
   const onSubmit = async (data: Reservation) => {
     try {
-      const res = await fetch("https://na-wzgorzu.vercel.app/", {
+      const res = await fetch("https://na-wzgorzu.vercel.app/api/reservation", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
