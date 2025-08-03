@@ -1,14 +1,24 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 204,
+    headers: corsHeaders,
+  });
+}
+
 export async function POST(req: Request) {
   const body = await req.json();
   const { lastName, firstName, email, phone, message } = body;
 
   if (!lastName || !firstName || !email || !message) {
-    return NextResponse.json(
-      { error: "Brakuje wymaganych danych" },
-      { status: 400 }
+    return new NextResponse(
+      JSON.stringify({ error: "Brakuje wymaganych danych" }),
+      {
+        status: 400,
+        headers: corsHeaders,
+      }
     );
   }
 
@@ -25,7 +35,7 @@ export async function POST(req: Request) {
   try {
     await transporter.sendMail({
       from: `"Rezerwacja" <${process.env.EMAIL_USER}>`,
-      to: "na-wzgorzu@home.pl",
+      to: "zakrzewski.ka@gmail.com",
       subject: "Zapytanie o Rezerwację.",
       replyTo: email,
       html: `
@@ -50,12 +60,25 @@ export async function POST(req: Request) {
       `,
     });
 
-    return NextResponse.json({ success: true });
+    return new NextResponse(JSON.stringify({ success: true }), {
+      status: 200,
+      headers: corsHeaders,
+    });
   } catch (error) {
     console.error("[MAIL ERROR]", error);
-    return NextResponse.json(
-      { error: "Błąd podczas wysyłania wiadomości" },
-      { status: 500 }
+    return new NextResponse(
+      JSON.stringify({ error: "Błąd podczas wysyłania wiadomości" }),
+      {
+        status: 500,
+        headers: corsHeaders,
+      }
     );
   }
 }
+
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "http://localhost:3000",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type",
+  "Access-Control-Allow-Credentials": "true",
+};
