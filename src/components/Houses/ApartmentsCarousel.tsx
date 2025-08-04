@@ -27,7 +27,7 @@ export function ApartmentsCarousel() {
               alt="Gallery item"
               width={300}
               height={200}
-              className={`max-w-[333px] w-full rounded-lg lg:even:block cursor-pointer object-cover aspect-video
+              className={`lg:max-w-[333px] w-full rounded-lg lg:even:block cursor-pointer object-cover aspect-video
                 `}
             />
           ))}
