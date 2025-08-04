@@ -44,18 +44,19 @@ export const AccommodationGallery = ({
           <img
             src={images[mainImage]}
             alt={`${name} tło`}
-            className="object-cover blur-xl scale-110 absolute"
+            className="object-cover blur-xl scale-110 absolute inset-0 w-full h-full"
           />
         )}
 
         <img
           src={images[mainImage]}
           alt={name}
-          className={imageClass}
-          // onLoadingComplete={(img) => {
-          //   const ratio = img.naturalWidth / img.naturalHeight;
-          //   setAspectRatio(ratio);
-          // }}
+          className={`${imageClass} absolute inset-0 w-full h-full`}
+          onLoad={(e) => {
+            const img = e.currentTarget;
+            const ratio = img.naturalWidth / img.naturalHeight;
+            setAspectRatio(ratio);
+          }}
         />
       </motion.div>
 
@@ -84,7 +85,7 @@ export const AccommodationGallery = ({
       <Lightbox
         open={isLightboxOpen}
         close={() => setIsLightboxOpen(false)}
-        slides={images.map((src) => ({ src }))}
+        slides={images.map((img) => ({ src: img }))}
         index={mainImage}
       />
     </>

@@ -8,9 +8,9 @@ export const rooms: Accommodation[] = [
     image: "/3-room-t/pokój13.jpg",
     images: [
       "/3-room-t/pokój13.jpg",
-      "/3-room-t/pokój14.jpg",
       "/3-room-t/pokój15.jpg",
-      "/3-room-t/pokój13.jpg",
+      "/3-room-t/pokój14.jpg",
+      "/3-room-t/hotel13.jpg",
     ],
     description:
       "Mają powierzchnię około 20 m2 (pokój + przedpokój z szafą + łazienka) oraz taras 7 m2. Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna), pościel, moskitiery w oknach. Mamy trzy takie pokoje.",
