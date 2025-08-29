@@ -41,7 +41,7 @@ export const Gastro = () => {
   const dietaryOptions = [
     "Wegetariańskie (prosimy o informację - z rybami czy bez)",
     "Wegańskie",
-    "Bezglutenowe (prosimy o informację czy dopuszczalne są śladowe ilości)",
+    "Bezglutenowe (możliwe tylko jeżeli dopuszczalne są śladowe ilości)",
   ];
 
   return (
@@ -214,9 +214,11 @@ export const Gastro = () => {
           </div>
 
           <p className="text-gray-700 mb-6">
-            Oferujemy posiłki dostosowane do różnych preferencji żywieniowych.
-            Wszystkie opcje należy zgłaszać przed przyjazdem, najlepiej na
-            etapie rezerwacji.
+            Oferujemy posiłki dostosowane do różnych preferencji żywieniowych.{" "}
+            <span className="font-bold">
+              Wszystkie opcje należy zgłaszać przed przyjazdem, najlepiej na
+              etapie rezerwacji.
+            </span>
           </p>
 
           <div className="flex flex-wrap gap-3">
