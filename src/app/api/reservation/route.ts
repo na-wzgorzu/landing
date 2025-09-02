@@ -34,7 +34,7 @@ export async function POST(req: Request) {
 
   try {
     logger(body);
-  } catch (error) {}
+  } catch {}
 
   try {
     await transporter.sendMail({
