@@ -33,6 +33,10 @@ export async function POST(req: Request) {
   });
 
   try {
+    logger(body);
+  } catch (error) {}
+
+  try {
     await transporter.sendMail({
       from: `"Rezerwacja" <${process.env.EMAIL_USER}>`,
       to: "na-wzgorzu@home.pl",
@@ -81,3 +85,41 @@ const corsHeaders = {
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type",
 };
+
+interface ContactData {
+  lastName: string;
+  firstName: string;
+  email: string;
+  phone: string;
+  message: string;
+}
+
+async function logger(data: ContactData) {
+  try {
+    const response = await fetch(
+      "https://script.google.com/macros/s/AKfycbz7zzvtuGKCZMVQiCpoWPLLBdKbgqM3TqU5zbBrlZ7ISE9iUVNEgzJDoaaxY3OgG-v60A/exec",
+      {
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...data,
+          creationDate: new Date().toISOString(),
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Błąd HTTP: ${response.status} - ${errorText}`);
+    }
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    throw error;
+  }
+}
