@@ -42,7 +42,7 @@ export const rooms: Accommodation[] = [
       "/2-room-bt/lazienka.jpg",
     ],
     description:
-      "Mają powierzchnię około 15 m2 (pokój + przedpokój z szafą + łazienka). Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna, na zdjęciach są jeszcze stare telewizory), pościel, moskitiery w oknach. Mamy sześć takich pokoi.",
+      "Mają powierzchnię około 15 m2 (pokój + przedpokój z szafą + łazienka). Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna), pościel, moskitiery w oknach. Mamy sześć takich pokoi",
     capacity: "2",
     bedrooms: 1,
     size: 15,
@@ -60,10 +60,10 @@ export const rooms: Accommodation[] = [
     id: "3",
     name: "Pokoje 3 osobowe bez tarasu",
     type: "pokoj",
-    image: "/3-room-bt/pok_17.jpeg",
-    images: ["/3-room-bt/pok_17.jpeg", "/3-room-bt/pok_11.jpeg"],
+    image: "/3-room-bt/pok_11.jpeg",
+    images: ["/3-room-bt/pok_11.jpeg", "/3-room-bt/pok_17.jpeg"],
     description:
-      "Mają powierzchnię około 20 m2 (pokój + przedpokój z szafą + łazienka). Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna, na zdjęciach są jeszcze stare telewizory), pościel, moskitiery w oknach. Mamy dwa takie pokoje.",
+      "Mają powierzchnię około 20 m2 (pokój + przedpokój z szafą + łazienka). Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna), pościel, moskitiery w oknach. Mamy dwa takie pokoje.",
     capacity: "3",
     bedrooms: 1,
     size: 20,
@@ -84,7 +84,7 @@ export const rooms: Accommodation[] = [
     image: "/4-room-bt/pok_10.jpeg",
     images: ["/4-room-bt/pok_10.jpeg", "/4-room-bt/pok_18.jpeg"],
     description:
-      "Mają powierzchnię około 25 m2 (pokój + przedpokój z szafą + łazienka). Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna, na zdjęciach są jeszcze stare telewizory), pościel, moskitiery w oknach. Mamy dwa takie pokoje.",
+      "Mają powierzchnię około 25 m2 (pokój + przedpokój z szafą + łazienka). Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna), pościel, moskitiery w oknach. Mamy dwa takie pokoje.",
     capacity: "4",
     bedrooms: 1,
     size: 25,
