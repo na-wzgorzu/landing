@@ -8,28 +8,10 @@ export const metadata: Metadata = {
   },
 };
 
-// async function getHtml(): Promise<string> {
-//   const url = "https://na-wzgorzu.pl/api/cennik";
-
-//   const res = await fetch(url, {
-//     cache: "no-store",
-//   });
-
-//   if (!res.ok) {
-//     throw new Error("Nie udało się pobrać danych");
-//   }
-
-//   return res.text();
-// }
-
 export default async function Page() {
-  // const html = await getHtml();
   return (
     <div className="overflow-hidden">
-      <div
-        className="py-8 overflow-scroll"
-        // dangerouslySetInnerHTML={{ __html: html }}
-      >
+      <div className="py-8 overflow-scroll">
         <div className="mx-auto my-0 max-w-5xl overflow-x-scroll bg-white p-4 shadow-md sm:min-w-[465px] sm:rounded-lg">
           <h1 className="pb-8 pt-2 text-center text-4xl font-bold text-gray-700">
             Cennik 2025
