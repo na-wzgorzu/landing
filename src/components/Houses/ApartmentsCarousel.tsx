@@ -4,13 +4,11 @@
 // import { CarouselItem } from "@/components/ui/carousel";
 // import { accommodationList } from "@/data/houses";
 
-import Image from "next/image";
 import Link from "next/link";
 
 const images = [
   "/gallery/hotel03.jpg",
-  // "/gallery/hotel07.jpg",
-  "/3-room-t/pokój15.jpg",
+  "/3-room-t/pok_15.jpg",
   "/gallery/hotel01.jpg",
 ];
 
@@ -22,13 +20,13 @@ export function ApartmentsCarousel() {
 
         <div className="flex flex-col lg:flex-row gap-3 justify-between">
           {images.map((image, index) => (
-            <Image
+            <img
               key={index}
               src={image}
               alt="Gallery item"
               width={300}
               height={200}
-              className={`w-full rounded-lg lg:even:block cursor-pointer aspect-video
+              className={`lg:max-w-[333px] w-full rounded-lg lg:even:block cursor-pointer object-cover aspect-video
                 `}
             />
           ))}

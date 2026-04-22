@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const images = [
@@ -35,7 +34,7 @@ export function HousesCarousel() {
           <div className="flex flex-col lg:flex-row gap-3 w-full">
             {images.map(({ image }, index) => (
               <div key={index} className="w-full flex flex-col gap-3">
-                <Image
+                <img
                   src={image}
                   alt="Gallery item"
                   width={300}

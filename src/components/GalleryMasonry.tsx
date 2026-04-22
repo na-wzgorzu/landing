@@ -3,7 +3,6 @@ import { useState } from "react";
 import Masonry from "react-masonry-css";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 const categories = ["Domki", "Pokoje", "Atrakcje i okolica"];
@@ -38,13 +37,13 @@ const images: Record<string, string[]> = {
     "/gallery/hotel01.jpg",
     "/gallery/hotel02.jpg",
     "/gallery/hotel08.jpg",
-    "/gallery/pokój_07.jpg",
+    "/2-room-bt/pok_07.jpg",
     "/gallery/hotel03.jpg",
     "/gallery/hotel06.jpg",
     "/gallery/hotel07.jpg",
-    "/gallery/pokój_06.jpg",
-    "/gallery/pokój_17.jpg",
-    "/gallery/pokój_05.jpg",
+    "/2-room-bt/pok_06.jpg",
+    "/3-room-bt/pok_17.jpeg",
+    "/2-room-bt/pok_05.jpg",
     "/gallery/hotel13.jpg",
   ],
   "Atrakcje i okolica": [
@@ -121,7 +120,7 @@ export function GalleryMasonry() {
         columnClassName="flex flex-col gap-4"
       >
         {images[selectedCategory].map((src, index) => (
-          <Image
+          <img
             key={src + index + selectedCategory}
             src={src}
             alt="Gallery item"

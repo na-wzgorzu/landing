@@ -1,10 +1,7 @@
 "use client";
 import { ButtonUnderline } from "@/components/ButtonUnderline";
 import { VerticalDivider } from "@/components/VerticalDivider";
-import Image from "next/image";
 import React from "react";
-import about1Img from "@/assets/about-1.jpg";
-import about2Img from "@/assets/about-2.jpg";
 import { FooterBuild } from "@/assets/FooterBuild";
 import { Input } from "@/components/ui/input-newsletter";
 import { saveEmail } from "@/components/Newsletter/actions";
@@ -92,15 +89,15 @@ export const Newsletter = () => {
             </div>
 
             <div className="w-full h-full min-h-20 flex justify-center">
-              <Image
-                src={about1Img}
+              <img
+                src="/gallery/about-1.jpg"
                 alt="facebook1-section"
                 className="object-cover size-22 outline-8 outline-white -mr-8 -mt-10 z-1"
               />
 
               <div className="relative w-48">
-                <Image
-                  src={about2Img}
+                <img
+                  src="/gallery/about-2.jpg"
                   alt="facebook2-section"
                   className="object-cover z-10 w-full outline-8 outline-brand"
                 />

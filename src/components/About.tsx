@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const aboutContent = {
   first:
     "Ośrodek Wypoczynkowy „Na Wzgórzu” jest zlokalizowany na terenie Brodnickiego Parku Krajobrazowego, nad jeziorem Strażym, w odległości 12 km od miasta Brodnica, 60 km od Torunia i 200 km od Warszawy, na pograniczu województw Kujawsko-Pomorskiego oraz Warmińsko-Mazurskiego.",
@@ -47,10 +45,9 @@ const AboutHeader = () => {
           maślaki oraz koźlarze.
         </p>
         <div className="mt-2">
-          <Image
+          <img
             width={1000}
             height={1000}
-            quality={100}
             alt="About image"
             src="/gallery/jezioro.jpg"
             className="w-full"
@@ -73,7 +70,7 @@ const AboutContent = ({
   return (
     <div className={`flex flex-1 flex-col gap-4 ${classNames}`}>
       <div>
-        <Image
+        <img
           width={450}
           height={300}
           alt="About image"

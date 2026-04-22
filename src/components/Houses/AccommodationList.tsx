@@ -1,11 +1,7 @@
-// import { motion } from "framer-motion";
-
 import { BedDouble, Users, Maximize, ArrowRight } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import Image from "next/image";
 import { getBedroomLabel } from "@/components/Houses/tools";
 import { Accommodation } from "@/components/Houses/types";
 
@@ -39,7 +35,7 @@ export const AccommodationList = ({
               <div className="flex flex-col md:flex-row">
                 {/* Left side - Image */}
                 <div className="md:w-1/3 h-64 md:h-auto relative">
-                  <Image
+                  <img
                     src={accommodation.image}
                     alt={accommodation.name}
                     className="w-full h-full object-cover"

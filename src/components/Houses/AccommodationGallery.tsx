@@ -1,12 +1,11 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Image, { StaticImageData } from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
 interface AccommodationGalleryProps {
-  images: StaticImageData[];
+  images: string[];
   name: string;
 }
 
@@ -42,20 +41,19 @@ export const AccommodationGallery = ({
         onClick={() => setIsLightboxOpen(true)}
       >
         {isUnusualAspect && (
-          <Image
+          <img
             src={images[mainImage]}
             alt={`${name} tło`}
-            fill
-            className="object-cover blur-xl scale-110 absolute"
+            className="object-cover blur-xl scale-110 absolute inset-0 w-full h-full"
           />
         )}
 
-        <Image
+        <img
           src={images[mainImage]}
           alt={name}
-          fill
-          className={imageClass}
-          onLoadingComplete={(img) => {
+          className={`${imageClass} absolute inset-0 w-full h-full`}
+          onLoad={(e) => {
+            const img = e.currentTarget;
             const ratio = img.naturalWidth / img.naturalHeight;
             setAspectRatio(ratio);
           }}
@@ -74,7 +72,7 @@ export const AccommodationGallery = ({
             }`}
             onClick={() => handleThumbnailClick(index)}
           >
-            <Image
+            <img
               src={image}
               alt={`${name} widok ${index + 1}`}
               className="w-full h-full object-cover"
@@ -87,7 +85,7 @@ export const AccommodationGallery = ({
       <Lightbox
         open={isLightboxOpen}
         close={() => setIsLightboxOpen(false)}
-        slides={images.map((img) => ({ src: img.src }))}
+        slides={images.map((img) => ({ src: img }))}
         index={mainImage}
       />
     </>

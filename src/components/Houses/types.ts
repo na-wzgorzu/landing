@@ -1,11 +1,9 @@
-import { StaticImageData } from "next/image";
-
 export interface Accommodation {
   id: string;
   name: string;
   type: "domek" | "pokoj";
-  image: StaticImageData;
-  images: StaticImageData[];
+  image: string;
+  images: string[];
   description: string;
   capacity: string;
   bedrooms: number | string;

@@ -1,9 +1,6 @@
 import { ButtonUnderline } from "@/components/ButtonUnderline";
 import { Title } from "@/components/Title";
 import { reviews } from "@/data/reviews";
-import bridgeImg from "@/assets/bridge-dark.jpg";
-import kayakImg from "@/assets/kayak.jpg";
-import Image from "next/image";
 import { Carousel } from "@/components/Carousel";
 import { CarouselItem } from "@/components/ui/carousel";
 import Link from "next/link";
@@ -22,9 +19,9 @@ export const Reviews = () => {
 
         <div className="p-4 md:p-0 relative flex flex-col md:flex-row mx-auto max-w-screen-lg gap-4 justify-center w-full">
           <div className="w-full md:w-[310px] h-[413px] md:absolute left-0 -top-full">
-            <Image
+            <img
               className="object-cover w-full h-full"
-              src={bridgeImg}
+              src="/bridge-dark.jpg"
               alt="bridge"
             />
           </div>
@@ -46,9 +43,9 @@ export const Reviews = () => {
           </div>
 
           <div className="w-full md:w-[310px] h-[413px] md:absolute right-0 -top-full">
-            <Image
+            <img
               className="object-cover w-full h-full"
-              src={kayakImg}
+              src="/kayak.jpg"
               alt="kayak"
             />
           </div>

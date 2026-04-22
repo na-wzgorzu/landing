@@ -11,6 +11,12 @@ type Props = {
   params: Promise<HouseDetailsParams>;
 };
 
+export function generateStaticParams() {
+  return rooms.map((house) => ({
+    id: house.id,
+  }));
+}
+
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const { params } = props;
   const { id } = await params;

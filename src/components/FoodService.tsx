@@ -1,5 +1,4 @@
 import { Title } from "@/components/Title";
-import Image from "next/image";
 import React from "react";
 import { ButtonUnderline } from "@/components/ButtonUnderline";
 import Link from "next/link";
@@ -18,7 +17,7 @@ export const FoodService = () => {
 
       <div className="flex gap-6 flex-col sm:flex-row">
         <div className="flex-2">
-          <Image
+          <img
             src={"/gallery/wyzywienie02-horizontal.png"}
             width={650}
             height={360}

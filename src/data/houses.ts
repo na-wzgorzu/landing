@@ -1,53 +1,17 @@
 import { Accommodation } from "@/components/Houses/types";
-// 2rooms-bt
-import room21Img from "@/../public/2-room-bt/pokój_05.jpg";
-import room22Img from "@/../public/2-room-bt/pokój_06.jpg";
-import room23Img from "@/../public/2-room-bt/pokój_07.jpg";
-import room24Img from "@/../public/2-room-bt/pokój_08.jpg";
-import room25Img from "@/../public/2-room-bt/łazienka.jpg";
-// 3rooms-bt
-import room31Img from "@/../public/3-room-bt/pokój_11.jpeg";
-import room32Img from "@/../public/3-room-bt/pokój_17.jpeg";
-// 3rooms-t
-import room33Img from "@/../public/3-room-t/hotel13.jpg";
-import room34Img from "@/../public/3-room-t/pokój13.jpg";
-import room35Img from "@/../public/3-room-t/pokój14.jpg";
-import room36Img from "@/../public/3-room-t/pokój15.jpg";
-// 4rooms-bt
-import room41Img from "@/../public/4-room-bt/pokój_10.jpeg";
-import room42Img from "@/../public/4-room-bt/pokój_18.jpeg";
-// 2-house
-import house21Img from "@/../public/2-house/domki1.jpg";
-import house22Img from "@/../public/2-house/domki2.jpg";
-import house23Img from "@/../public/2-house/domki3.jpg";
-// 4-house
-import house41Img from "@/../public/4-house/apartamenty1.jpg";
-import house42Img from "@/../public/4-house/apartamenty2.jpg";
-import house43Img from "@/../public/4-house/apartamenty3.jpg";
-import house44Img from "@/../public/4-house/apartamenty4.jpg";
-import house45Img from "@/../public/4-house/apartamenty5.jpg";
-import house46Img from "@/../public/4-house/apartamenty6.jpg";
-import house47Img from "@/../public/4-house/apartamenty7.jpg";
-import house48Img from "@/../public/4-house/apartamenty8.jpg";
-import house49Img from "@/../public/4-house/apartamenty9.jpg";
-import house410Img from "@/../public/4-house/apartamenty10.jpg";
-// 5-house
-import house51Img from "@/../public/5-house/domki_nad_jeziorem1.jpg";
-import house52Img from "@/../public/5-house/domki_nad_jeziorem2.jpg";
-import house53Img from "@/../public/5-house/domki_nad_jeziorem3.jpg";
-import house54Img from "@/../public/5-house/domki_nad_jeziorem4.jpg";
-import house55Img from "@/../public/5-house/domki_nad_jeziorem5.jpg";
-import house56Img from "@/../public/5-house/domki_nad_jeziorem6.jpg";
-import house57Img from "@/../public/5-house/domki_nad_jeziorem7.jpg";
-import house58Img from "@/../public/5-house/domki_nad_jeziorem8.jpg";
 
 export const rooms: Accommodation[] = [
   {
     id: "1",
     name: "Pokoje 3 osobowe z tarasem",
     type: "pokoj",
-    image: room34Img,
-    images: [room34Img, room36Img, room35Img, room33Img],
+    image: "/3-room-t/pok_13.jpg",
+    images: [
+      "/3-room-t/pok_13.jpg",
+      "/3-room-t/pok_15.jpg",
+      "/3-room-t/pok_14.jpg",
+      "/3-room-t/hotel13.jpg",
+    ],
     description:
       "Mają powierzchnię około 20 m2 (pokój + przedpokój z szafą + łazienka) oraz taras 7 m2. Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna), pościel, moskitiery w oknach. Mamy trzy takie pokoje.",
     capacity: "3",
@@ -69,10 +33,16 @@ export const rooms: Accommodation[] = [
     id: "2",
     name: "Pokoje 2 osobowe bez tarasu",
     type: "pokoj",
-    image: room24Img,
-    images: [room24Img, room23Img, room22Img, room21Img, room25Img],
+    image: "/2-room-bt/pok_08.jpg",
+    images: [
+      "/2-room-bt/pok_08.jpg",
+      "/2-room-bt/pok_07.jpg",
+      "/2-room-bt/pok_06.jpg",
+      "/2-room-bt/pok_05.jpg",
+      "/2-room-bt/lazienka.jpg",
+    ],
     description:
-      "Mają powierzchnię około 15 m2 (pokój + przedpokój z szafą + łazienka). Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna, na zdjęciach są jeszcze stare telewizory), pościel, moskitiery w oknach. Mamy sześć takich pokoi.",
+      "Mają powierzchnię około 15 m2 (pokój + przedpokój z szafą + łazienka). Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna), pościel, moskitiery w oknach. Mamy sześć takich pokoi",
     capacity: "2",
     bedrooms: 1,
     size: 15,
@@ -90,10 +60,10 @@ export const rooms: Accommodation[] = [
     id: "3",
     name: "Pokoje 3 osobowe bez tarasu",
     type: "pokoj",
-    image: room32Img,
-    images: [room32Img, room31Img],
+    image: "/3-room-bt/pok_11.jpeg",
+    images: ["/3-room-bt/pok_11.jpeg", "/3-room-bt/pok_17.jpeg"],
     description:
-      "Mają powierzchnię około 20 m2 (pokój + przedpokój z szafą + łazienka). Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna, na zdjęciach są jeszcze stare telewizory), pościel, moskitiery w oknach. Mamy dwa takie pokoje.",
+      "Mają powierzchnię około 20 m2 (pokój + przedpokój z szafą + łazienka). Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna), pościel, moskitiery w oknach. Mamy dwa takie pokoje.",
     capacity: "3",
     bedrooms: 1,
     size: 20,
@@ -111,10 +81,10 @@ export const rooms: Accommodation[] = [
     id: "4",
     name: "Pokoje 4 osobowe bez tarasu",
     type: "pokoj",
-    image: room41Img,
-    images: [room41Img, room42Img],
+    image: "/4-room-bt/pok_10.jpeg",
+    images: ["/4-room-bt/pok_10.jpeg", "/4-room-bt/pok_18.jpeg"],
     description:
-      "Mają powierzchnię około 25 m2 (pokój + przedpokój z szafą + łazienka). Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna, na zdjęciach są jeszcze stare telewizory), pościel, moskitiery w oknach. Mamy dwa takie pokoje.",
+      "Mają powierzchnię około 25 m2 (pokój + przedpokój z szafą + łazienka). Każdy jest umeblowany i wyposażony w: węzeł sanitarny (prysznic, toaleta, umywalka), lodówkę, czajnik elektryczny, szklanki, telewizor LCD (cyfrowa telewizja naziemna), pościel, moskitiery w oknach. Mamy dwa takie pokoje.",
     capacity: "4",
     bedrooms: 1,
     size: 25,
@@ -135,16 +105,16 @@ export const houses: Accommodation[] = [
     id: "1",
     name: "Domki piętrowe 5-7 osobowe",
     type: "domek",
-    image: house51Img,
+    image: "/5-house/domki_nad_jeziorem1.jpg",
     images: [
-      house51Img,
-      house52Img,
-      house53Img,
-      house54Img,
-      house55Img,
-      house56Img,
-      house57Img,
-      house58Img,
+      "/5-house/domki_nad_jeziorem1.jpg",
+      "/5-house/domki_nad_jeziorem2.jpg",
+      "/5-house/domki_nad_jeziorem3.jpg",
+      "/5-house/domki_nad_jeziorem4.jpg",
+      "/5-house/domki_nad_jeziorem5.jpg",
+      "/5-house/domki_nad_jeziorem6.jpg",
+      "/5-house/domki_nad_jeziorem7.jpg",
+      "/5-house/domki_nad_jeziorem8.jpg",
     ],
     description:
       "Domek piętrowy 5 (max 7) osobowy ma powierzchnię 60 m2. Na piętrze znajdują się dwie sypialnie (2 i 3 osobowa) i loggia. Na parterze salon z rozkładaną wersalką, łazienka, aneks kuchenny oraz taras. Są umeblowane i wyposażone w węzeł sanitarny (prysznic, toaleta, umywalka), aneks kuchenny (zlew, lodówka, mała kuchenka i czajnik elektryczny, garnki, patelnia, szklanki, talerze, sztućce, deska do krojenia, akcesoria do zmywania), telewizor LCD (cyfrowa telewizja naziemna), pościel, siatki przeciwko owadom w oknach, kotary osłaniające od słońca na tarasach, meble ogrodowe, dwa leżaki, naścienne grzejniki elektryczne. Każdy domek ma własną wydzieloną działkę z bujawką. W ogródku przy domku można grillować. Domki piętrowe stoją w pierwszej linii od jeziora. Mamy osiem takich domków.",
@@ -167,18 +137,18 @@ export const houses: Accommodation[] = [
     id: "2",
     name: "Domki parterowe apartamenty 4-6 osobowe",
     type: "domek",
-    image: house41Img,
+    image: "/4-house/apartamenty1.jpg",
     images: [
-      house41Img,
-      house42Img,
-      house43Img,
-      house44Img,
-      house45Img,
-      house46Img,
-      house47Img,
-      house48Img,
-      house49Img,
-      house410Img,
+      "/4-house/apartamenty1.jpg",
+      "/4-house/apartamenty2.jpg",
+      "/4-house/apartamenty3.jpg",
+      "/4-house/apartamenty4.jpg",
+      "/4-house/apartamenty5.jpg",
+      "/4-house/apartamenty6.jpg",
+      "/4-house/apartamenty7.jpg",
+      "/4-house/apartamenty8.jpg",
+      "/4-house/apartamenty9.jpg",
+      "/4-house/apartamenty10.jpg",
     ],
     description:
       "Domek parterowy apartament 4 (max 6) osobowy ma powierzchnię 60 m2. Apartamenty znajdują się w osobnej zabudowie (bungalow), w każdym są dwie sypialnie 2 osobowe, salon 30 m2 z rozkładaną wersalką, kuchnia, łazienka. Są umeblowane i wyposażone w węzeł sanitarny (prysznic, toaleta, umywalka), kuchnię (zlew, lodówka, kuchenka i czajnik elektryczny, garnki, patelnia, szklanki, talerze, sztućce, deska do krojenia, akcesoria do zmywania), telewizor LCD (cyfrowa telewizja naziemna), pościel, siatki przeciwko owadom w oknach, meble ogrodowe, dwa leżaki, internet Wi-Fi, naścienne grzejniki elektryczne. Każdy domek ma własną wydzieloną działkę z bujawką. W ogródku można grillować. Domki parterowe apartamenty stoją w trzeciej linii od jeziora. Mamy trzy takie domki.",
@@ -202,8 +172,12 @@ export const houses: Accommodation[] = [
     id: "3",
     name: "Domki parterowe 2-3 osobowe",
     type: "domek",
-    image: house21Img,
-    images: [house21Img, house22Img, house23Img],
+    image: "/2-house/domki1.jpg",
+    images: [
+      "/2-house/domki1.jpg",
+      "/2-house/domki2.jpg",
+      "/2-house/domki3.jpg",
+    ],
     description:
       "Domek parterowy 2 (max 3) osobowy ma powierzchnię 25 m2. Jest to jedna izba z aneksem kuchennym i łazienką. Każdy domek ma również taras. W salonie jest tapczan i rozkładana wersalka. Są umeblowane i wyposażone w węzeł sanitarny (prysznic, toaleta, umywalka), aneks kuchenny (zlew, lodówka, mała kuchenka i czajnik elektryczny, garnki, patelnia, szklanki, talerze, sztućce, deska do krojenia, akcesoria do zmywania), telewizor LCD (cyfrowa telewizja naziemna), pościel, siatki przeciwko owadom w oknach, kotary osłaniające od słońca na tarasach, meble ogrodowe, dwa leżaki, naścienne grzejniki elektryczne. Każdy domek ma własną wydzieloną działkę z bujawką. W ogródku przy domku można grillować. Domki parterowe stoją w drugiej linii od jeziora. Mamy dwa takie domki.",
     capacity: "2 (max 3)",

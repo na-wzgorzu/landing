@@ -3,12 +3,14 @@ import React from "react";
 import { Metadata } from "next";
 import { houses } from "@/data/houses";
 
-interface HouseDetailsParams {
-  id: string;
+export function generateStaticParams() {
+  return houses.map((house) => ({
+    id: house.id,
+  }));
 }
 
 type Props = {
-  params: Promise<HouseDetailsParams>;
+  params: Promise<{ id: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
