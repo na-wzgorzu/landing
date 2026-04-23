@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Accommodation } from "@/components/Houses/types";
 import { AccommodationDetails } from "@/components/Houses/AccommodationDetails";
+import { AccommodationSkeleton } from "@/components/Houses/AccommodationSkeleton";
 
 type Data = {
   houses: Accommodation[];
@@ -28,7 +29,7 @@ export function RoomDetailsClient({ id }: { id: string }) {
       .finally(() => setLoading(false));
   }, [id]);
 
-  if (loading) return <p>Ładowanie...</p>;
+  if (loading) return <AccommodationSkeleton />;
   if (error || !accommodation) return null;
 
   return <AccommodationDetails accommodation={accommodation} />;
