@@ -7,7 +7,6 @@ import ImageGalleryEditor from "./ImageGalleryEditor";
 type Props = {
   accommodation: Accommodation;
   onChange: (updated: Accommodation) => void;
-  onRemove: () => void;
 };
 
 const field = (label: string, input: React.ReactNode) => (
@@ -22,7 +21,6 @@ const inputClass = "border border-gray-300 rounded px-2 py-1 text-sm";
 export default function AccommodationForm({
   accommodation,
   onChange,
-  onRemove,
 }: Props) {
   const set = (patch: Partial<Accommodation>) =>
     onChange({ ...accommodation, ...patch });
@@ -104,13 +102,6 @@ export default function AccommodationForm({
         onChange={(amenities) => set({ amenities })}
       />
 
-      <button
-        type="button"
-        onClick={onRemove}
-        className="self-end text-sm text-red-500 hover:text-red-700"
-      >
-        Usuń
-      </button>
     </div>
   );
 }

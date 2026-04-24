@@ -58,7 +58,7 @@ function LoginDialog({ onLogin }: { onLogin: () => void }) {
                 setUsername(e.target.value);
                 setFailed(false);
               }}
-              className="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand"
               autoFocus
             />
           </div>
@@ -71,7 +71,7 @@ function LoginDialog({ onLogin }: { onLogin: () => void }) {
                 setPassword(e.target.value);
                 setFailed(false);
               }}
-              className="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand"
             />
           </div>
           {failed && (
@@ -81,7 +81,7 @@ function LoginDialog({ onLogin }: { onLogin: () => void }) {
           )}
           <button
             type="submit"
-            className="mt-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded hover:bg-blue-700"
+            className="mt-2 px-4 py-2 bg-brand text-white text-sm font-medium rounded hover:bg-brand/90"
           >
             Zaloguj
           </button>
@@ -126,25 +126,6 @@ export default function CmsClient() {
       [list]: prev![list].map((item) => (item.id === id ? updated : item)),
     }));
 
-  const addItem = (list: Tab) =>
-    setData((prev) => ({
-      ...prev!,
-      [list]: [
-        ...prev![list],
-        {
-          ...EMPTY,
-          id: Date.now().toString(),
-          type: list === "houses" ? "domek" : "pokoj",
-        },
-      ],
-    }));
-
-  const removeItem = (list: Tab, id: string) =>
-    setData((prev) => ({
-      ...prev!,
-      [list]: prev![list].filter((item) => item.id !== id),
-    }));
-
   const handleSave = async () => {
     setSaving(true);
     setError(null);
@@ -170,7 +151,6 @@ export default function CmsClient() {
   if (error) return <p className="p-8 text-red-600">{error}</p>;
 
   const items = data![tab];
-  const label = tab === "houses" ? "domek" : "pokój";
 
   return (
     <div className="p-8 max-w-3xl mx-auto">
@@ -180,7 +160,7 @@ export default function CmsClient() {
           type="button"
           onClick={handleSave}
           disabled={saving}
-          className="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded hover:bg-blue-700 disabled:opacity-50"
+          className="px-4 py-2 bg-brand text-white text-sm font-medium rounded hover:bg-brand/90 disabled:opacity-50"
         >
           {saving ? "Zapisywanie..." : "Zapisz zmiany"}
         </button>
@@ -196,7 +176,7 @@ export default function CmsClient() {
             onClick={() => setTab(t)}
             className={`px-4 py-2 text-sm font-medium border-b-2 -mb-px transition-colors ${
               tab === t
-                ? "border-blue-600 text-blue-600"
+                ? "border-brand text-brand"
                 : "border-transparent text-gray-500 hover:text-gray-700"
             }`}
           >
@@ -211,18 +191,10 @@ export default function CmsClient() {
             key={item.id}
             accommodation={item}
             onChange={(updated) => updateItem(tab, item.id, updated)}
-            onRemove={() => removeItem(tab, item.id)}
           />
         ))}
       </div>
 
-      <button
-        type="button"
-        onClick={() => addItem(tab)}
-        className="mt-4 text-sm text-blue-600 hover:text-blue-800"
-      >
-        + Dodaj {label}
-      </button>
     </div>
   );
 }
