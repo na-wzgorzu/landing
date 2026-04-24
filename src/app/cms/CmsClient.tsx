@@ -4,6 +4,11 @@ import { useEffect, useState } from "react";
 import type { Accommodation } from "@/components/Houses/types";
 import AccommodationForm from "@/components/cms/AccommodationForm";
 
+// Zmień te dane logowania według potrzeb
+const CMS_USERNAME = "admin";
+const CMS_PASSWORD = "wzgorze2024";
+const SESSION_KEY = "cms_auth";
+
 type Data = {
   houses: Accommodation[];
   rooms: Accommodation[];
@@ -23,7 +28,71 @@ const EMPTY: Omit<Accommodation, "id"> = {
   amenities: [],
 };
 
+function LoginDialog({ onLogin }: { onLogin: () => void }) {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [failed, setFailed] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (username === CMS_USERNAME && password === CMS_PASSWORD) {
+      sessionStorage.setItem(SESSION_KEY, "1");
+      onLogin();
+    } else {
+      setFailed(true);
+      setPassword("");
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+      <div className="bg-white rounded-xl shadow-lg p-8 w-full max-w-sm">
+        <h2 className="text-xl font-bold mb-6 text-center">Panel CMS</h2>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <div className="flex flex-col gap-1">
+            <label className="text-sm font-medium text-gray-700">Login</label>
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => {
+                setUsername(e.target.value);
+                setFailed(false);
+              }}
+              className="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              autoFocus
+            />
+          </div>
+          <div className="flex flex-col gap-1">
+            <label className="text-sm font-medium text-gray-700">Hasło</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                setFailed(false);
+              }}
+              className="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          {failed && (
+            <p className="text-red-600 text-sm text-center">
+              Nieprawidłowy login lub hasło
+            </p>
+          )}
+          <button
+            type="submit"
+            className="mt-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded hover:bg-blue-700"
+          >
+            Zaloguj
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
 export default function CmsClient() {
+  const [authenticated, setAuthenticated] = useState(false);
   const [data, setData] = useState<Data | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -31,6 +100,13 @@ export default function CmsClient() {
   const [tab, setTab] = useState<Tab>("houses");
 
   useEffect(() => {
+    if (sessionStorage.getItem(SESSION_KEY) === "1") {
+      setAuthenticated(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!authenticated) return;
     fetch("https://na-wzgorzu.pl/api.php")
       .then((res) => {
         if (!res.ok) throw new Error();
@@ -42,7 +118,7 @@ export default function CmsClient() {
       })
       .catch(() => setError("Nie udało się pobrać danych"))
       .finally(() => setLoading(false));
-  }, []);
+  }, [authenticated]);
 
   const updateItem = (list: Tab, id: string, updated: Accommodation) =>
     setData((prev) => ({
@@ -55,7 +131,11 @@ export default function CmsClient() {
       ...prev!,
       [list]: [
         ...prev![list],
-        { ...EMPTY, id: Date.now().toString(), type: list === "houses" ? "domek" : "pokoj" },
+        {
+          ...EMPTY,
+          id: Date.now().toString(),
+          type: list === "houses" ? "domek" : "pokoj",
+        },
       ],
     }));
 
@@ -81,6 +161,10 @@ export default function CmsClient() {
       setSaving(false);
     }
   };
+
+  if (!authenticated) {
+    return <LoginDialog onLogin={() => setAuthenticated(true)} />;
+  }
 
   if (loading) return <p className="p-8">Ładowanie...</p>;
   if (error) return <p className="p-8 text-red-600">{error}</p>;
