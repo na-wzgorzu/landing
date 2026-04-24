@@ -2,6 +2,7 @@
 
 import type { Accommodation } from "@/components/Houses/types";
 import StringListEditor from "./StringListEditor";
+import ImageGalleryEditor from "./ImageGalleryEditor";
 
 type Props = {
   accommodation: Accommodation;
@@ -83,16 +84,6 @@ export default function AccommodationForm({
       )}
 
       {field(
-        "Zdjęcie główne",
-        <input
-          type="text"
-          value={accommodation.image}
-          onChange={(e) => set({ image: e.target.value })}
-          className={inputClass}
-        />,
-      )}
-
-      {field(
         "Opis",
         <textarea
           value={accommodation.description}
@@ -102,8 +93,7 @@ export default function AccommodationForm({
         />,
       )}
 
-      <StringListEditor
-        label="Galeria"
+      <ImageGalleryEditor
         items={accommodation.images}
         onChange={(images) => set({ images })}
       />
