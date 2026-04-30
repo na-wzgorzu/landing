@@ -82,6 +82,26 @@ export default function AccommodationForm({
       )}
 
       {field(
+        "Wyżywienie",
+        <input
+          type="text"
+          value={accommodation.mealPlan ?? ""}
+          onChange={(e) => set({ mealPlan: e.target.value })}
+          className={inputClass}
+        />,
+      )}
+
+      {field(
+        "Wyróżniona informacja",
+        <input
+          type="text"
+          value={accommodation.highlightedNote ?? ""}
+          onChange={(e) => set({ highlightedNote: e.target.value })}
+          className={inputClass}
+        />,
+      )}
+
+      {field(
         "Opis",
         <textarea
           value={accommodation.description}

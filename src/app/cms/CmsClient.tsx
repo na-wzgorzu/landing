@@ -6,7 +6,7 @@ import AccommodationForm from "@/components/cms/AccommodationForm";
 
 // Zmień te dane logowania według potrzeb
 const CMS_USERNAME = "admin";
-const CMS_PASSWORD = "wzgorze2024";
+const CMS_PASSWORD = "admin";
 const SESSION_KEY = "cms_auth";
 
 type Data = {
@@ -16,17 +16,17 @@ type Data = {
 
 type Tab = "houses" | "rooms";
 
-const EMPTY: Omit<Accommodation, "id"> = {
-  name: "",
-  type: "domek",
-  image: "",
-  images: [],
-  description: "",
-  capacity: "",
-  bedrooms: "",
-  size: 0,
-  amenities: [],
-};
+// const EMPTY: Omit<Accommodation, "id"> = {
+//   name: "",
+//   type: "domek",
+//   image: "",
+//   images: [],
+//   description: "",
+//   capacity: "",
+//   bedrooms: "",
+//   size: 0,
+//   amenities: [],
+// };
 
 function LoginDialog({ onLogin }: { onLogin: () => void }) {
   const [username, setUsername] = useState("");
@@ -194,7 +194,6 @@ export default function CmsClient() {
           />
         ))}
       </div>
-
     </div>
   );
 }
