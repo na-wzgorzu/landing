@@ -19,6 +19,8 @@
       "capacity": "5 (max 7)",
       "bedrooms": "2 sypialnie + salon",
       "size": 60,
+      "mealPlan": "Pobyt z wyżywieniem",
+      "highlightedNote": "Na wyposażeniu domków nie ma ręczników.",
       "amenities": [
         "Łazienka (toaleta, prysznic, umywalka)",
         "Telewizor LCD",
@@ -52,6 +54,8 @@
       "capacity": "4 (max 6)",
       "bedrooms": "2 sypialnie + salon",
       "size": 60,
+      "mealPlan": "Pobyt z wyżywieniem",
+      "highlightedNote": "Na wyposażeniu domków nie ma ręczników.",
       "amenities": [
         "Łazienka (toaleta, prysznic, umywalka)",
         "Telewizor LCD",
@@ -79,6 +83,8 @@
       "capacity": "2 (max 3)",
       "bedrooms": "Jedna izba",
       "size": 25,
+      "mealPlan": "Pobyt z wyżywieniem",
+      "highlightedNote": "Na wyposażeniu domków nie ma ręczników.",
       "amenities": [
         "Łazienka (toaleta, prysznic, umywalka)",
         "Telewizor LCD",
@@ -109,6 +115,8 @@
       "capacity": "3",
       "bedrooms": 1,
       "size": 20,
+      "mealPlan": "Pobyt z wyżywieniem",
+      "highlightedNote": "Na wyposażeniu pokoi nie ma ręczników.",
       "amenities": [
         "Łazienka (prysznic, toaleta, umywalka)",
         "Czajnik elektryczny",
@@ -136,6 +144,8 @@
       "capacity": "2",
       "bedrooms": 1,
       "size": 15,
+      "mealPlan": "Pobyt z wyżywieniem",
+      "highlightedNote": "Na wyposażeniu pokoi nie ma ręczników.",
       "amenities": [
         "Łazienka (prysznic, toaleta, umywalka)",
         "Czajnik elektryczny",
@@ -159,6 +169,8 @@
       "capacity": "3",
       "bedrooms": 1,
       "size": 20,
+      "mealPlan": "Pobyt z wyżywieniem",
+      "highlightedNote": "Na wyposażeniu pokoi nie ma ręczników.",
       "amenities": [
         "Łazienka (prysznic, toaleta, umywalka)",
         "Czajnik elektryczny",
@@ -182,6 +194,8 @@
       "capacity": "4",
       "bedrooms": 1,
       "size": 25,
+      "mealPlan": "Pobyt z wyżywieniem",
+      "highlightedNote": "Na wyposażeniu pokoi nie ma ręczników.",
       "amenities": [
         "Łazienka (prysznic, toaleta, umywalka)",
         "Czajnik elektryczny",
