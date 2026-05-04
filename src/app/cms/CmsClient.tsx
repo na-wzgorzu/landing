@@ -3,11 +3,8 @@
 import { useEffect, useState } from "react";
 import type { Accommodation } from "@/components/Houses/types";
 import AccommodationForm from "@/components/cms/AccommodationForm";
-
-// Zmień te dane logowania według potrzeb
-const CMS_USERNAME = "admin";
-const CMS_PASSWORD = "admin";
-const SESSION_KEY = "cms_auth";
+import LoginForm from "./LoginForm";
+import { SESSION_KEY, API_URL } from "./constants";
 
 type Data = {
   houses: Accommodation[];
@@ -15,81 +12,6 @@ type Data = {
 };
 
 type Tab = "houses" | "rooms";
-
-// const EMPTY: Omit<Accommodation, "id"> = {
-//   name: "",
-//   type: "domek",
-//   image: "",
-//   images: [],
-//   description: "",
-//   capacity: "",
-//   bedrooms: "",
-//   size: 0,
-//   amenities: [],
-// };
-
-function LoginDialog({ onLogin }: { onLogin: () => void }) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [failed, setFailed] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (username === CMS_USERNAME && password === CMS_PASSWORD) {
-      sessionStorage.setItem(SESSION_KEY, "1");
-      onLogin();
-    } else {
-      setFailed(true);
-      setPassword("");
-    }
-  };
-
-  return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-xl shadow-lg p-8 w-full max-w-sm">
-        <h2 className="text-xl font-bold mb-6 text-center">Panel CMS</h2>
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <div className="flex flex-col gap-1">
-            <label className="text-sm font-medium text-gray-700">Login</label>
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => {
-                setUsername(e.target.value);
-                setFailed(false);
-              }}
-              className="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand"
-              autoFocus
-            />
-          </div>
-          <div className="flex flex-col gap-1">
-            <label className="text-sm font-medium text-gray-700">Hasło</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => {
-                setPassword(e.target.value);
-                setFailed(false);
-              }}
-              className="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand"
-            />
-          </div>
-          {failed && (
-            <p className="text-red-600 text-sm text-center">
-              Nieprawidłowy login lub hasło
-            </p>
-          )}
-          <button
-            type="submit"
-            className="mt-2 px-4 py-2 bg-brand text-white text-sm font-medium rounded hover:bg-brand/90"
-          >
-            Zaloguj
-          </button>
-        </form>
-      </div>
-    </div>
-  );
-}
 
 export default function CmsClient() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -107,13 +29,12 @@ export default function CmsClient() {
 
   useEffect(() => {
     if (!authenticated) return;
-    fetch("https://na-wzgorzu.pl/api.php")
+    fetch(API_URL)
       .then((res) => {
         if (!res.ok) throw new Error();
         return res.json() as Promise<Data>;
       })
       .then((fetched) => {
-        console.log("CMS data:", fetched);
         setData(fetched);
       })
       .catch(() => setError("Nie udało się pobrać danych"))
@@ -130,7 +51,7 @@ export default function CmsClient() {
     setSaving(true);
     setError(null);
     try {
-      const res = await fetch("https://na-wzgorzu.pl/api.php", {
+      const res = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -144,7 +65,7 @@ export default function CmsClient() {
   };
 
   if (!authenticated) {
-    return <LoginDialog onLogin={() => setAuthenticated(true)} />;
+    return <LoginForm onLogin={() => setAuthenticated(true)} />;
   }
 
   if (loading) return <p className="p-8">Ładowanie...</p>;

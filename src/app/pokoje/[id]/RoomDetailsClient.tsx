@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { API_URL } from "@/app/cms/constants";
 import { Accommodation } from "@/components/Houses/types";
 import { AccommodationDetails } from "@/components/Houses/AccommodationDetails";
 import { AccommodationSkeleton } from "@/components/Houses/AccommodationSkeleton";
@@ -16,7 +17,7 @@ export function RoomDetailsClient({ id }: { id: string }) {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch("https://na-wzgorzu.pl/api.php")
+    fetch(API_URL)
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch");
         return res.json() as Promise<Data>;

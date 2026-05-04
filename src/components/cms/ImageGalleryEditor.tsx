@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { IMAGES_URL } from "@/app/cms/constants";
 import { ChevronUp, ChevronDown, Trash2 } from "lucide-react";
 
 type Props = {
@@ -12,7 +13,7 @@ export default function ImageGalleryEditor({ items, onChange }: Props) {
   const [available, setAvailable] = useState<string[]>([]);
 
   useEffect(() => {
-    fetch("https://na-wzgorzu.pl/images.php")
+    fetch(IMAGES_URL)
       .then((r) => r.json())
       .then((data: string[]) => setAvailable(data))
       .catch(() => {});
