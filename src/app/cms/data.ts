@@ -11,6 +11,8 @@ export type CmsData = {
   reservationNotice?: ReservationNotice;
 };
 
+export type CmsTab = "houses" | "rooms" | "reservation";
+
 export const DEFAULT_RESERVATION_NOTICE: ReservationNotice = {
   enabled: false,
   text: "",
