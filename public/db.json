@@ -206,5 +206,9 @@
         "Moskitiery w oknach"
       ]
     }
-  ]
+  ],
+  "reservationNotice": {
+    "enabled": false,
+    "text": ""
+  }
 }

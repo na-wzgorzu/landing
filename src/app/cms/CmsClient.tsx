@@ -5,17 +5,17 @@ import type { Accommodation } from "@/components/Houses/types";
 import AccommodationForm from "@/components/cms/AccommodationForm";
 import LoginForm from "./LoginForm";
 import { SESSION_KEY, API_URL } from "./constants";
+import {
+  DEFAULT_RESERVATION_NOTICE,
+  type CmsData,
+  type ReservationNotice,
+} from "./data";
 
-type Data = {
-  houses: Accommodation[];
-  rooms: Accommodation[];
-};
-
-type Tab = "houses" | "rooms";
+type Tab = "houses" | "rooms" | "reservation";
 
 export default function CmsClient() {
   const [authenticated, setAuthenticated] = useState(false);
-  const [data, setData] = useState<Data | null>(null);
+  const [data, setData] = useState<CmsData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
@@ -32,19 +32,36 @@ export default function CmsClient() {
     fetch(API_URL)
       .then((res) => {
         if (!res.ok) throw new Error();
-        return res.json() as Promise<Data>;
+        return res.json() as Promise<CmsData>;
       })
       .then((fetched) => {
-        setData(fetched);
+        setData({
+          ...fetched,
+          reservationNotice:
+            fetched.reservationNotice ?? DEFAULT_RESERVATION_NOTICE,
+        });
       })
       .catch(() => setError("Nie udało się pobrać danych"))
       .finally(() => setLoading(false));
   }, [authenticated]);
 
-  const updateItem = (list: Tab, id: string, updated: Accommodation) =>
+  const updateItem = (
+    list: Extract<Tab, "houses" | "rooms">,
+    id: string,
+    updated: Accommodation,
+  ) =>
     setData((prev) => ({
       ...prev!,
       [list]: prev![list].map((item) => (item.id === id ? updated : item)),
+    }));
+
+  const updateReservationNotice = (patch: Partial<ReservationNotice>) =>
+    setData((prev) => ({
+      ...prev!,
+      reservationNotice: {
+        ...(prev!.reservationNotice ?? DEFAULT_RESERVATION_NOTICE),
+        ...patch,
+      },
     }));
 
   const handleSave = async () => {
@@ -71,7 +88,8 @@ export default function CmsClient() {
   if (loading) return <p className="p-8">Ładowanie...</p>;
   if (error) return <p className="p-8 text-red-600">{error}</p>;
 
-  const items = data![tab];
+  const reservationNotice =
+    data!.reservationNotice ?? DEFAULT_RESERVATION_NOTICE;
 
   return (
     <div className="p-8 max-w-3xl mx-auto">
@@ -104,17 +122,57 @@ export default function CmsClient() {
             {t === "houses" ? "Domki" : "Pokoje"}
           </button>
         ))}
+        <button
+          type="button"
+          onClick={() => setTab("reservation")}
+          className={`px-4 py-2 text-sm font-medium border-b-2 -mb-px transition-colors ${
+            tab === "reservation"
+              ? "border-brand text-brand"
+              : "border-transparent text-gray-500 hover:text-gray-700"
+          }`}
+        >
+          Rezerwacje
+        </button>
       </div>
 
-      <div className="flex flex-col gap-4">
-        {items.map((item) => (
-          <AccommodationForm
-            key={item.id}
-            accommodation={item}
-            onChange={(updated) => updateItem(tab, item.id, updated)}
-          />
-        ))}
-      </div>
+      {tab === "reservation" ? (
+        <div className="border border-gray-200 rounded-lg p-4 flex flex-col gap-4">
+          <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+            <input
+              type="checkbox"
+              checked={reservationNotice.enabled}
+              onChange={(e) =>
+                updateReservationNotice({ enabled: e.target.checked })
+              }
+            />
+            Pokaż komunikat na stronie rezerwacji
+          </label>
+
+          <label className="flex flex-col gap-1">
+            <span className="text-sm font-medium text-gray-700">
+              Treść komunikatu
+            </span>
+            <textarea
+              value={reservationNotice.text}
+              onChange={(e) =>
+                updateReservationNotice({ text: e.target.value })
+              }
+              rows={6}
+              className="border border-gray-300 rounded px-2 py-1 text-sm resize-y"
+            />
+          </label>
+        </div>
+      ) : (
+        <div className="flex flex-col gap-4">
+          {data![tab].map((item) => (
+            <AccommodationForm
+              key={item.id}
+              accommodation={item}
+              onChange={(updated) => updateItem(tab, item.id, updated)}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
