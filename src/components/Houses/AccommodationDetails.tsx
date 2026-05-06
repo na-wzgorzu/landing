@@ -40,6 +40,8 @@ export const AccommodationDetails = ({ accommodation }: Props) => {
     capacity,
     bedrooms,
     size,
+    mealPlan,
+    highlightedNote,
     amenities,
   } = accommodation;
 
@@ -73,10 +75,7 @@ export const AccommodationDetails = ({ accommodation }: Props) => {
                   {description}
                 </p>
 
-                <strong>
-                  Na wyposażeniu {type === "domek" ? "domków" : "pokoi"} nie ma
-                  ręczników.
-                </strong>
+                {highlightedNote && <strong>{highlightedNote}</strong>}
               </CardContent>
             </Card>
 
@@ -127,10 +126,12 @@ export const AccommodationDetails = ({ accommodation }: Props) => {
                     <Maximize size={18} className="mr-2 text-brand" />
                     <span>{size} m²</span>
                   </div>
-                  <div className="flex items-center text-gray-600">
-                    <Coffee size={24} className="mr-2 text-brand" />
-                    <span>Pobyt z wyżywieniem</span>
-                  </div>
+                  {mealPlan && (
+                    <div className="flex items-center text-gray-600">
+                      <Coffee size={24} className="mr-2 text-brand" />
+                      <span>{mealPlan}</span>
+                    </div>
+                  )}
                 </div>
 
                 <div className="border-t border-gray-200 pt-4 mb-6">

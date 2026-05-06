@@ -12,6 +12,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Form from "next/form";
 import { Textarea } from "@/components/ui/textarea";
 import { toast, Toaster } from "sonner";
+import { RESERVATION_URL } from "@/app/cms/constants";
 
 export const RegistrationForm = () => {
   const {
@@ -33,24 +34,23 @@ export const RegistrationForm = () => {
 
   const onSubmit = async (data: Reservation) => {
     try {
-      const res = await fetch("https://na-wzgorzu.vercel.app/api/reservation", {
+      const res = await fetch(RESERVATION_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        mode: "no-cors",
         body: JSON.stringify(data),
       });
+
       if (res.ok) {
         toast.success("Wiadomość została wysłana!");
+        reset();
       } else {
         toast.error("Nie udało się wysłać formularza.");
       }
     } catch (err) {
       console.error("Błąd podczas wysyłania formularza:", err);
       toast.error("Wystąpił błąd przy wysyłce. Spróbuj ponownie.");
-    } finally {
-      reset();
     }
   };
 

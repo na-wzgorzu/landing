@@ -1,24 +1,19 @@
-import { AccommodationDetails } from "@/components/Houses/AccommodationDetails";
 import { rooms } from "@/data/houses";
 import { Metadata } from "next";
 import React from "react";
-
-interface HouseDetailsParams {
-  id: string;
-}
+import { RoomDetailsClient } from "./RoomDetailsClient";
 
 type Props = {
-  params: Promise<HouseDetailsParams>;
+  params: Promise<{ id: string }>;
 };
 
 export function generateStaticParams() {
-  return rooms.map((house) => ({
-    id: house.id,
+  return rooms.map((room) => ({
+    id: room.id,
   }));
 }
 
-export async function generateMetadata(props: Props): Promise<Metadata> {
-  const { params } = props;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const accommodation = rooms.find((acc) => acc.id === id);
 
@@ -30,17 +25,12 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   };
 }
 
-export default async function HousesDetails({ params }: Props) {
+export default async function RoomDetails({ params }: Props) {
   const { id } = await params;
 
-  const accommodation = rooms.find((acc) => acc.id === id);
-
-  if (!accommodation) {
-    return null;
-  }
   return (
     <div className="w-full flex flex-col items-center gap-4 bg-gray-50">
-      <AccommodationDetails accommodation={accommodation} />
+      <RoomDetailsClient id={id} />
     </div>
   );
 }

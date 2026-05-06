@@ -1,7 +1,7 @@
-import { AccommodationDetails } from "@/components/Houses/AccommodationDetails";
 import React from "react";
 import { Metadata } from "next";
 import { houses } from "@/data/houses";
+import { HouseDetailsClient } from "./HouseDetailsClient";
 
 export function generateStaticParams() {
   return houses.map((house) => ({
@@ -27,15 +27,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function HousesDetails({ params }: Props) {
   const { id } = await params;
-  const accommodation = houses.find((acc) => acc.id === id);
-
-  if (!accommodation) {
-    return null;
-  }
 
   return (
     <div className="w-full flex flex-col items-center gap-4 bg-gray-50">
-      <AccommodationDetails accommodation={accommodation} />
+      <HouseDetailsClient id={id} />
     </div>
   );
 }

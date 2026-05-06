@@ -8,6 +8,8 @@ export interface Accommodation {
   capacity: string;
   bedrooms: number | string;
   size: number;
+  mealPlan?: string;
+  highlightedNote?: string;
   features?: string[];
   amenities: string[];
 }
