@@ -11,6 +11,7 @@ import {
   SaladIcon,
 } from "lucide-react";
 import Link from "next/link";
+import gastroContent from "@/data/gastro.json";
 
 const images = [
   "/gallery/wyzywienie01.jpg",
@@ -22,27 +23,7 @@ const images = [
 ];
 
 export const Gastro = () => {
-  const mealTimes = [
-    { name: "Śniadanie", time: "9:00", icon: Coffee },
-    { name: "Obiad", time: "14:00", icon: Soup },
-    { name: "Obiadokolacja", time: "17:00", icon: Utensils },
-    { name: "Kolacja", time: "19:00", icon: Cake },
-  ];
-
-  const mealOptions = [
-    "Śniadania + obiady",
-    "Śniadania + obiadokoalcje",
-    "Obiady + koalcje",
-    "Śniadania + obiady + koalcje",
-    "Same obiady (tylko dla domków)",
-    "Same obiadokolacje (tylko dla domków)",
-  ];
-
-  const dietaryOptions = [
-    "Wegetariańskie (prosimy o informację - z rybami czy bez)",
-    "Wegańskie",
-    "Bezglutenowe (możliwe tylko jeżeli dopuszczalne są śladowe ilości)",
-  ];
+  const mealIcons = [Coffee, Soup, Utensils, Cake];
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -55,7 +36,7 @@ export const Gastro = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Usługi Gastronomiczne
+            {gastroContent.hero.title}
           </motion.h1>
           <motion.p
             className="text-xl"
@@ -63,8 +44,7 @@ export const Gastro = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Smaczne, lekkie i pożywne jedzenie to ważny element udanego
-            wypoczynku
+            {gastroContent.hero.subtitle}
           </motion.p>
         </div>
       </section>
@@ -79,15 +59,13 @@ export const Gastro = () => {
         >
           <div className="flex items-center mb-6">
             <Utensils className="text-brand mr-3 h-8 w-8" />
-            <h2 className="text-3xl font-bold text-gray-800">Nasza Kuchnia</h2>
+            <h2 className="text-3xl font-bold text-gray-800">
+              {gastroContent.kitchen.title}
+            </h2>
           </div>
 
           <p className="text-lg text-gray-700 mb-6">
-            Ośrodek posiada pełne zaplecze gastronomiczne oraz jadalnię. Zdajemy
-            sobie sprawę, że smaczne, lekkie i pożywne jedzenie jest ważnym
-            elementem udanego wypoczynku. U nas jedzenie jest zawsze
-            przyrządzane ze świeżych produktów. Staramy się o wysoką jakość, a
-            nasza kuchnia otrzymuje wiele pochwał.
+            {gastroContent.kitchen.description}
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 mt-10">
@@ -96,28 +74,31 @@ export const Gastro = () => {
               <div className="flex items-center mb-4">
                 <Clock className="text-brand mr-2 h-6 w-6" />
                 <h3 className="text-xl font-bold text-gray-800">
-                  Godziny posiłków
+                  {gastroContent.mealTimes.title}
                 </h3>
               </div>
               <div className="space-y-4">
-                {mealTimes.map((meal, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center border-b border-gray-200 pb-3 last:border-0"
-                  >
-                    <meal.icon className="h-5 w-5 text-brand mr-3" />
-                    <span className="text-gray-800 font-medium">
-                      {meal.name}
-                    </span>
-                    <span className="ml-auto bg-brand/10 text-brand px-3 py-1 rounded-full text-sm font-medium">
-                      {meal.time}
-                    </span>
-                  </div>
-                ))}
+                {gastroContent.mealTimes.items.map((meal, index) => {
+                  const MealIcon = mealIcons[index] ?? Utensils;
+
+                  return (
+                    <div
+                      key={`${meal.name}-${meal.time}`}
+                      className="flex items-center border-b border-gray-200 pb-3 last:border-0"
+                    >
+                      <MealIcon className="h-5 w-5 text-brand mr-3" />
+                      <span className="text-gray-800 font-medium">
+                        {meal.name}
+                      </span>
+                      <span className="ml-auto bg-brand/10 text-brand px-3 py-1 rounded-full text-sm font-medium">
+                        {meal.time}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
               <p className="mt-4 text-sm text-gray-600">
-                Obiad i obiadokolacja to u nas ten sam posiłek, różni się
-                jedynie godziną podania.
+                {gastroContent.mealTimes.note}
               </p>
             </div>
 
@@ -126,16 +107,14 @@ export const Gastro = () => {
               <div className="flex items-center mb-4">
                 <CalendarDays className="text-brand mr-2 h-6 w-6" />
                 <h3 className="text-xl font-bold text-gray-800">
-                  Opcje wyżywienia
+                  {gastroContent.mealOptions.title}
                 </h3>
               </div>
               <p className="mb-4 text-gray-700">
-                W okresie wakacyjnym sprzedajemy tylko pobyty z wyżywieniem
-                (warianty wypisane poniżej). Poza sezonem w zależności od okresu
-                możliwe są inne opcje.
+                {gastroContent.mealOptions.description}
               </p>
               <ul className="space-y-2">
-                {mealOptions.map((option, index) => (
+                {gastroContent.mealOptions.items.map((option, index) => (
                   <li key={index} className="flex items-center">
                     <span className="h-2 w-2 rounded-full bg-brand mr-2"></span>
                     <span className="text-gray-700">{option}</span>
@@ -154,50 +133,31 @@ export const Gastro = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <h2 className="text-2xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-3">
-            Szczegóły posiłków
+            {gastroContent.mealDetails.title}
           </h2>
 
           <div className="space-y-8">
-            <div>
-              <h3 className="text-xl text-brand font-bold mb-2">Śniadania</h3>
-              <p className="text-gray-700">
-                Śniadania serwowane są częściowo na szwedzkim stole (kawa,
-                herbata, mleko, dżemy, płatki, sałatki, itp.) oraz na
-                przypisanych do domków / pokoi stolikach (danie ciepłe, półmiski
-                wędlin i serów, bułeczki, chleb, masło).
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl text-brand font-bold mb-2">
-                Obiad i obiadokolacja
-              </h3>
-              <p className="text-gray-700">
-                Obiad i obiadokolacja to posiłki trzydaniowe - podawane do
-                stolika, zupy w wazach, mięsiwa, ziemniaki i sałatki na
-                półmiskach, soki w dzbankach oraz deser.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl text-brand font-bold mb-2">Kolacje</h3>
-              <p className="text-gray-700">
-                Kolacje serwujemy do stolika oraz częściowo na bufecie.
-              </p>
-            </div>
+            {gastroContent.mealDetails.items.map((mealDetail) => (
+              <div key={mealDetail.title}>
+                <h3 className="text-xl text-brand font-bold mb-2">
+                  {mealDetail.title}
+                </h3>
+                <p className="text-gray-700">{mealDetail.description}</p>
+              </div>
+            ))}
           </div>
 
           <div className="text-center mt-10">
             <Link
-              href="/cennik"
+              href={gastroContent.pricingCta.href}
               className="px-5 py-3 bg-brand text-white rounded-md hover:bg-brand/90 transition-colors duration-200 inline-block"
             >
-              Przejdź do cennika
+              {gastroContent.pricingCta.text}
             </Link>
           </div>
         </motion.div>
 
-        <GallerySection images={images} title="Galeria" />
+        <GallerySection images={images} title={gastroContent.gallery.title} />
 
         {/* Dietary Options */}
         <motion.div
@@ -209,20 +169,19 @@ export const Gastro = () => {
           <div className="flex items-center mb-6">
             <SaladIcon className="text-brand mr-3 h-7 w-7" />
             <h2 className="text-2xl font-bold text-gray-800">
-              Diety specjalne
+              {gastroContent.dietaryOptions.title}
             </h2>
           </div>
 
           <p className="text-gray-700 mb-6">
-            Oferujemy posiłki dostosowane do różnych preferencji żywieniowych.{" "}
+            {gastroContent.dietaryOptions.description}{" "}
             <span className="font-bold">
-              Wszystkie opcje należy zgłaszać przed przyjazdem, najlepiej na
-              etapie rezerwacji.
+              {gastroContent.dietaryOptions.highlight}
             </span>
           </p>
 
           <div className="flex flex-wrap gap-3">
-            {dietaryOptions.map((diet, index) => (
+            {gastroContent.dietaryOptions.items.map((diet, index) => (
               <span
                 key={index}
                 className="inline-block px-4 py-2 text-sm font-medium rounded-full bg-brand/10 text-brand"
