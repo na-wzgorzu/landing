@@ -15,15 +15,6 @@ import {
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const images = [
-  "/gallery/wyzywienie01.jpg",
-  "/gallery/wyzywienie02.jpg",
-  "/gallery/wyzywienie03.jpg",
-  "/gallery/gastronomia4.jpg",
-  "/gallery/gastronomia5.jpg",
-  "/gallery/gastronomia6.jpg",
-];
-
 export const Gastro = () => {
   const [gastroContent, setGastroContent] = useState<GastroContent | null>(
     null,
@@ -39,7 +30,7 @@ export const Gastro = () => {
         return res.json() as Promise<CmsData>;
       })
       .then((data) => {
-        if (!data.gastro) throw new Error();
+        if (!data.gastro?.gallery?.images?.length) throw new Error();
         setGastroContent(data.gastro);
       })
       .catch(() => {
@@ -198,7 +189,10 @@ export const Gastro = () => {
           </div>
         </motion.div>
 
-        <GallerySection images={images} title={gastroContent.gallery.title} />
+        <GallerySection
+          images={gastroContent.gallery.images}
+          title={gastroContent.gallery.title}
+        />
 
         {/* Dietary Options */}
         <motion.div

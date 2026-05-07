@@ -40,6 +40,7 @@ export type GastroContent = {
   };
   gallery: {
     title: string;
+    images: string[];
   };
   dietaryOptions: {
     title: string;
