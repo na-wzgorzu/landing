@@ -1,5 +1,7 @@
 "use client";
 import { GallerySection } from "@/components/GallerySection";
+import { API_URL } from "@/app/cms/constants";
+import type { CmsData, GastroContent } from "@/app/cms/data";
 import { motion } from "framer-motion";
 import {
   Utensils,
@@ -11,7 +13,7 @@ import {
   SaladIcon,
 } from "lucide-react";
 import Link from "next/link";
-import gastroContent from "@/data/gastro.json";
+import { useEffect, useState } from "react";
 
 const images = [
   "/gallery/wyzywienie01.jpg",
@@ -23,7 +25,46 @@ const images = [
 ];
 
 export const Gastro = () => {
+  const [gastroContent, setGastroContent] = useState<GastroContent | null>(
+    null,
+  );
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const mealIcons = [Coffee, Soup, Utensils, Cake];
+
+  useEffect(() => {
+    fetch(API_URL)
+      .then((res) => {
+        if (!res.ok) throw new Error();
+        return res.json() as Promise<CmsData>;
+      })
+      .then((data) => {
+        if (!data.gastro) throw new Error();
+        setGastroContent(data.gastro);
+      })
+      .catch(() => {
+        setError("Nie udało się pobrać danych gastronomii.");
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-100 px-4 py-16">
+        <div className="max-w-6xl mx-auto text-gray-700">Ładowanie...</div>
+      </div>
+    );
+  }
+
+  if (error || !gastroContent) {
+    return (
+      <div className="min-h-screen bg-gray-100 px-4 py-16">
+        <div className="max-w-6xl mx-auto text-red-600">
+          {error ?? "Brak danych gastronomii."}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-100">

@@ -34,9 +34,9 @@
     "description": "W okresie wakacyjnym sprzedajemy tylko pobyty z wyżywieniem (warianty wypisane poniżej). Poza sezonem w zależności od okresu możliwe są inne opcje.",
     "items": [
       "Śniadania + obiady",
-      "Śniadania + obiadokoalcje",
-      "Obiady + koalcje",
-      "Śniadania + obiady + koalcje",
+      "Śniadania + obiadokolacje",
+      "Obiady + kolacje",
+      "Śniadania + obiady + kolacje",
       "Same obiady (tylko dla domków)",
       "Same obiadokolacje (tylko dla domków)"
     ]
