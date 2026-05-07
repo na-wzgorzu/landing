@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import type { Accommodation } from "@/components/Houses/types";
 import AccommodationEditorList from "@/components/cms/AccommodationEditorList";
 import CmsTabs from "@/components/cms/CmsTabs";
+import GastroForm from "@/components/cms/GastroForm";
 import ReservationNoticeForm from "@/components/cms/ReservationNoticeForm";
 import LoginForm from "./LoginForm";
 import { SESSION_KEY, API_URL } from "./constants";
@@ -11,6 +12,7 @@ import {
   DEFAULT_RESERVATION_NOTICE,
   type CmsData,
   type CmsTab,
+  type GastroContent,
   type ReservationNotice,
 } from "./data";
 
@@ -65,6 +67,12 @@ export default function CmsClient() {
       },
     }));
 
+  const updateGastroContent = (gastro: GastroContent) =>
+    setData((prev) => ({
+      ...prev!,
+      gastro,
+    }));
+
   const handleSave = async () => {
     setSaving(true);
     setError(null);
@@ -114,6 +122,11 @@ export default function CmsClient() {
         <ReservationNoticeForm
           notice={reservationNotice}
           onChange={updateReservationNotice}
+        />
+      ) : tab === "gastro" ? (
+        <GastroForm
+          content={data!.gastro}
+          onChange={updateGastroContent}
         />
       ) : (
         <AccommodationEditorList

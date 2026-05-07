@@ -11,6 +11,7 @@ const tabs: { id: CmsTab; label: string }[] = [
   { id: "houses", label: "Domki" },
   { id: "rooms", label: "Pokoje" },
   { id: "reservation", label: "Rezerwacje" },
+  { id: "gastro", label: "Gastronomia" },
 ];
 
 export default function CmsTabs({ activeTab, onTabChange }: Props) {

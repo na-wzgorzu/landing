@@ -57,7 +57,7 @@ export type CmsData = {
   reservationNotice?: ReservationNotice;
 };
 
-export type CmsTab = "houses" | "rooms" | "reservation";
+export type CmsTab = "houses" | "rooms" | "reservation" | "gastro";
 
 export const DEFAULT_RESERVATION_NOTICE: ReservationNotice = {
   enabled: false,
