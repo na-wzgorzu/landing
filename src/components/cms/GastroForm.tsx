@@ -1,6 +1,7 @@
 "use client";
 
 import type { GastroContent } from "@/app/cms/data";
+import ImageGalleryEditor from "./ImageGalleryEditor";
 import StringListEditor from "./StringListEditor";
 
 type Props = {
@@ -62,9 +63,15 @@ function MealTimesEditor({ items, onChange }: MealTimesEditorProps) {
           <button
             type="button"
             onClick={() => remove(index)}
-            className="px-2 text-sm text-red-500 hover:text-red-700"
+            className="text-red-500 hover:text-red-700 px-2"
+            aria-label="Usuń"
           >
-            Usuń
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="3 6 5 6 21 6" />
+              <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+              <path d="M10 11v6M14 11v6" />
+              <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" />
+            </svg>
           </button>
         </div>
       ))}
@@ -115,9 +122,15 @@ function MealDetailsEditor({ items, onChange }: MealDetailsEditorProps) {
           <button
             type="button"
             onClick={() => remove(index)}
-            className="self-start text-sm text-red-500 hover:text-red-700"
+            className="self-start text-red-500 hover:text-red-700 px-2"
+            aria-label="Usuń"
           >
-            Usuń
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="3 6 5 6 21 6" />
+              <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+              <path d="M10 11v6M14 11v6" />
+              <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" />
+            </svg>
           </button>
         </div>
       ))}
@@ -329,6 +342,12 @@ export default function GastroForm({ content, onChange }: Props) {
             className={inputClass}
           />,
         )}
+        <ImageGalleryEditor
+          items={content.gallery.images}
+          onChange={(images) =>
+            set({ gallery: { ...content.gallery, images } })
+          }
+        />
       </section>
 
       <section className="flex flex-col gap-4">
