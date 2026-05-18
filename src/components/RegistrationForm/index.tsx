@@ -4,7 +4,7 @@ import {
   reservationSchema,
 } from "@/components/RegistrationForm/tools";
 import { Input } from "@/components/ui/input";
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -12,9 +12,17 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Form from "next/form";
 import { Textarea } from "@/components/ui/textarea";
 import { toast, Toaster } from "sonner";
-import { RESERVATION_URL } from "@/app/cms/constants";
+import { API_URL, RESERVATION_URL } from "@/app/cms/constants";
+import {
+  DEFAULT_RESERVATION_NOTICE,
+  type CmsData,
+  type ReservationNotice,
+} from "@/app/cms/data";
 
 export const RegistrationForm = () => {
+  const [reservationNotice, setReservationNotice] =
+    React.useState<ReservationNotice | null>(null);
+
   const {
     reset,
     register,
@@ -31,6 +39,31 @@ export const RegistrationForm = () => {
       phone: "",
     },
   });
+  useEffect(() => {
+    let ignore = false;
+
+    fetch(API_URL)
+      .then((res) => {
+        if (!res.ok) return null;
+        return res.json() as Promise<CmsData>;
+      })
+      .then((data) => {
+        if (!ignore) {
+          setReservationNotice(
+            data?.reservationNotice ?? DEFAULT_RESERVATION_NOTICE,
+          );
+        }
+      })
+      .catch(() => {
+        if (!ignore) {
+          setReservationNotice(DEFAULT_RESERVATION_NOTICE);
+        }
+      });
+
+    return () => {
+      ignore = true;
+    };
+  }, []);
 
   const onSubmit = async (data: Reservation) => {
     try {
@@ -68,6 +101,12 @@ export const RegistrationForm = () => {
           procesu ewentualnej rezerwacji. Państwa danych nikomu nie
           przekazujemy.
         </p>
+
+        {reservationNotice?.enabled && reservationNotice.text.trim() && (
+          <p className="pt-4 leading-5 md:leading-6 text-red-500 font-semibold">
+            {reservationNotice.text}
+          </p>
+        )}
       </div>
 
       <Form

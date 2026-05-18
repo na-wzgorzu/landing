@@ -3,6 +3,7 @@
 import type { Accommodation } from "@/components/Houses/types";
 import StringListEditor from "./StringListEditor";
 import ImageGalleryEditor from "./ImageGalleryEditor";
+import ImagePicker from "./ImagePicker";
 
 type Props = {
   accommodation: Accommodation;
@@ -108,6 +109,14 @@ export default function AccommodationForm({
           onChange={(e) => set({ description: e.target.value })}
           rows={10}
           className={`${inputClass} resize-y`}
+        />,
+      )}
+
+      {field(
+        "Zdjęcie główne",
+        <ImagePicker
+          value={accommodation.image}
+          onChange={(image) => set({ image })}
         />,
       )}
 

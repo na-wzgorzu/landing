@@ -2,24 +2,27 @@
 
 import { useEffect, useState } from "react";
 import type { Accommodation } from "@/components/Houses/types";
-import AccommodationForm from "@/components/cms/AccommodationForm";
+import AccommodationEditorList from "@/components/cms/AccommodationEditorList";
+import CmsTabs from "@/components/cms/CmsTabs";
+import GastroForm from "@/components/cms/GastroForm";
+import ReservationNoticeForm from "@/components/cms/ReservationNoticeForm";
 import LoginForm from "./LoginForm";
 import { SESSION_KEY, API_URL } from "./constants";
-
-type Data = {
-  houses: Accommodation[];
-  rooms: Accommodation[];
-};
-
-type Tab = "houses" | "rooms";
+import {
+  DEFAULT_RESERVATION_NOTICE,
+  type CmsData,
+  type CmsTab,
+  type GastroContent,
+  type ReservationNotice,
+} from "./data";
 
 export default function CmsClient() {
   const [authenticated, setAuthenticated] = useState(false);
-  const [data, setData] = useState<Data | null>(null);
+  const [data, setData] = useState<CmsData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
-  const [tab, setTab] = useState<Tab>("houses");
+  const [tab, setTab] = useState<CmsTab>("houses");
 
   useEffect(() => {
     if (sessionStorage.getItem(SESSION_KEY) === "1") {
@@ -32,19 +35,42 @@ export default function CmsClient() {
     fetch(API_URL)
       .then((res) => {
         if (!res.ok) throw new Error();
-        return res.json() as Promise<Data>;
+        return res.json() as Promise<CmsData>;
       })
       .then((fetched) => {
-        setData(fetched);
+        setData({
+          ...fetched,
+          reservationNotice:
+            fetched.reservationNotice ?? DEFAULT_RESERVATION_NOTICE,
+        });
       })
       .catch(() => setError("Nie udało się pobrać danych"))
       .finally(() => setLoading(false));
   }, [authenticated]);
 
-  const updateItem = (list: Tab, id: string, updated: Accommodation) =>
+  const updateItem = (
+    list: Extract<CmsTab, "houses" | "rooms">,
+    id: string,
+    updated: Accommodation,
+  ) =>
     setData((prev) => ({
       ...prev!,
       [list]: prev![list].map((item) => (item.id === id ? updated : item)),
+    }));
+
+  const updateReservationNotice = (patch: Partial<ReservationNotice>) =>
+    setData((prev) => ({
+      ...prev!,
+      reservationNotice: {
+        ...(prev!.reservationNotice ?? DEFAULT_RESERVATION_NOTICE),
+        ...patch,
+      },
+    }));
+
+  const updateGastroContent = (gastro: GastroContent) =>
+    setData((prev) => ({
+      ...prev!,
+      gastro,
     }));
 
   const handleSave = async () => {
@@ -71,7 +97,8 @@ export default function CmsClient() {
   if (loading) return <p className="p-8">Ładowanie...</p>;
   if (error) return <p className="p-8 text-red-600">{error}</p>;
 
-  const items = data![tab];
+  const reservationNotice =
+    data!.reservationNotice ?? DEFAULT_RESERVATION_NOTICE;
 
   return (
     <div className="p-8 max-w-3xl mx-auto">
@@ -89,32 +116,24 @@ export default function CmsClient() {
 
       {error && <p className="mb-4 text-red-600 text-sm">{error}</p>}
 
-      <div className="flex gap-2 mb-6 border-b border-gray-200">
-        {(["houses", "rooms"] as Tab[]).map((t) => (
-          <button
-            key={t}
-            type="button"
-            onClick={() => setTab(t)}
-            className={`px-4 py-2 text-sm font-medium border-b-2 -mb-px transition-colors ${
-              tab === t
-                ? "border-brand text-brand"
-                : "border-transparent text-gray-500 hover:text-gray-700"
-            }`}
-          >
-            {t === "houses" ? "Domki" : "Pokoje"}
-          </button>
-        ))}
-      </div>
+      <CmsTabs activeTab={tab} onTabChange={setTab} />
 
-      <div className="flex flex-col gap-4">
-        {items.map((item) => (
-          <AccommodationForm
-            key={item.id}
-            accommodation={item}
-            onChange={(updated) => updateItem(tab, item.id, updated)}
-          />
-        ))}
-      </div>
+      {tab === "reservation" ? (
+        <ReservationNoticeForm
+          notice={reservationNotice}
+          onChange={updateReservationNotice}
+        />
+      ) : tab === "gastro" ? (
+        <GastroForm
+          content={data!.gastro}
+          onChange={updateGastroContent}
+        />
+      ) : (
+        <AccommodationEditorList
+          items={data![tab]}
+          onChange={(id, updated) => updateItem(tab, id, updated)}
+        />
+      )}
     </div>
   );
 }

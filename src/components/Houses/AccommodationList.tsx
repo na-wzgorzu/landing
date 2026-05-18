@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { getBedroomLabel } from "@/components/Houses/tools";
 import { Accommodation } from "@/components/Houses/types";
+import { AccommodationImage } from "@/components/Houses/AccommodationImage";
 
 type Props = {
   type: "domek" | "pokoj";
@@ -34,11 +35,12 @@ export const AccommodationList = ({
             >
               <div className="flex flex-col md:flex-row">
                 {/* Left side - Image */}
-                <div className="md:w-1/3 h-64 md:h-auto relative">
-                  <img
-                    src={accommodation.image}
+                <div className="md:w-1/3 h-64 md:h-auto relative overflow-hidden">
+                  <AccommodationImage
+                    id={accommodation.id}
+                    type={type}
+                    localImage={accommodation.image}
                     alt={accommodation.name}
-                    className="w-full h-full object-cover"
                   />
                   <Badge
                     className="absolute top-3 left-3 bg-brand text-white hover:bg-brand"
