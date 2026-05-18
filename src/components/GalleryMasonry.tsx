@@ -32,7 +32,6 @@ const images: Record<string, string[]> = {
     "/gallery/apartamenty102.jpg",
   ],
   Pokoje: [
-    "/3-room-bt/pok_17.jpeg",
     "/gallery/hotel12.jpg",
     "/gallery/hotel01.jpg",
     "/3-room-t/pok_13.jpg",
